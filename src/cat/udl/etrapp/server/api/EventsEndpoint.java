@@ -39,11 +39,7 @@ public class EventsEndpoint {
 	public Response findById(@PathParam("id") final Long id) {
 		//TODO: retrieve the event 
 		Event event = EventsController.getInstance().getEventById(id);
-		if (event == null) {
-			System.out.println("PEPE");
-			return Response.status(Status.NOT_FOUND).build();
-		}
-		System.out.println("PEPA");
+		if (event == null) return Response.status(Status.NOT_FOUND).build();
 		return Response.ok(event).build();
 	}
 
