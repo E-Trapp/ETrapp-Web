@@ -1,0 +1,199 @@
+.body{
+	height: 100%;
+}
+
+.homePage{
+	background-color: #FF3030;
+}
+
+.homePage button{
+	width: 80%;
+	height: 80px;
+	background-color: black;
+	border-color: black;
+	font-size: 18px;
+}
+
+.homePage button:hover{
+	background-color: #292929;
+	border-color: black; 
+}
+
+.logoField{
+	font-size: 18px;
+	text-align: center;
+}
+
+.logoField .row{
+	color:white;
+	padding: 100px 0px 100px 0px;
+}
+
+.logoHome{
+	width: 150px;
+	height: 150px;
+}
+.logoControl{
+	margin:20px 0px 20px 0px;
+	width: 100px;
+	height: 100px;
+}
+
+
+.pageControl{
+	font-family: 'Ubuntu', sans-serif;
+	//font-family: 'Montserrat', sans-serif;
+}
+
+.menu{
+	height: 100%;
+	position:fixed;	
+	background-color: #cacaca;
+	z-index: 10;
+}
+
+.menu .row{
+	text-align:center;
+		
+}
+
+.menuTitle{
+	background-color: #848484;
+	color: white;
+	padding: 15px 0px 15px 0px;
+    font-size: 20px;
+    font-weight: bold;
+    border-width: thin;
+    border-color: black;
+    border-bottom-style: solid;
+    cursor: pointer;
+}
+
+.menuTitle:hover{
+	//background-color: #bbbaba;
+}
+
+.menuLinks{
+	background-color: #ff3b3b;
+	color: white;
+	padding: 15px 0px 15px 0px;
+	font-size: 15px;
+    border-width: thin;
+    border-color: black;
+    border-bottom-style: dashed;
+    cursor: pointer; 
+}
+.menuLinks:hover{
+	background-color: #212121;
+}
+
+.menuLinks .menuImg{
+	width: 70px;
+    height: 70px;
+    margin-right: 20px;
+}
+
+.avatar{
+	padding: 20px 0px 20px 0px;
+}
+.avatarAdmin{
+	border-radius: 125px;
+	width: 60px;
+	height: 60px;
+}
+
+.content{
+	
+}
+
+.content .header{
+    height: 140px;
+    background-color: #b3b3b3;
+    padding: 20px 20px 20px 40px;
+}
+
+.content .barmenu{
+    background-color: #dadada;
+    padding: 5px 0px 5px 0px;
+}
+
+.content .barmenu ul {
+    margin: 0px;
+    padding: 0px;
+}
+.content .barmenu ul li {
+    float: left;
+    width: 180px;
+    height: 50px;
+    color: #2b2b2b;
+    font-size: 20px;
+    list-style: none;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+}
+
+
+.content .events{
+	height: 80px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.content .events .col-3{
+	background-color: #00000059;
+    filter: alpha(opacity=50);
+    position: relative;
+}
+
+.content .events .col-3 .eventContent{
+    color:white;
+}
+
+.content .events .col-3 .eventContent .titleEvent{
+    margin: 10px 10px 10px 10px;
+    height: 100px;
+}
+
+.content .events .col-3 .eventContent .dateEvent{
+    bottom: 0px;
+    position: absolute;
+}
+
+.content .events .eventButton img{
+    width: 50px;
+    height: 50px;
+}
+
+.content .events .eventButton{
+    padding: 30px 5px 20px 25px;
+	font-size: 10px;
+	background-color: #ffffffcf;
+}
+
+
+.content .events img{
+	width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
