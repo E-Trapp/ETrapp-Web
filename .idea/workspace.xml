@@ -7,14 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b936f20a-94fa-45fd-8e05-37535ffe15f2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/UsersEndpoint.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cat/udl/etrapp/server/models/UserAuth.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/RestApplication.java" afterPath="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/application/RestApplication.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/AuthEndpoint.java" afterPath="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/AuthEndpoint.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/EventsDAO.java" afterPath="$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/EventsDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/UsersDAO.java" afterPath="$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/UsersDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cat/udl/etrapp/server/models/User.java" afterPath="$PROJECT_DIR$/src/cat/udl/etrapp/server/models/User.java" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,19 +63,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UsersDAO.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UsersDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/UsersDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="106" column="12" lean-forward="false" selection-start-line="106" selection-start-column="12" selection-end-line="106" selection-end-column="12" />
+            <state relative-caret-position="404">
+              <caret line="128" column="24" lean-forward="true" selection-start-line="128" selection-start-column="24" selection-end-line="128" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#createUser#0;class#UsersDAO#0" expanded="false" />
-                <marker date="1511961851193" expanded="true" signature="1202:1242" ph="SELECT id, t... users" />
-                <marker date="1511961851193" expanded="true" signature="2131:2138" ph="UPDATE event... " />
-                <marker date="1511961851193" expanded="true" signature="2131:2170" ph="UPDATE users... " />
-                <marker date="1511961851193" expanded="true" signature="2131:2172" ph="UPDATE users... " />
-                <marker date="1511961851193" expanded="true" signature="2654:2689" ph="SELECT * FRO... users" />
+                <element signature="method#getUserByToken#0;class#UsersDAO#0" expanded="false" />
+                <element signature="method#updateToken#0;class#UsersDAO#0" expanded="false" />
+                <marker date="1511962526298" expanded="true" signature="1202:1242" ph="SELECT id, t... users" />
+                <marker date="1511962526298" expanded="true" signature="2166:2219" ph="SELECT id, u... users" />
+                <marker date="1511962526298" expanded="true" signature="3185:3192" ph="UPDATE event... " />
+                <marker date="1511962526298" expanded="true" signature="3185:3224" ph="UPDATE users... " />
+                <marker date="1511962526298" expanded="true" signature="3185:3226" ph="UPDATE users... " />
+                <marker date="1511962526298" expanded="true" signature="3708:3743" ph="SELECT * FRO... users" />
               </folding>
             </state>
           </provider>
@@ -132,11 +130,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthEndpoint.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AuthEndpoint.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/AuthEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="33" column="37" lean-forward="true" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+            <state relative-caret-position="340">
+              <caret line="31" column="28" lean-forward="false" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -211,8 +209,8 @@
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/models/UserAuth.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/EventsDAO.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/models/User.java" />
-        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/AuthEndpoint.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/UsersDAO.java" />
+        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/AuthEndpoint.java" />
       </list>
     </option>
   </component>
@@ -708,12 +706,12 @@
       <workItem from="1511908303393" duration="593000" />
       <workItem from="1511908944960" duration="937000" />
       <workItem from="1511915450912" duration="6058000" />
-      <workItem from="1511947527445" duration="11563000" />
+      <workItem from="1511947527445" duration="12314000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19559000" />
+    <option name="totallyTimeSpent" value="20310000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -738,7 +736,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26066098" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1175,6 +1173,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/UsersEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/models/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1205,6 +1213,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/UsersDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="128" column="24" lean-forward="true" selection-start-line="128" selection-start-column="24" selection-end-line="128" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#createUser#0;class#UsersDAO#0" expanded="false" />
+            <element signature="method#getUserByToken#0;class#UsersDAO#0" expanded="false" />
+            <element signature="method#updateToken#0;class#UsersDAO#0" expanded="false" />
+            <marker date="1511962526298" expanded="true" signature="1202:1242" ph="SELECT id, t... users" />
+            <marker date="1511962526298" expanded="true" signature="2166:2219" ph="SELECT id, u... users" />
+            <marker date="1511962526298" expanded="true" signature="3185:3192" ph="UPDATE event... " />
+            <marker date="1511962526298" expanded="true" signature="3185:3224" ph="UPDATE users... " />
+            <marker date="1511962526298" expanded="true" signature="3185:3226" ph="UPDATE users... " />
+            <marker date="1511962526298" expanded="true" signature="3708:3743" ph="SELECT * FRO... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="das://table:/cff0e20f/7ea67212-7573-41ad-90c2-72c7b422d9bf/dh9lc7447dlvb.public.users">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1212,38 +1239,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/UsersEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/AuthEndpoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="33" column="37" lean-forward="true" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+        <state relative-caret-position="340">
+          <caret line="31" column="28" lean-forward="false" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/UsersDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="106" column="12" lean-forward="false" selection-start-line="106" selection-start-column="12" selection-end-line="106" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#createUser#0;class#UsersDAO#0" expanded="false" />
-            <marker date="1511961851193" expanded="true" signature="1202:1242" ph="SELECT id, t... users" />
-            <marker date="1511961851193" expanded="true" signature="2131:2138" ph="UPDATE event... " />
-            <marker date="1511961851193" expanded="true" signature="2131:2170" ph="UPDATE users... " />
-            <marker date="1511961851193" expanded="true" signature="2131:2172" ph="UPDATE users... " />
-            <marker date="1511961851193" expanded="true" signature="2654:2689" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>

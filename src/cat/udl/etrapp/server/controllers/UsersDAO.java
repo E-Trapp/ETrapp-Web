@@ -59,6 +59,34 @@ public class UsersDAO {
         return user;
     }
 
+    @Nullable
+    public User getUserByToken(String token) {
+        User user = null;
+
+        try (Connection connection = DBManager.getConnection();
+             PreparedStatement statement = connection.prepareStatement("SELECT id, username, token FROM users WHERE token = ?");
+        ) {
+            statement.setString(1, token);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    user = new User();
+                    user.setId(resultSet.getLong("id"));
+                    user.setToken(resultSet.getString("token"));
+                    user.setUsername(resultSet.getString("username"));
+                }
+            } catch (SQLException e) {
+                System.err.println("Error in SQL: getUserById()");
+                System.err.println(e.getMessage());
+            }
+        } catch (SQLException e) {
+            System.err.println("Error in SQL: getUserById()");
+            System.err.println(e.getMessage());
+        }
+
+        return user;
+    }
+
     public void updateToken(String token, long id) {
         try (Connection connection = DBManager.getConnection();
              PreparedStatement statement = connection.prepareStatement("UPDATE users SET token = ? WHERE id = ?");
@@ -98,14 +126,12 @@ public class UsersDAO {
         return user;
     }
 
-    public boolean deauthenticate(long id, String token) {
+    public boolean deauthenticate(String token) {
         boolean deauth = false;
         // TODO: Get user and delete token.
-        User user = getUserById(id);
+        User user = getUserByToken(token);
         if (user != null && user.getToken().equals(token)) {
-
-
-
+            updateToken(null, user.getId());
             deauth = true;
         }
         return deauth;

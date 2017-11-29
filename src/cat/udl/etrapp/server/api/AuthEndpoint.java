@@ -29,10 +29,9 @@ public class AuthEndpoint {
 
     @DELETE
     @Secured
-    @Path("/{id}")
-    public Response signOut(@PathParam("id") long id, @Context HttpHeaders headers) {
+    public Response signOut(@Context HttpHeaders headers) {
         // TODO: Remove token from DB
-        UsersDAO.getInstance().deauthenticate(id, headers.getHeaderString(HttpHeaders.AUTHORIZATION).substring("Bearer".length()).trim());
+        UsersDAO.getInstance().deauthenticate(headers.getHeaderString(HttpHeaders.AUTHORIZATION).substring("Bearer".length()).trim());
         return Response.ok().build();
     }
 
