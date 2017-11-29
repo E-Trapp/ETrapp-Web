@@ -23,13 +23,13 @@ import cat.udl.etrapp.server.controllers.EventsDAO;
 import cat.udl.etrapp.server.models.Event;
 
 @RequestScoped
-@Secured
 @Path("/events")
 @Produces("application/json")
 @Consumes("application/json")
 public class EventsEndpoint {
 
 	@POST
+	@Secured
 	public Response create(final Event event) {
         if (EventsDAO.getInstance().createEvent(event) == null) return Response.serverError().status(Status.INTERNAL_SERVER_ERROR).build();
 		else return Response.created(UriBuilder.fromResource(EventsEndpoint.class).path(String.valueOf(event.getId())).build()).build();
@@ -53,13 +53,15 @@ public class EventsEndpoint {
 	}
 
 	@PUT
-	@Path("/{id:[0-9][0-9]*}")
+    @Secured
+    @Path("/{id:[0-9][0-9]*}")
 	public Response update(@PathParam("id") Long id, final Event event) {
 		//TODO: process the given event 
 		return Response.noContent().build();
 	}
 
 	@PATCH
+    @Secured
     @Path("/{id:[0-9][0-9]*}")
     public Response update_partially(@PathParam("id") Long id, final Map<String, Object> data) {
         //TODO: process the given event
@@ -74,7 +76,8 @@ public class EventsEndpoint {
     }
 
 	@DELETE
-	@Path("/{id:[0-9][0-9]*}")
+    @Secured
+    @Path("/{id:[0-9][0-9]*}")
 	public Response deleteById(@PathParam("id") final Long id) {
 		//TODO: process the event matching by the given id 
 		return Response.noContent().build();
