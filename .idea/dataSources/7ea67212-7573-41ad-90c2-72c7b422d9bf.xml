@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="HerokuDB">
-  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.3">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.4">
     <root id="1"/>
     <database id="2" parent="1" name="dh9lc7447dlvb">
       <ObjectId>16856425</ObjectId>
@@ -2673,8 +2673,8 @@
     </database>
     <schema id="891" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-11-29.03:02:22.031</IntrospectionTimestamp>
-      <IntrospectionStateNumber>112096282</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-11-29.12:03:14.086</IntrospectionTimestamp>
+      <IntrospectionStateNumber>112404678</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -2699,15 +2699,25 @@
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <table id="898" parent="891" name="events">
+    <sequence id="898" parent="891" name="users_id_seq">
+      <ObjectId>16946991</ObjectId>
+      <StateNumber>112404676</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <table id="899" parent="891" name="events">
       <ObjectId>16934777</ObjectId>
       <StateNumber>112096282</StateNumber>
     </table>
-    <table id="899" parent="891" name="pepe">
+    <table id="900" parent="891" name="pepe">
       <ObjectId>16857812</ObjectId>
       <StateNumber>111174470</StateNumber>
     </table>
-    <column id="900" parent="898" name="id">
+    <table id="901" parent="891" name="users">
+      <ObjectId>16946993</ObjectId>
+      <StateNumber>112404676</StateNumber>
+    </table>
+    <column id="902" parent="899" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
@@ -2715,27 +2725,68 @@
       <SequenceName>events_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;events_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="901" parent="898" name="title">
+    <column id="903" parent="899" name="title">
       <Position>2</Position>
       <DataType>varchar(200)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>112096282</StateNumber>
     </column>
-    <index id="902" parent="898" name="events_pkey">
+    <index id="904" parent="899" name="events_pkey">
       <ObjectId>16934781</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="903" parent="898" name="events_pkey">
+    <key id="905" parent="899" name="events_pkey">
       <ObjectId>16934782</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>events_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="904" parent="899" name="pepe">
+    <column id="906" parent="900" name="pepe">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <StateNumber>111174470</StateNumber>
     </column>
+    <column id="907" parent="901" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>112404676</StateNumber>
+      <SequenceName>users_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="908" parent="901" name="username">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>112404676</StateNumber>
+    </column>
+    <column id="909" parent="901" name="password_hashed">
+      <Position>3</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>112404676</StateNumber>
+    </column>
+    <column id="910" parent="901" name="token">
+      <Position>4</Position>
+      <DataType>varchar(200)|0</DataType>
+      <StateNumber>112404676</StateNumber>
+    </column>
+    <index id="911" parent="901" name="users_pkey">
+      <ObjectId>16946997</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="912" parent="901" name="users_token_uindex">
+      <ObjectId>16947000</ObjectId>
+      <ColNames>token</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="913" parent="901" name="users_pkey">
+      <ObjectId>16946998</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>

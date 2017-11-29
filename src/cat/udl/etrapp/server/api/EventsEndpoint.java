@@ -17,11 +17,13 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriBuilder;
 
-import cat.udl.etrapp.server.api.extras.PATCH;
+import cat.udl.etrapp.server.api.annotations.PATCH;
+import cat.udl.etrapp.server.api.annotations.Secured;
 import cat.udl.etrapp.server.controllers.EventsDAO;
 import cat.udl.etrapp.server.models.Event;
 
 @RequestScoped
+@Secured
 @Path("/events")
 @Produces("application/json")
 @Consumes("application/json")
@@ -34,7 +36,7 @@ public class EventsEndpoint {
 	}
 
 	@GET
-	@Path("/{id:[0-9][0-9]*}")
+    @Path("/{id:[0-9][0-9]*}")
 	public Response findById(@PathParam("id") final Long id) {
 		//TODO: retrieve the event 
 		Event event = EventsDAO.getInstance().getEventById(id);
@@ -43,9 +45,9 @@ public class EventsEndpoint {
 	}
 
 	@GET
-	public List<Event> listAll(@QueryParam("start") final Integer startPosition,
+    public List<Event> listAll(@QueryParam("start") final Integer startPosition,
 			@QueryParam("max") final Integer maxResult) {
-		//TODO: retrieve the events 
+		//TODO: retrieve the events
 		final List<Event> events = EventsDAO.getInstance().getAllEvents();
 		return events;
 	}

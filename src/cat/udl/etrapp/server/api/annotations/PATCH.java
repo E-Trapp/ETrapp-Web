@@ -1,4 +1,4 @@
-package cat.udl.etrapp.server.api.extras;
+package cat.udl.etrapp.server.api.annotations;
 
 import javax.ws.rs.HttpMethod;
 import java.lang.annotation.ElementType;

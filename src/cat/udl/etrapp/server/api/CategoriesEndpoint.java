@@ -11,6 +11,7 @@ public class CategoriesEndpoint {
     @GET
     // The Java method will produce content identified by the MIME Media type "text/plain"
     @Produces("text/plain")
+    @Path("../test")
     public String getClichedMessage() {
         // Return some cliched textual content
         return "Hello World";
