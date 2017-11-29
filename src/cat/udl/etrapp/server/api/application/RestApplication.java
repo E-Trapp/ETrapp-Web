@@ -1,5 +1,9 @@
-package cat.udl.etrapp.server.api;
+package cat.udl.etrapp.server.api.application;
 
+import cat.udl.etrapp.server.api.AuthEndpoint;
+import cat.udl.etrapp.server.api.CategoriesEndpoint;
+import cat.udl.etrapp.server.api.EventsEndpoint;
+import cat.udl.etrapp.server.api.UsersEndpoint;
 import cat.udl.etrapp.server.api.filters.AuthenticationFilter;
 
 import javax.ws.rs.ApplicationPath;
@@ -13,10 +17,11 @@ public class RestApplication extends Application {
 
     @Override
     public Set<Class<?>> getClasses() {
-        return new HashSet<Class<?>>(Arrays.asList(
-                EventsEndpoint.class,
-                CategoriesEndpoint.class,
+        return new HashSet<>(Arrays.asList(
                 AuthEndpoint.class,
+                CategoriesEndpoint.class,
+                EventsEndpoint.class,
+                UsersEndpoint.class,
                 AuthenticationFilter.class));
     }
 

@@ -7,15 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b936f20a-94fa-45fd-8e05-37535ffe15f2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cat/udl/etrapp/server/models/Credentials.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cat/udl/etrapp/server/models/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cat/udl/etrapp/server/utils/BCrypt.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cat/udl/etrapp/server/utils/Password.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/7ea67212-7573-41ad-90c2-72c7b422d9bf.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/7ea67212-7573-41ad-90c2-72c7b422d9bf.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/UsersEndpoint.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cat/udl/etrapp/server/models/UserAuth.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/RestApplication.java" afterPath="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/application/RestApplication.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/AuthEndpoint.java" afterPath="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/AuthEndpoint.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/EventsDAO.java" afterPath="$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/EventsDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/UsersDAO.java" afterPath="$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/UsersDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cat/udl/etrapp/server/models/User.java" afterPath="$PROJECT_DIR$/src/cat/udl/etrapp/server/models/User.java" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,13 +68,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EventsEndpoint.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/EventsEndpoint.java">
+      <file leaf-file-name="UsersDAO.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/UsersDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="49" column="35" lean-forward="false" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+            <state relative-caret-position="405">
+              <caret line="106" column="12" lean-forward="false" selection-start-line="106" selection-start-column="12" selection-end-line="106" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#createUser#0;class#UsersDAO#0" expanded="false" />
+                <marker date="1511961851193" expanded="true" signature="1202:1242" ph="SELECT id, t... users" />
+                <marker date="1511961851193" expanded="true" signature="2131:2138" ph="UPDATE event... " />
+                <marker date="1511961851193" expanded="true" signature="2131:2170" ph="UPDATE users... " />
+                <marker date="1511961851193" expanded="true" signature="2131:2172" ph="UPDATE users... " />
+                <marker date="1511961851193" expanded="true" signature="2654:2689" ph="SELECT * FRO... users" />
               </folding>
             </state>
           </provider>
@@ -84,72 +89,10 @@
       <file leaf-file-name="AuthenticationFilter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/filters/AuthenticationFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="71" column="13" lean-forward="false" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
+            <state relative-caret-position="190">
+              <caret line="28" column="72" lean-forward="false" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EventsDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/EventsDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="77" column="43" lean-forward="false" selection-start-line="77" selection-start-column="43" selection-end-line="77" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#getInstance#0;class#EventsDAO#0" expanded="false" />
-                <element signature="method#getAllEvents#0;class#EventsDAO#0" expanded="false" />
-                <element signature="method#getEventById#0;class#EventsDAO#0" expanded="false" />
-                <element signature="method#getEventByIdStatement#0;class#EventsDAO#0" expanded="false" />
-                <marker date="1511954690304" expanded="true" signature="694:722" ph="SELECT id, t... events" />
-                <marker date="1511954690304" expanded="true" signature="2080:2113" ph="SELECT * FRO... events" />
-                <marker date="1511954690304" expanded="true" signature="2364:2401" ph="INSERT INTO events... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsersDAO.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/UsersDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="69" column="25" lean-forward="true" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1511956727546" expanded="true" signature="1094:1101" ph="UPDATE event... " />
-                <marker date="1511956727546" expanded="true" signature="1094:1133" ph="UPDATE users... " />
-                <marker date="1511956727546" expanded="true" signature="1094:1135" ph="UPDATE users... " />
-                <marker date="1511956727546" expanded="true" signature="1617:1652" ph="SELECT * FRO... users" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Password.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/utils/Password.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-102">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BCrypt.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/utils/BCrypt.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12430">
-              <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#28027#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <marker date="1511955463227" expanded="false" signature="26950:26955" ph=" { " />
-                <marker date="1511955463227" expanded="false" signature="27002:27005" ph=" }" />
-                <marker date="1511955463227" expanded="false" signature="27224:27229" ph=" { " />
-                <marker date="1511955463227" expanded="false" signature="27273:27276" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -158,15 +101,32 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/models/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
+            <state relative-caret-position="289">
+              <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
               <folding>
-                <element signature="e#337#338#0" expanded="true" />
                 <element signature="e#362#363#0" expanded="true" />
-                <element signature="e#397#398#0" expanded="true" />
-                <element signature="e#428#429#0" expanded="true" />
-                <element signature="e#460#461#0" expanded="true" />
-                <element signature="e#488#489#0" expanded="true" />
+                <element signature="e#396#397#0" expanded="true" />
+                <element signature="e#424#425#0" expanded="true" />
+                <element signature="e#459#460#0" expanded="true" />
+                <element signature="e#490#491#0" expanded="true" />
+                <element signature="e#538#539#0" expanded="true" />
+                <element signature="e#578#579#0" expanded="true" />
+                <element signature="e#610#611#0" expanded="true" />
+                <element signature="e#638#639#0" expanded="true" />
+                <element signature="e#680#681#0" expanded="true" />
+                <element signature="e#714#715#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsersEndpoint.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/UsersEndpoint.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -175,24 +135,10 @@
       <file leaf-file-name="AuthEndpoint.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/AuthEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="53" lean-forward="false" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+            <state relative-caret-position="439">
+              <caret line="33" column="37" lean-forward="true" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Credentials.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/models/Credentials.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-              <folding>
-                <element signature="e#189#190#0" expanded="true" />
-                <element signature="e#224#225#0" expanded="true" />
-                <element signature="e#255#256#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -256,12 +202,15 @@
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/utils/Utils.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/EventsEndpoint.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/filters/AuthenticationFilter.java" />
-        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/EventsDAO.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/models/User.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/utils/BCrypt.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/utils/Password.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/models/Credentials.java" />
+        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/application/RestApplication.java" />
+        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/UsersEndpoint.java" />
+        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/models/UserAuth.java" />
+        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/EventsDAO.java" />
+        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/models/User.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/AuthEndpoint.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/UsersDAO.java" />
       </list>
@@ -318,6 +267,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="etrapp-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="etrapp-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="etrapp-server" type="b2602c69:ProjectViewProjectNode" />
@@ -393,7 +350,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Password">
+  <component name="RunManager" selected="JBoss Server.Production">
     <configuration name="Development" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="WildFly 11.0.0.Final" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER" value="false" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
@@ -751,12 +708,12 @@
       <workItem from="1511908303393" duration="593000" />
       <workItem from="1511908944960" duration="937000" />
       <workItem from="1511915450912" duration="6058000" />
-      <workItem from="1511947527445" duration="9126000" />
+      <workItem from="1511947527445" duration="11563000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17122000" />
+    <option name="totallyTimeSpent" value="19559000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -804,7 +761,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -846,7 +805,7 @@
         <state relative-caret-position="102">
           <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -877,11 +836,11 @@
             <element signature="imports" expanded="true" />
             <element signature="method#getInstance#0;class#EventsDAO#0" expanded="false" />
             <element signature="method#getAllEvents#0;class#EventsDAO#0" expanded="false" />
-            <element signature="method#getEventById#0;class#EventsDAO#0" expanded="false" />
             <element signature="method#getEventByIdStatement#0;class#EventsDAO#0" expanded="false" />
-            <marker date="1511954690304" expanded="true" signature="694:722" ph="SELECT id, t... events" />
-            <marker date="1511954690304" expanded="true" signature="2080:2113" ph="SELECT * FRO... events" />
-            <marker date="1511954690304" expanded="true" signature="2364:2401" ph="INSERT INTO events... " />
+            <element signature="method#createEvent#0;class#EventsDAO#0" expanded="false" />
+            <marker date="1511961281257" expanded="true" signature="694:722" ph="SELECT id, t... events" />
+            <marker date="1511961281257" expanded="true" signature="2083:2116" ph="SELECT * FRO... events" />
+            <marker date="1511961281257" expanded="true" signature="2367:2404" ph="INSERT INTO events... " />
           </folding>
         </state>
       </provider>
@@ -906,7 +865,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/RestApplication.java">
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/application/RestApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
@@ -944,7 +903,7 @@
         <state relative-caret-position="102">
           <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1108,7 +1067,7 @@
         <state relative-caret-position="204">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1118,36 +1077,9 @@
         <state relative-caret-position="85">
           <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
           <folding>
-            <element signature="e#108#109#0" expanded="true" />
-            <element signature="e#142#143#0" expanded="true" />
+            <element signature="e#108#109#0" expanded="false" />
+            <element signature="e#142#143#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/RestApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/EventsEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="49" column="35" lean-forward="false" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/cff0e20f/7ea67212-7573-41ad-90c2-72c7b422d9bf/dh9lc7447dlvb.public.users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1156,70 +1088,6 @@
         <state relative-caret-position="357">
           <caret line="81" column="9" lean-forward="true" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/filters/AuthenticationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="71" column="13" lean-forward="false" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/EventsDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="77" column="43" lean-forward="false" selection-start-line="77" selection-start-column="43" selection-end-line="77" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getInstance#0;class#EventsDAO#0" expanded="false" />
-            <element signature="method#getAllEvents#0;class#EventsDAO#0" expanded="false" />
-            <element signature="method#getEventById#0;class#EventsDAO#0" expanded="false" />
-            <element signature="method#getEventByIdStatement#0;class#EventsDAO#0" expanded="false" />
-            <marker date="1511954690304" expanded="true" signature="694:722" ph="SELECT id, t... events" />
-            <marker date="1511954690304" expanded="true" signature="2080:2113" ph="SELECT * FRO... events" />
-            <marker date="1511954690304" expanded="true" signature="2364:2401" ph="INSERT INTO events... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/models/Credentials.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding>
-            <element signature="e#189#190#0" expanded="true" />
-            <element signature="e#224#225#0" expanded="true" />
-            <element signature="e#255#256#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/AuthEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="53" lean-forward="false" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/models/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-          <folding>
-            <element signature="e#337#338#0" expanded="true" />
-            <element signature="e#362#363#0" expanded="true" />
-            <element signature="e#397#398#0" expanded="true" />
-            <element signature="e#428#429#0" expanded="true" />
-            <element signature="e#460#461#0" expanded="true" />
-            <element signature="e#488#489#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1246,16 +1114,136 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/EventsEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="49" column="35" lean-forward="false" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/models/Credentials.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+          <folding>
+            <element signature="e#189#190#0" expanded="true" />
+            <element signature="e#224#225#0" expanded="true" />
+            <element signature="e#255#256#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/application/RestApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/models/UserAuth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="33" lean-forward="false" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+          <folding>
+            <element signature="e#271#272#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/EventsDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="50" column="38" lean-forward="true" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getInstance#0;class#EventsDAO#0" expanded="false" />
+            <element signature="method#getAllEvents#0;class#EventsDAO#0" expanded="false" />
+            <element signature="method#getEventByIdStatement#0;class#EventsDAO#0" expanded="false" />
+            <element signature="method#createEvent#0;class#EventsDAO#0" expanded="false" />
+            <marker date="1511961281257" expanded="true" signature="694:722" ph="SELECT id, t... events" />
+            <marker date="1511961281257" expanded="true" signature="2083:2116" ph="SELECT * FRO... events" />
+            <marker date="1511961281257" expanded="true" signature="2367:2404" ph="INSERT INTO events... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/models/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding>
+            <element signature="e#362#363#0" expanded="true" />
+            <element signature="e#396#397#0" expanded="true" />
+            <element signature="e#424#425#0" expanded="true" />
+            <element signature="e#459#460#0" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#610#611#0" expanded="true" />
+            <element signature="e#638#639#0" expanded="true" />
+            <element signature="e#680#681#0" expanded="true" />
+            <element signature="e#714#715#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/filters/AuthenticationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="28" column="72" lean-forward="false" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/cff0e20f/7ea67212-7573-41ad-90c2-72c7b422d9bf/dh9lc7447dlvb.public.users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/UsersEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/AuthEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="33" column="37" lean-forward="true" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/UsersDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
-          <caret line="69" column="25" lean-forward="true" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
+          <caret line="106" column="12" lean-forward="false" selection-start-line="106" selection-start-column="12" selection-end-line="106" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1511956727546" expanded="true" signature="1094:1101" ph="UPDATE event... " />
-            <marker date="1511956727546" expanded="true" signature="1094:1133" ph="UPDATE users... " />
-            <marker date="1511956727546" expanded="true" signature="1094:1135" ph="UPDATE users... " />
-            <marker date="1511956727546" expanded="true" signature="1617:1652" ph="SELECT * FRO... users" />
+            <element signature="method#createUser#0;class#UsersDAO#0" expanded="false" />
+            <marker date="1511961851193" expanded="true" signature="1202:1242" ph="SELECT id, t... users" />
+            <marker date="1511961851193" expanded="true" signature="2131:2138" ph="UPDATE event... " />
+            <marker date="1511961851193" expanded="true" signature="2131:2170" ph="UPDATE users... " />
+            <marker date="1511961851193" expanded="true" signature="2131:2172" ph="UPDATE users... " />
+            <marker date="1511961851193" expanded="true" signature="2654:2689" ph="SELECT * FRO... users" />
           </folding>
         </state>
       </provider>

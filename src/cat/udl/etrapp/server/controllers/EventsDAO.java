@@ -42,12 +42,12 @@ public class EventsDAO {
         return events;
     }
 
-    public Event getEventById(Long id) {
+    public Event getEventById(long id) {
         Event event = null;
 
-        try (Connection connection = DBManager.getConnection()) {
-            PreparedStatement statement = getEventByIdStatement(connection, id);
-            ResultSet resultSet = statement.executeQuery();
+        try (Connection connection = DBManager.getConnection();
+             PreparedStatement statement = getEventByIdStatement(connection, id);
+             ResultSet resultSet = statement.executeQuery();) {
             while (resultSet.next()) {
                 event = new Event();
                 event.setId(resultSet.getLong("id"));
