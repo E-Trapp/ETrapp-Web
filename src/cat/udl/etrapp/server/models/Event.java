@@ -1,11 +1,9 @@
 package cat.udl.etrapp.server.models;
 
-import javax.persistence.Entity;
-
-@Entity
 public class Event {
 
     private long id;
+    private long owner;
     private String title;
 
     public Event() {
@@ -30,6 +28,14 @@ public class Event {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public long getOwner() {
+        return owner;
+    }
+
+    public void setOwner(long owner) {
+        this.owner = owner;
     }
 
     @Override

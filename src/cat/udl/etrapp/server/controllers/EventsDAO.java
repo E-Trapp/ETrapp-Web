@@ -25,13 +25,14 @@ public class EventsDAO {
 
         try (
                 Connection connection = DBManager.getConnection();
-                PreparedStatement statement = connection.prepareStatement("SELECT id, title FROM events");
+                PreparedStatement statement = connection.prepareStatement("SELECT * FROM events");
                 ResultSet resultSet = statement.executeQuery();
         ) {
             while (resultSet.next()) {
                 Event event = new Event();
                 event.setId(resultSet.getLong("id"));
                 event.setTitle(resultSet.getString("title"));
+                event.setOwner(resultSet.getLong("owner_id"));
                 events.add(event);
             }
         } catch (SQLException e) {
@@ -52,6 +53,7 @@ public class EventsDAO {
                 event = new Event();
                 event.setId(resultSet.getLong("id"));
                 event.setTitle(resultSet.getString("title"));
+                event.setOwner(resultSet.getLong("owner_id"));
             }
         } catch (SQLException e) {
             System.err.println("Error in SQL: getAllEvents()");

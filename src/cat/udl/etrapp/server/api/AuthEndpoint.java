@@ -15,9 +15,19 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Path("/auth")
+@Produces(MediaType.APPLICATION_JSON)
 public class AuthEndpoint {
 
+    @GET
+    @Secured
+    public Response getAuthUser(@Context HttpHeaders headers) {
+        final User user = UsersDAO.getInstance().getUserByToken(headers.getHeaderString(HttpHeaders.AUTHORIZATION).substring("Bearer".length()).trim());
+        user.setToken(null);
+        return Response.ok(user).build();
+    }
+
     @POST
+    @Consumes(MediaType.APPLICATION_JSON)
     public Response signIn(Credentials credentials) {
         try {
             User user = UsersDAO.getInstance().authenticate(credentials);
