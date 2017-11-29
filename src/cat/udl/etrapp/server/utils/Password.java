@@ -69,6 +69,8 @@ public class Password {
         System.out.println("Verify against stored hash:   " + compare_test);
         System.out.println("Verify against computed hash: " + compare_computed);
 
+        System.out.println("<-------- TEST ---------->");
+
     }
 
 }

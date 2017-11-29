@@ -12,6 +12,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Map;
+
+import static cat.udl.etrapp.server.utils.Utils.getHashedString;
 
 public class UsersDAO {
 
@@ -60,8 +63,10 @@ public class UsersDAO {
     }
 
     @Nullable
-    public User getUserByToken(String token) {
+    public User getUserByToken(String tokenPlainText) {
         User user = null;
+
+        final String token = getHashedString(tokenPlainText.getBytes());
 
         try (Connection connection = DBManager.getConnection();
              PreparedStatement statement = connection.prepareStatement("SELECT id, username, token FROM users WHERE token = ?");
@@ -100,7 +105,10 @@ public class UsersDAO {
         }
     }
 
-    public boolean validateToken(String token) {
+    public boolean validateToken(String tokenPlainText) {
+
+        final String token = getHashedString(tokenPlainText.getBytes());
+
         try (Connection connection = DBManager.getConnection();
              PreparedStatement statement = connection.prepareStatement("SELECT * FROM users WHERE token = ?");
         ) {
@@ -136,8 +144,9 @@ public class UsersDAO {
 
                     if (Password.checkPassword(credentials.getPassword(), hashed_password)) {
                         user = new User();
-                        user.setToken(Utils.generateSessionToken());
-                        updateToken(user.getToken(), resultSet.getLong("id"));
+                        Map<String, String> tokenData = Utils.generateSessionToken();
+                        user.setToken(tokenData.get("token"));
+                        updateToken(tokenData.get("hashed"), resultSet.getLong("id"));
                     }
                 }
             } catch (SQLException e) {
@@ -154,9 +163,8 @@ public class UsersDAO {
 
     public boolean deauthenticate(String token) {
         boolean deauth = false;
-        // TODO: Get user and delete token.
         User user = getUserByToken(token);
-        if (user != null && user.getToken().equals(token)) {
+        if (user != null && user.getToken().equals(getHashedString(token.getBytes()))) {
             updateToken(null, user.getId());
             deauth = true;
         }

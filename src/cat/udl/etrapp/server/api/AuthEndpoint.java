@@ -7,6 +7,7 @@ import cat.udl.etrapp.server.models.User;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
@@ -20,7 +21,7 @@ public class AuthEndpoint {
     public Response signIn(Credentials credentials) {
         try {
             User user = UsersDAO.getInstance().authenticate(credentials);
-            return Response.ok(user.getToken()).build();
+            return Response.ok("{\"token\":\""+user.getToken()+"\"}").build();
         } catch (Exception e) {
             return Response.status(422).build();
         }
@@ -48,8 +49,11 @@ public class AuthEndpoint {
     @Secured
     public Response signOut(@Context HttpHeaders headers) {
         // TODO: Handle failures
-        UsersDAO.getInstance().deauthenticate(headers.getHeaderString(HttpHeaders.AUTHORIZATION).substring("Bearer".length()).trim());
-        return Response.ok().build();
+        if(UsersDAO.getInstance().deauthenticate(headers.getHeaderString(HttpHeaders.AUTHORIZATION).substring("Bearer".length()).trim())) {
+            return Response.ok().build();
+        } else {
+            return Response.serverError().build();
+        }
     }
 
 }
