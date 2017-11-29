@@ -15,6 +15,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
+import javax.ws.rs.core.UriBuilder;
 
 import cat.udl.etrapp.server.api.extras.PATCH;
 import cat.udl.etrapp.server.controllers.EventsDAO;
@@ -28,11 +29,8 @@ public class EventsEndpoint {
 
 	@POST
 	public Response create(final Event event) {
-		//TODO: process the given event 
-		//you may want to use the following return statement, assuming that Event#getId() or a similar method 
-		//would provide the identifier to retrieve the created Event resource:
-		//return Response.created(UriBuilder.fromResource(EventsEndpoint.class).path(String.valueOf(event.getId())).build()).build();
-		return Response.created(null).build();
+        if (EventsDAO.getInstance().createEvent(event) == null) return Response.serverError().status(Status.INTERNAL_SERVER_ERROR).build();
+		else return Response.created(UriBuilder.fromResource(EventsEndpoint.class).path(String.valueOf(event.getId())).build()).build();
 	}
 
 	@GET

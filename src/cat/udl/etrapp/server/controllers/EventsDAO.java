@@ -1,9 +1,6 @@
 package cat.udl.etrapp.server.controllers;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +31,8 @@ public class EventsDAO {
 	        while (resultSet.next()) {
 	            Event event = new Event();
 	            event.setId(resultSet.getLong("id"));
-	            event.setTitle(resultSet.getString("title"));	            
+	            event.setTitle(resultSet.getString("title"));
+	            events.add(event);
 	        }
 	    } catch (SQLException e) {
 	    	System.err.println("Error in SQL: getAllEvents()");
@@ -68,5 +66,24 @@ public class EventsDAO {
     	statement.setLong(1, id);
     	return statement;
 	}
+
+	public Event createEvent(Event event) {
+	    boolean error = false;
+        try (Connection connection = DBManager.getConnection();
+             PreparedStatement statement = connection.prepareStatement("INSERT INTO events (title) VALUES (?)", Statement.RETURN_GENERATED_KEYS);
+        ) {
+            statement.setString(1, event.getTitle());
+            statement.executeUpdate();
+            ResultSet rs = statement.getGeneratedKeys();
+            if (rs.next()) {
+                event.setId(rs.getLong(1));
+            }
+        } catch (SQLException e) {
+            System.err.println("Error in SQL: createEvent()");
+            System.err.println(e.getMessage());
+            return null;
+        }
+        return event;
+    }
 
 }

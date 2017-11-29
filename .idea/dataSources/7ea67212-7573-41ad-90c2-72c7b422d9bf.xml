@@ -2673,8 +2673,8 @@
     </database>
     <schema id="891" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-11-29.02:33:28.581</IntrospectionTimestamp>
-      <IntrospectionStateNumber>111984839</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-11-29.03:02:22.031</IntrospectionTimestamp>
+      <IntrospectionStateNumber>112096282</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -2693,38 +2693,46 @@
     <schema id="896" parent="2" name="information_schema">
       <ObjectId>13003</ObjectId>
     </schema>
-    <table id="897" parent="891" name="events">
-      <ObjectId>16905699</ObjectId>
-      <StateNumber>111984839</StateNumber>
+    <sequence id="897" parent="891" name="events_id_seq">
+      <ObjectId>16934775</ObjectId>
+      <StateNumber>112096282</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <table id="898" parent="891" name="events">
+      <ObjectId>16934777</ObjectId>
+      <StateNumber>112096282</StateNumber>
     </table>
-    <table id="898" parent="891" name="pepe">
+    <table id="899" parent="891" name="pepe">
       <ObjectId>16857812</ObjectId>
       <StateNumber>111174470</StateNumber>
     </table>
-    <column id="899" parent="897" name="id">
+    <column id="900" parent="898" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>111984839</StateNumber>
+      <StateNumber>112096282</StateNumber>
+      <SequenceName>events_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;events_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="900" parent="897" name="title">
+    <column id="901" parent="898" name="title">
       <Position>2</Position>
       <DataType>varchar(200)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>111984839</StateNumber>
+      <StateNumber>112096282</StateNumber>
     </column>
-    <index id="901" parent="897" name="events_pkey">
-      <ObjectId>16905702</ObjectId>
+    <index id="902" parent="898" name="events_pkey">
+      <ObjectId>16934781</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="902" parent="897" name="events_pkey">
-      <ObjectId>16905703</ObjectId>
+    <key id="903" parent="898" name="events_pkey">
+      <ObjectId>16934782</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>events_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="903" parent="898" name="pepe">
+    <column id="904" parent="899" name="pepe">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <StateNumber>111174470</StateNumber>
