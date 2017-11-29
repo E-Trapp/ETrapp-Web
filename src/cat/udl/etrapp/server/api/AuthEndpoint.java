@@ -30,7 +30,7 @@ public class AuthEndpoint {
     @DELETE
     @Secured
     public Response signOut(@Context HttpHeaders headers) {
-        // TODO: Remove token from DB
+        // TODO: Handle failures
         UsersDAO.getInstance().deauthenticate(headers.getHeaderString(HttpHeaders.AUTHORIZATION).substring("Bearer".length()).trim());
         return Response.ok().build();
     }

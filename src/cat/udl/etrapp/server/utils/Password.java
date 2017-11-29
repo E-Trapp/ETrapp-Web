@@ -65,6 +65,7 @@ public class Password {
         String compare_computed = checkPassword(test_passwd, computed_hash)
                 ? "Passwords Match" : "Passwords do not match";
 
+        System.out.println("mypasswordHashed: " + hashPassword("password"));
         System.out.println("Verify against stored hash:   " + compare_test);
         System.out.println("Verify against computed hash: " + compare_computed);
 

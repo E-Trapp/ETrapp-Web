@@ -123,7 +123,31 @@ public class UsersDAO {
         // "SELECT id, username, password_hashed FROM users WHERE username = ?"
         // Password.checkPassword(credentials.getPassword(), resultSet.get..(password_hashed)..
         // updateToken();
+
+        try (Connection connection = DBManager.getConnection();
+             PreparedStatement statement = connection.prepareStatement("SELECT id, password_hashed FROM users WHERE username = ?");
+        ) {
+            statement.setString(1, credentials.getUsername());
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+
+                    final String hashed_password = resultSet.getString("password_hashed");
+
+                    if (Password.checkPassword(credentials.getPassword(), hashed_password)) {
+                        updateToken("newToken", resultSet.getLong("id"));
+                    }
+                }
+            } catch (SQLException e) {
+                System.err.println("Error in SQL: getUserById()");
+                System.err.println(e.getMessage());
+            }
+        } catch (SQLException e) {
+            System.err.println("Error in SQL: getUserById()");
+            System.err.println(e.getMessage());
+        }
         return user;
+
     }
 
     public boolean deauthenticate(String token) {
