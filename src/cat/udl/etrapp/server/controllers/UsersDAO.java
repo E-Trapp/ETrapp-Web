@@ -1,6 +1,10 @@
 package cat.udl.etrapp.server.controllers;
 
 import cat.udl.etrapp.server.db.DBManager;
+import cat.udl.etrapp.server.models.Credentials;
+import cat.udl.etrapp.server.models.User;
+import cat.udl.etrapp.server.utils.Password;
+import cat.udl.etrapp.server.utils.Utils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,6 +22,14 @@ public class UsersDAO {
     public static synchronized UsersDAO getInstance() {
         if (instance == null) instance = new UsersDAO();
         return instance;
+    }
+
+    public User createUser(User user, String password) {
+        // SQL: INSERT INTO users (username, password_hashed, token) VALUES (?, ?, ?)
+        user.getUsername();
+        Utils.generateSessionToken();
+        Password.hashPassword("pwpw");
+        return user;
     }
 
     public void updateToken(String token, long id) {
@@ -51,4 +63,11 @@ public class UsersDAO {
         return false;
     }
 
+    public User authenticate(Credentials credentials) {
+        User user = new User();
+        // "SELECT id, username, password_hashed FROM users WHERE username = ?"
+        // Password.checkPassword(credentials.getPassword(), resultSet.get..(password_hashed)..
+        // updateToken();
+        return user;
+    }
 }

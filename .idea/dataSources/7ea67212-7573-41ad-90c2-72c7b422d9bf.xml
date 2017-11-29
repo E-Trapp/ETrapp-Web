@@ -2673,8 +2673,8 @@
     </database>
     <schema id="891" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-11-29.12:03:14.086</IntrospectionTimestamp>
-      <IntrospectionStateNumber>112404678</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-11-29.12:57:24.437</IntrospectionTimestamp>
+      <IntrospectionStateNumber>112435619</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -2777,12 +2777,17 @@
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="912" parent="901" name="users_token_uindex">
+    <index id="912" parent="901" name="users_username_uindex">
+      <ObjectId>16947072</ObjectId>
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="913" parent="901" name="users_token_uindex">
       <ObjectId>16947000</ObjectId>
       <ColNames>token</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="913" parent="901" name="users_pkey">
+    <key id="914" parent="901" name="users_pkey">
       <ObjectId>16946998</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
