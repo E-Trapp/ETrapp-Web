@@ -5,12 +5,12 @@ import cat.udl.etrapp.server.controllers.UsersDAO;
 import cat.udl.etrapp.server.models.Credentials;
 import cat.udl.etrapp.server.models.User;
 
-import javax.ws.rs.DELETE;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Path("/auth")
@@ -24,7 +24,24 @@ public class AuthEndpoint {
         } catch (Exception e) {
             return Response.status(422).build();
         }
+    }
 
+    @POST
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    public void authenticate(@FormParam("username") String username,
+                             @FormParam("password") String password,
+                             @Context HttpServletResponse response,
+                             @Context HttpServletRequest request) throws Exception {
+
+        Credentials c = new Credentials();
+        c.setUsername(username);
+        c.setPassword(password);
+
+        if (UsersDAO.getInstance().authenticate(c) != null) {
+            response.sendRedirect("/etrapp-server/charts.jsp");
+        } else {
+            request.setAttribute("authenticationError", "Invalid email/password.");
+        }
     }
 
     @DELETE

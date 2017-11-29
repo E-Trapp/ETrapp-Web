@@ -1,12 +1,13 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="etrapp-server">
-    <output-path>$PROJECT_DIR$/build/classes/artifacts/unnamed</output-path>
+  <artifact type="war" build-on-make="true" name="etrapp-server">
+    <output-path>$PROJECT_DIR$/build/classes/artifacts/etrapp_server</output-path>
     <root id="archive" name="etrapp-server.war">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="etrapp-server" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="etrapp-server/web/Web" />
     </root>
   </artifact>
 </component>

@@ -119,7 +119,7 @@ public class UsersDAO {
     }
 
     public User authenticate(Credentials credentials) {
-        User user = new User();
+        User user = null;
         // "SELECT id, username, password_hashed FROM users WHERE username = ?"
         // Password.checkPassword(credentials.getPassword(), resultSet.get..(password_hashed)..
         // updateToken();
@@ -135,7 +135,9 @@ public class UsersDAO {
                     final String hashed_password = resultSet.getString("password_hashed");
 
                     if (Password.checkPassword(credentials.getPassword(), hashed_password)) {
-                        updateToken("newToken", resultSet.getLong("id"));
+                        user = new User();
+                        user.setToken(Utils.generateSessionToken());
+                        updateToken(user.getToken(), resultSet.getLong("id"));
                     }
                 }
             } catch (SQLException e) {
