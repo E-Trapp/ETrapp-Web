@@ -5,22 +5,21 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import cat.udl.etrapp.server.db.DBManager;
 import cat.udl.etrapp.server.models.Event;
 
-public class EventsController {
+public class EventsDAO {
 	
-	private static EventsController instance;
+	private static EventsDAO instance;
 		
-	private EventsController() {
+	private EventsDAO() {
 		
 	}
 	
-	public static synchronized EventsController getInstance() {
-		if (instance == null) instance = new EventsController();
+	public static synchronized EventsDAO getInstance() {
+		if (instance == null) instance = new EventsDAO();
 		return instance;
 	}
 	

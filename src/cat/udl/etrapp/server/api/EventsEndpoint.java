@@ -1,7 +1,7 @@
 package cat.udl.etrapp.server.api;
 
-import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import javax.enterprise.context.RequestScoped;
 import javax.ws.rs.Consumes;
@@ -16,7 +16,8 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import cat.udl.etrapp.server.controllers.EventsController;
+import cat.udl.etrapp.server.api.extras.PATCH;
+import cat.udl.etrapp.server.controllers.EventsDAO;
 import cat.udl.etrapp.server.models.Event;
 
 @RequestScoped
@@ -38,7 +39,7 @@ public class EventsEndpoint {
 	@Path("/{id:[0-9][0-9]*}")
 	public Response findById(@PathParam("id") final Long id) {
 		//TODO: retrieve the event 
-		Event event = EventsController.getInstance().getEventById(id);
+		Event event = EventsDAO.getInstance().getEventById(id);
 		if (event == null) return Response.status(Status.NOT_FOUND).build();
 		return Response.ok(event).build();
 	}
@@ -47,8 +48,7 @@ public class EventsEndpoint {
 	public List<Event> listAll(@QueryParam("start") final Integer startPosition,
 			@QueryParam("max") final Integer maxResult) {
 		//TODO: retrieve the events 
-		final List<Event> events = EventsController.getInstance().getAllEvents();
-		System.out.println(events.toString());
+		final List<Event> events = EventsDAO.getInstance().getAllEvents();
 		return events;
 	}
 
@@ -58,6 +58,20 @@ public class EventsEndpoint {
 		//TODO: process the given event 
 		return Response.noContent().build();
 	}
+
+	@PATCH
+    @Path("/{id:[0-9][0-9]*}")
+    public Response update_partially(@PathParam("id") Long id, final Map<String, Object> data) {
+        //TODO: process the given event
+        for (String key:data.keySet()) {
+            try {
+                System.out.println(Event.class.getDeclaredField(key).toString());
+            } catch (NoSuchFieldException e) {
+                e.printStackTrace();
+            }
+        }
+        return Response.noContent().build();
+    }
 
 	@DELETE
 	@Path("/{id:[0-9][0-9]*}")

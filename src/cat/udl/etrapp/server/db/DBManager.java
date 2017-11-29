@@ -13,7 +13,13 @@ public class DBManager {
 
     static {
         try {
-            dataSource = (DataSource) new InitialContext().lookup("java:/PostgresXADS");
+            final String env = System.getenv("environment");
+            if (env.equals("production")) {
+                dataSource = (DataSource) new InitialContext().lookup("java:/PostgresXADS");
+            } else if (env.equals("development")) {
+                // TODO: cambiar dataSource para atacar a DB local
+                dataSource = (DataSource) new InitialContext().lookup("java:/PostgresXADS");
+            }
         }
         catch (NamingException e) { 
             throw new ExceptionInInitializerError("'java:/PostgresXADS' not found in JNDI");
