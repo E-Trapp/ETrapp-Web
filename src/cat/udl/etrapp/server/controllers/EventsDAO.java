@@ -21,13 +21,11 @@ public class EventsDAO {
     }
 
     public List<Event> getAllEvents() {
-        List<Event> events = new ArrayList<>();
+        final List<Event> events = new ArrayList<>();
 
-        try (
-                Connection connection = DBManager.getConnection();
-                PreparedStatement statement = connection.prepareStatement("SELECT * FROM events");
-                ResultSet resultSet = statement.executeQuery();
-        ) {
+        try (Connection connection = DBManager.getConnection();
+             PreparedStatement statement = connection.prepareStatement("SELECT * FROM events");
+             ResultSet resultSet = statement.executeQuery()) {
             while (resultSet.next()) {
                 Event event = new Event();
                 event.setId(resultSet.getLong("id"));
@@ -37,6 +35,35 @@ public class EventsDAO {
             }
         } catch (SQLException e) {
             System.err.println("Error in SQL: getAllEvents()");
+            System.err.println(e.getMessage());
+        }
+
+        return events;
+    }
+
+    public List<Event> getEventsPaginated(int offset, int maxResults) {
+        final List<Event> events = new ArrayList<>();
+
+        try (Connection connection = DBManager.getConnection();
+             PreparedStatement statement = connection.prepareStatement("SELECT * FROM events LIMIT ? OFFSET ?")) {
+            statement.setInt(1, maxResults);
+            statement.setInt(2, offset);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    Event event = new Event();
+                    event.setId(resultSet.getLong("id"));
+                    event.setTitle(resultSet.getString("title"));
+                    event.setOwner(resultSet.getLong("owner_id"));
+                    // System.out.println("Event created at: " + resultSet.getTimestamp("created_at").getTime());
+                    events.add(event);
+                }
+            } catch (SQLException e) {
+                System.err.println("Error in SQL: getEventsPaginated()");
+                System.err.println(e.getMessage());
+            }
+        } catch (SQLException e) {
+            System.err.println("Error in SQL: getEventsPaginated()");
             System.err.println(e.getMessage());
         }
 
@@ -94,5 +121,6 @@ public class EventsDAO {
         }
         return event;
     }
+
 
 }

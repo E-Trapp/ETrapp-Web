@@ -49,11 +49,19 @@ public class EventsEndpoint {
     }
 
     @GET
-    public List<Event> listAll(@QueryParam("start") final Integer startPosition,
+    public Response listAll(@QueryParam("start") final Integer startPosition,
                                @QueryParam("max") final Integer maxResult) {
-        //TODO: retrieve the events
-        final List<Event> events = EventsDAO.getInstance().getAllEvents();
-        return events;
+
+        System.out.println("Start: " + startPosition + " maxResult: " + maxResult);
+        final List<Event> events;
+        if (startPosition != null && maxResult != null) {
+            events = EventsDAO.getInstance().getEventsPaginated(startPosition, maxResult);
+        } else events = EventsDAO.getInstance().getAllEvents();
+        if (events.isEmpty()) {
+            return Response.status(Status.NOT_FOUND).build();
+        } else {
+            return Response.ok(events).build();
+        }
     }
 
     @PUT
