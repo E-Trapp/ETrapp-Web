@@ -151,9 +151,6 @@ public class UsersDAO {
 
     public User authenticate(Credentials credentials) {
         User user = null;
-        // "SELECT id, username, password_hashed FROM users WHERE username = ?"
-        // Password.checkPassword(credentials.getPassword(), resultSet.get..(password_hashed)..
-        // updateToken();
 
         try (Connection connection = DBManager.getConnection();
              PreparedStatement statement = connection.prepareStatement("SELECT id, password_hashed FROM users WHERE username = ?");

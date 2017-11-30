@@ -31,10 +31,10 @@ public class AuthEndpoint {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response signIn(Credentials credentials) {
-        try {
-            User user = UsersDAO.getInstance().authenticate(credentials);
-            return Response.ok("{\"token\":\""+user.getToken()+"\"}").build();
-        } catch (Exception e) {
+        final User user;
+        if ((user = UsersDAO.getInstance().authenticate(credentials)) != null) {
+            return Response.ok(user).build();
+        } else {
             return Response.status(422).build();
         }
     }

@@ -6,12 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b936f20a-94fa-45fd-8e05-37535ffe15f2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cat/udl/etrapp/server/models/UserInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/UsersEndpoint.java" afterPath="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/UsersEndpoint.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/UsersDAO.java" afterPath="$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/UsersDAO.java" />
-    </list>
+    <list default="true" id="b936f20a-94fa-45fd-8e05-37535ffe15f2" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,107 +28,98 @@
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
         <item name="HerokuDB" type="e3449647:DbNodeDescriptor" />
       </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="HerokuDB" type="e3449647:DbNodeDescriptor" />
-        <item name="dh9lc7447dlvb" type="e3449647:DbNodeDescriptor" />
-      </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="HerokuDB" type="e3449647:DbNodeDescriptor" />
-        <item name="dh9lc7447dlvb" type="e3449647:DbNodeDescriptor" />
-        <item name="public" type="e3449647:DbNodeDescriptor" />
-      </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="HerokuDB" type="e3449647:DbNodeDescriptor" />
-        <item name="dh9lc7447dlvb" type="e3449647:DbNodeDescriptor" />
-        <item name="public" type="e3449647:DbNodeDescriptor" />
-        <item name="" type="fce03ad6:DatabaseStructure$GroupNode" />
-      </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="HerokuDB" type="e3449647:DbNodeDescriptor" />
-        <item name="dh9lc7447dlvb" type="e3449647:DbNodeDescriptor" />
-        <item name="public" type="e3449647:DbNodeDescriptor" />
-        <item name="" type="fce03ad6:DatabaseStructure$GroupNode" />
-        <item name="events" type="e3449647:DbNodeDescriptor" />
-      </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="HerokuDB" type="e3449647:DbNodeDescriptor" />
-        <item name="dh9lc7447dlvb" type="e3449647:DbNodeDescriptor" />
-        <item name="public" type="e3449647:DbNodeDescriptor" />
-        <item name="" type="fce03ad6:DatabaseStructure$GroupNode" />
-        <item name="users" type="e3449647:DbNodeDescriptor" />
-      </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="HerokuDB" type="e3449647:DbNodeDescriptor" />
-        <item name="dh9lc7447dlvb" type="e3449647:DbNodeDescriptor" />
-        <item name="public" type="e3449647:DbNodeDescriptor" />
-        <item name="" type="fce03ad6:DatabaseStructure$GroupNode" />
-      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UsersEndpoint.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/UsersEndpoint.java">
+      <file leaf-file-name="AuthenticationFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/filters/AuthenticationFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="34" column="56" lean-forward="false" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/models/UserInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding>
-                <element signature="e#391#392#0" expanded="true" />
-                <element signature="e#416#417#0" expanded="true" />
-                <element signature="e#450#451#0" expanded="true" />
-                <element signature="e#478#479#0" expanded="true" />
-                <element signature="e#513#514#0" expanded="true" />
-                <element signature="e#544#545#0" expanded="true" />
-                <element signature="e#592#593#0" expanded="true" />
-                <element signature="e#632#633#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users" pinned="false" current-in-tab="false">
-        <entry file="das://table:/cff0e20f/7ea67212-7573-41ad-90c2-72c7b422d9bf/dh9lc7447dlvb.public.users">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EventsEndpoint.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/EventsEndpoint.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="33" column="40" lean-forward="true" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+            <state relative-caret-position="562">
+              <caret line="71" column="42" lean-forward="false" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="events" pinned="false" current-in-tab="true">
-        <entry file="das://table:/cff0e20f/7ea67212-7573-41ad-90c2-72c7b422d9bf/dh9lc7447dlvb.public.events">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
+      <file leaf-file-name="AuthorizationFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/filters/AuthorizationFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="246">
+              <caret line="69" column="135" lean-forward="false" selection-start-line="69" selection-start-column="135" selection-end-line="69" selection-end-column="135" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UnauthorizedResourceAccessException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/exceptions/UnauthorizedResourceAccessException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="68" lean-forward="false" selection-start-line="2" selection-start-column="68" selection-end-line="2" selection-end-column="68" />
+              <folding>
+                <element signature="e#166#167#0" expanded="true" />
+                <element signature="e#189#190#0" expanded="true" />
+                <element signature="e#255#256#0" expanded="true" />
+                <element signature="e#285#286#0" expanded="true" />
+                <element signature="e#368#369#0" expanded="true" />
+                <element signature="e#405#406#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InvalidTokenException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/exceptions/InvalidTokenException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/AbstractDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="35" lean-forward="true" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RestApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/application/RestApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="26" column="41" lean-forward="false" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventsEndpoint.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/EventsEndpoint.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsersEndpoint.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/UsersEndpoint.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="637">
+              <caret line="46" column="37" lean-forward="false" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1533#1534#0" expanded="true" />
+                <element signature="e#1577#1578#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -141,32 +127,16 @@
       <file leaf-file-name="UsersDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/UsersDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="84" column="27" lean-forward="false" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
+            <state relative-caret-position="56">
+              <caret line="152" column="25" lean-forward="false" selection-start-line="152" selection-start-column="25" selection-end-line="152" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3040#3041#0" expanded="true" />
-                <element signature="e#3097#3098#0" expanded="true" />
-                <marker date="1512046109485" expanded="true" signature="794:863" ph="INSERT INTO users... " />
-                <marker date="1512046109485" expanded="true" signature="2174:2224" ph="SELECT id, t... users" />
-                <marker date="1512046109485" expanded="true" signature="3407:3460" ph="SELECT id, u... users" />
-                <marker date="1512046109485" expanded="true" signature="4426:4465" ph="UPDATE users... " />
-                <marker date="1512046109485" expanded="true" signature="5033:5068" ph="SELECT * FRO... users" />
-                <marker date="1512046109485" expanded="true" signature="6017:6073" ph="SELECT id, p... users" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SessionToken.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/models/SessionToken.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-              <folding>
-                <element signature="e#361#362#0" expanded="true" />
-                <element signature="e#399#400#0" expanded="true" />
-                <element signature="e#433#434#0" expanded="true" />
+                <marker date="1512062640832" expanded="true" signature="794:863" ph="INSERT INTO users... " />
+                <marker date="1512062640832" expanded="true" signature="2174:2224" ph="SELECT id, u... users" />
+                <marker date="1512062640832" expanded="true" signature="3407:3460" ph="SELECT id, u... users" />
+                <marker date="1512062640832" expanded="true" signature="4426:4465" ph="UPDATE users... " />
+                <marker date="1512062640832" expanded="true" signature="5033:5068" ph="SELECT * FRO... users" />
+                <marker date="1512062640832" expanded="true" signature="5815:5871" ph="SELECT id, p... users" />
               </folding>
             </state>
           </provider>
@@ -175,23 +145,12 @@
       <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/utils/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="13" column="38" lean-forward="false" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+            <state relative-caret-position="519">
+              <caret line="45" column="111" lean-forward="false" selection-start-line="45" selection-start-column="111" selection-end-line="45" selection-end-column="111" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/models/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="25" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="6" selection-end-column="25" />
-              <folding>
-                <element signature="e#337#338#0" expanded="true" />
-                <element signature="e#362#363#0" expanded="true" />
+                <element signature="e#555#556#0" expanded="true" />
+                <element signature="e#611#612#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -245,13 +204,10 @@
         <option value="$PROJECT_DIR$/.classpath" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/RestApplication.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/utils/BCrypt.java" />
-        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/application/RestApplication.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/models/User.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/models/UserAuth.java" />
-        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/annotations/Authorized.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/filters/BaseFilter.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/filters/AuthenticationFilter.java" />
-        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/filters/AuthorizationFilter.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/WebContent/index.html" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/models/Credentials.java" />
@@ -261,13 +217,18 @@
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/CategoriesDAO.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/models/Event.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/EventsDAO.java" />
-        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/AuthEndpoint.java" />
-        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/EventsEndpoint.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/models/SessionToken.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/utils/Utils.java" />
-        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/UsersEndpoint.java" />
-        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/UsersDAO.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/models/UserInfo.java" />
+        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/UsersDAO.java" />
+        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/AuthEndpoint.java" />
+        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/annotations/Authorized.java" />
+        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/UsersEndpoint.java" />
+        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/application/RestApplication.java" />
+        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/AbstractDAO.java" />
+        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/exceptions/UnauthorizedResourceAccessException.java" />
+        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/filters/AuthorizationFilter.java" />
+        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/EventsEndpoint.java" />
       </list>
     </option>
   </component>
@@ -297,77 +258,121 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="etrapp-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="etrapp-server" type="462c0819:PsiDirectoryNode" />
+              <item name="ETrapp-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ETrapp-Web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="etrapp-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="etrapp-server" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="ETrapp-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ETrapp-Web" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="etrapp-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="etrapp-server" type="462c0819:PsiDirectoryNode" />
+              <item name="ETrapp-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ETrapp-Web" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ETrapp-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ETrapp-Web" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ETrapp-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ETrapp-Web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="etrapp-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="etrapp-server" type="462c0819:PsiDirectoryNode" />
+              <item name="ETrapp-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ETrapp-Web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="etrapp-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="etrapp-server" type="462c0819:PsiDirectoryNode" />
+              <item name="ETrapp-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ETrapp-Web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="etrapp-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="etrapp-server" type="462c0819:PsiDirectoryNode" />
+              <item name="ETrapp-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ETrapp-Web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="annotations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ETrapp-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ETrapp-Web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ETrapp-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ETrapp-Web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ETrapp-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ETrapp-Web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
               <item name="filters" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="etrapp-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="etrapp-server" type="462c0819:PsiDirectoryNode" />
+              <item name="ETrapp-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ETrapp-Web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="etrapp-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="etrapp-server" type="462c0819:PsiDirectoryNode" />
+              <item name="ETrapp-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ETrapp-Web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="etrapp-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="etrapp-server" type="462c0819:PsiDirectoryNode" />
+              <item name="ETrapp-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ETrapp-Web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="etrapp-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="ETrapp-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ETrapp-Web" type="462c0819:PsiDirectoryNode" />
+              <item name="WebContent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ETrapp-Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ETrapp-Web" type="462c0819:PsiDirectoryNode" />
+              <item name="WebContent" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -383,11 +388,18 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ry\workspace\etrapp-server\src\cat\udl\etrapp\server\utils" />
-      <recent name="C:\Users\ry\workspace\etrapp-server\lib" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="cat.udl.etrapp.server.api.exceptions" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ry\workspace\etrapp-server\lib" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cat.udl.etrapp.server.api.annotations" />
+      <recent name="cat.udl.etrapp.server.api.filters" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ry\workspace\etrapp-server\src\cat\udl\etrapp\server\utils" />
       <recent name="C:\Users\ry\workspace\etrapp-server\lib" />
     </key>
   </component>
@@ -792,10 +804,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44957000" />
+    <option name="totallyTimeSpent" value="49654000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -817,21 +829,48 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.53590566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26918977" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2196162" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43194" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20471597" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18017058" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -847,14 +886,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_141/src.zip!/java/lang/annotation/Documented.java" />
-    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-761">
@@ -915,20 +946,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/exceptions/InvalidTokenException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/application/RestApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/models/UserAuth.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -950,9 +967,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/annotations/Authorized.java" />
     <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/filters/BaseFilter.java" />
-    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/filters/AuthorizationFilter.java" />
     <entry file="file://$PROJECT_DIR$/.idea/dataSources.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -980,6 +995,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-102">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -996,12 +1012,12 @@
         <state relative-caret-position="203">
           <caret line="24" column="18" lean-forward="false" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
           <folding>
-            <element signature="e#158#159#0" expanded="false" />
-            <element signature="e#189#190#0" expanded="false" />
-            <element signature="e#303#304#0" expanded="false" />
-            <element signature="e#343#344#0" expanded="false" />
-            <element signature="e#391#392#0" expanded="false" />
-            <element signature="e#431#432#0" expanded="false" />
+            <element signature="e#158#159#0" expanded="true" />
+            <element signature="e#189#190#0" expanded="true" />
+            <element signature="e#303#304#0" expanded="true" />
+            <element signature="e#343#344#0" expanded="true" />
+            <element signature="e#391#392#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1010,6 +1026,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
           <caret line="29" column="70" lean-forward="false" selection-start-line="29" selection-start-column="70" selection-end-line="29" selection-end-column="70" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1020,13 +1037,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/dataSources/7ea67212-7573-41ad-90c2-72c7b422d9bf.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/dataSources/7ea67212-7573-41ad-90c2-72c7b422d9bf.xml" />
     <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/utils/BCrypt.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-735">
@@ -1043,24 +1054,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/filters/AuthenticationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="71" column="42" lean-forward="false" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/7ea67212-7573-41ad-90c2-72c7b422d9bf/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/7ea67212-7573-41ad-90c2-72c7b422d9bf/console.sql" />
     <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/CategoriesDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1069,13 +1063,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/cff0e20f/7ea67212-7573-41ad-90c2-72c7b422d9bf/dh9lc7447dlvb.public.categories">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/cff0e20f/7ea67212-7573-41ad-90c2-72c7b422d9bf/dh9lc7447dlvb.public.categories" />
     <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/models/Event.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1089,36 +1077,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/AuthEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#authenticate#0;class#AuthEndpoint#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/EventsEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="33" column="40" lean-forward="true" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/EventsDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="72" column="8" lean-forward="false" selection-start-line="72" selection-start-column="8" selection-end-line="94" selection-end-column="21" />
+        <state relative-caret-position="218">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
-            <element signature="method#getAllEvents#0;class#EventsDAO#0" expanded="false" />
-            <element signature="method#getEventById#0;class#EventsDAO#0" expanded="false" />
-            <element signature="method#getEventByIdStatement#0;class#EventsDAO#0" expanded="false" />
-            <marker date="1512038361819" expanded="true" signature="694:714" ph="SELECT * FRO... events" />
-            <marker date="1512038361819" expanded="true" signature="2201:2234" ph="SELECT * FRO... events" />
-            <marker date="1512038361819" expanded="true" signature="2485:2567" ph="INSERT INTO events... " />
+            <marker date="1512062342185" expanded="true" signature="694:701" ph="SELECT id, t... events" />
+            <marker date="1512062342185" expanded="true" signature="3224:3448" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1128,73 +1093,22 @@
         <state relative-caret-position="204">
           <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
           <folding>
-            <element signature="e#361#362#0" expanded="true" />
-            <element signature="e#399#400#0" expanded="true" />
-            <element signature="e#433#434#0" expanded="true" />
+            <element signature="e#361#362#0" expanded="false" />
+            <element signature="e#399#400#0" expanded="false" />
+            <element signature="e#433#434#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/utils/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="13" column="38" lean-forward="false" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/cff0e20f/7ea67212-7573-41ad-90c2-72c7b422d9bf/dh9lc7447dlvb.public.users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbSrc:///cff0e20f/7ea67212-7573-41ad-90c2-72c7b422d9bf/database/dh9lc7447dlvb/schema/public/routine/trigger_set_timestamp.().sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://table:/cff0e20f/7ea67212-7573-41ad-90c2-72c7b422d9bf/dh9lc7447dlvb.public.users" />
+    <entry file="dbSrc:///cff0e20f/7ea67212-7573-41ad-90c2-72c7b422d9bf/database/dh9lc7447dlvb/schema/public/routine/trigger_set_timestamp.().sql" />
     <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/models/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="25" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="6" selection-end-column="25" />
           <folding>
-            <element signature="e#337#338#0" expanded="true" />
-            <element signature="e#362#363#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/UsersEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="34" column="56" lean-forward="false" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/UsersDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="84" column="27" lean-forward="false" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3040#3041#0" expanded="true" />
-            <element signature="e#3097#3098#0" expanded="true" />
-            <marker date="1512046109485" expanded="true" signature="794:863" ph="INSERT INTO users... " />
-            <marker date="1512046109485" expanded="true" signature="2174:2224" ph="SELECT id, t... users" />
-            <marker date="1512046109485" expanded="true" signature="3407:3460" ph="SELECT id, u... users" />
-            <marker date="1512046109485" expanded="true" signature="4426:4465" ph="UPDATE users... " />
-            <marker date="1512046109485" expanded="true" signature="5033:5068" ph="SELECT * FRO... users" />
-            <marker date="1512046109485" expanded="true" signature="6017:6073" ph="SELECT id, p... users" />
+            <element signature="e#337#338#0" expanded="false" />
+            <element signature="e#362#363#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1204,22 +1118,139 @@
         <state relative-caret-position="343">
           <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <element signature="e#391#392#0" expanded="true" />
-            <element signature="e#416#417#0" expanded="true" />
-            <element signature="e#450#451#0" expanded="true" />
-            <element signature="e#478#479#0" expanded="true" />
-            <element signature="e#513#514#0" expanded="true" />
-            <element signature="e#544#545#0" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
-            <element signature="e#632#633#0" expanded="true" />
+            <element signature="e#391#392#0" expanded="false" />
+            <element signature="e#416#417#0" expanded="false" />
+            <element signature="e#450#451#0" expanded="false" />
+            <element signature="e#478#479#0" expanded="false" />
+            <element signature="e#513#514#0" expanded="false" />
+            <element signature="e#544#545#0" expanded="false" />
+            <element signature="e#592#593#0" expanded="false" />
+            <element signature="e#632#633#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/cff0e20f/7ea67212-7573-41ad-90c2-72c7b422d9bf/dh9lc7447dlvb.public.events">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="das://table:/cff0e20f/7ea67212-7573-41ad-90c2-72c7b422d9bf/dh9lc7447dlvb.public.events" />
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/UsersDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="152" column="25" lean-forward="false" selection-start-line="152" selection-start-column="25" selection-end-line="152" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1512062640832" expanded="true" signature="794:863" ph="INSERT INTO users... " />
+            <marker date="1512062640832" expanded="true" signature="2174:2224" ph="SELECT id, u... users" />
+            <marker date="1512062640832" expanded="true" signature="3407:3460" ph="SELECT id, u... users" />
+            <marker date="1512062640832" expanded="true" signature="4426:4465" ph="UPDATE users... " />
+            <marker date="1512062640832" expanded="true" signature="5033:5068" ph="SELECT * FRO... users" />
+            <marker date="1512062640832" expanded="true" signature="5815:5871" ph="SELECT id, p... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/AuthEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/filters/AuthenticationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="71" column="42" lean-forward="false" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/annotations/Authorized.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/utils/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="45" column="111" lean-forward="false" selection-start-line="45" selection-start-column="111" selection-end-line="45" selection-end-column="111" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/UsersEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="46" column="37" lean-forward="false" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1533#1534#0" expanded="true" />
+            <element signature="e#1577#1578#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/application/RestApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="26" column="41" lean-forward="false" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/AbstractDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="35" lean-forward="true" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/exceptions/InvalidTokenException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/exceptions/UnauthorizedResourceAccessException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="68" lean-forward="false" selection-start-line="2" selection-start-column="68" selection-end-line="2" selection-end-column="68" />
+          <folding>
+            <element signature="e#166#167#0" expanded="true" />
+            <element signature="e#189#190#0" expanded="true" />
+            <element signature="e#255#256#0" expanded="true" />
+            <element signature="e#285#286#0" expanded="true" />
+            <element signature="e#368#369#0" expanded="true" />
+            <element signature="e#405#406#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/filters/AuthorizationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="69" column="135" lean-forward="false" selection-start-line="69" selection-start-column="135" selection-end-line="69" selection-end-column="135" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/EventsEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1230,10 +1261,10 @@
         <settings>
           <artifact-editor>
             <show-content>
-              <type id="library" />
               <type id="javaee-facet-resources" />
-              <type id="artifact" />
               <type id="jpa-descriptors" />
+              <type id="library" />
+              <type id="artifact" />
             </show-content>
           </artifact-editor>
           <last-edited>etrapp-server</last-edited>
@@ -1289,6 +1320,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

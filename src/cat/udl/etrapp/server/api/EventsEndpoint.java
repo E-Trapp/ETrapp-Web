@@ -1,5 +1,6 @@
 package cat.udl.etrapp.server.api;
 
+import cat.udl.etrapp.server.api.annotations.Authorized;
 import cat.udl.etrapp.server.api.annotations.PATCH;
 import cat.udl.etrapp.server.api.annotations.Secured;
 import cat.udl.etrapp.server.controllers.EventsDAO;
@@ -56,7 +57,7 @@ public class EventsEndpoint {
     }
 
     @PUT
-    @Secured
+    @Authorized
     @Path("/{id:[0-9][0-9]*}")
     public Response update(@PathParam("id") Long id, final Event event) {
         //TODO: process the given event
@@ -64,7 +65,7 @@ public class EventsEndpoint {
     }
 
     @PATCH
-    @Secured
+    @Authorized
     @Path("/{id:[0-9][0-9]*}")
     public Response update_partially(@PathParam("id") Long id, final Map<String, Object> data) {
         //TODO: process the given event
@@ -79,7 +80,7 @@ public class EventsEndpoint {
     }
 
     @DELETE
-    @Secured
+    @Authorized
     @Path("/{id:[0-9][0-9]*}")
     public Response deleteById(@PathParam("id") final Long id) {
         //TODO: process the event matching by the given id

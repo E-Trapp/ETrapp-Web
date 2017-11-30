@@ -1,5 +1,6 @@
 package cat.udl.etrapp.server.api;
 
+import cat.udl.etrapp.server.api.annotations.Authorized;
 import cat.udl.etrapp.server.api.annotations.Secured;
 import cat.udl.etrapp.server.controllers.UsersDAO;
 import cat.udl.etrapp.server.models.User;
@@ -8,13 +9,14 @@ import cat.udl.etrapp.server.models.UserInfo;
 
 import javax.enterprise.context.RequestScoped;
 import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
 
 @RequestScoped
 @Path("/users")
-@Produces("application/json")
-@Consumes("application/json")
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class UsersEndpoint {
 
     @POST
@@ -28,7 +30,6 @@ public class UsersEndpoint {
     }
 
     @GET
-    @Secured
     @Path("/{id}")
     public Response getUserById(@PathParam("id") long id) {
         final UserInfo user;
@@ -38,5 +39,14 @@ public class UsersEndpoint {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
+
+    @PUT
+    @Authorized
+    @Path("/{id}")
+    public Response updateUser(@PathParam("id") long id) {
+        return Response.ok().build();
+    }
+
+
 
 }

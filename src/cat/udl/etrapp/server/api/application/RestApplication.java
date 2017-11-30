@@ -5,6 +5,7 @@ import cat.udl.etrapp.server.api.CategoriesEndpoint;
 import cat.udl.etrapp.server.api.EventsEndpoint;
 import cat.udl.etrapp.server.api.UsersEndpoint;
 import cat.udl.etrapp.server.api.filters.AuthenticationFilter;
+import cat.udl.etrapp.server.api.filters.AuthorizationFilter;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -22,7 +23,8 @@ public class RestApplication extends Application {
                 CategoriesEndpoint.class,
                 EventsEndpoint.class,
                 UsersEndpoint.class,
-                AuthenticationFilter.class));
+                AuthenticationFilter.class,
+                AuthorizationFilter.class));
     }
 
 }
