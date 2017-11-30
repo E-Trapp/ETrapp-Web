@@ -1,5 +1,7 @@
 package cat.udl.etrapp.server.utils;
 
+import cat.udl.etrapp.server.models.SessionToken;
+
 import javax.ws.rs.core.HttpHeaders;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -9,13 +11,9 @@ import java.util.UUID;
 
 public class Utils {
 
-    public static Map<String, String> generateSessionToken() {
-        Map<String, String> tokenData = new HashMap<>();
-
+    public static SessionToken generateSessionToken() {
         final String token = UUID.randomUUID().toString();
-        tokenData.put("token", token);
-        tokenData.put("hashed", getHashedString(token.getBytes()));
-        return tokenData;
+        return new SessionToken(token, getHashedString(token.getBytes()));
     }
 
     public static String getHashedString(String input) {

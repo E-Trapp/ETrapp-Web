@@ -2,17 +2,14 @@ package cat.udl.etrapp.server.controllers;
 
 import cat.udl.etrapp.server.db.DBManager;
 import cat.udl.etrapp.server.models.Credentials;
+import cat.udl.etrapp.server.models.SessionToken;
 import cat.udl.etrapp.server.models.User;
 import cat.udl.etrapp.server.models.UserAuth;
 import cat.udl.etrapp.server.utils.Password;
 import cat.udl.etrapp.server.utils.Utils;
 import com.sun.istack.internal.Nullable;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Map;
+import java.sql.*;
 
 import static cat.udl.etrapp.server.utils.Utils.getHashedString;
 
@@ -29,19 +26,43 @@ public class UsersDAO {
         return instance;
     }
 
-    public int createUser(UserAuth user) {
-        // SQL: INSERT INTO users (username, password_hashed, token) VALUES (?, ?, ?)
-        user.getUsername();
-        Utils.generateSessionToken();
-        Password.hashPassword(user.getPassword());
-        return 1;
+    public User createUser(UserAuth userAuth) {
+        User user = null;
+
+        try (Connection connection = DBManager.getConnection();
+             PreparedStatement statement = connection.prepareStatement("INSERT INTO users (username, password_hashed, token) VALUES (?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+        ) {
+            SessionToken tokenData = Utils.generateSessionToken();
+
+            statement.setString(1, userAuth.getUsername());
+            statement.setString(2, Password.hashPassword(userAuth.getPassword()));
+            statement.setString(3, tokenData.getHashedToken());
+            statement.executeUpdate();
+            try (ResultSet rs = statement.getGeneratedKeys()) {
+                if (rs.next()) {
+                    user = new User();
+                    user.setId(rs.getLong(1));
+                    user.setUsername(userAuth.getUsername());
+                    user.setToken(tokenData.getPlainToken());
+                }
+            } catch (SQLException e) {
+                System.err.println("Error in SQL: createUser()");
+                System.err.println(e.getMessage());
+                return null;
+            }
+        } catch (SQLException e) {
+            System.err.println("Error in SQL: createUser()");
+            System.err.println(e.getMessage());
+            return null;
+        }
+        return user;
     }
 
     @Nullable
     public User getUserById(long id) {
         User user = null;
         try (Connection connection = DBManager.getConnection();
-             PreparedStatement statement = connection.prepareStatement("SELECT id, token FROM users WHERE id = ?");
+             PreparedStatement statement = connection.prepareStatement("SELECT id, username, token FROM users WHERE id = ?");
         ) {
             statement.setLong(1, id);
 
@@ -50,6 +71,7 @@ public class UsersDAO {
                     user = new User();
                     user.setId(resultSet.getLong("id"));
                     user.setToken(resultSet.getString("token"));
+                    user.setUsername(resultSet.getString("username"));
                 }
             } catch (SQLException e) {
                 System.err.println("Error in SQL: getUserById()");
@@ -144,9 +166,9 @@ public class UsersDAO {
 
                     if (Password.checkPassword(credentials.getPassword(), hashed_password)) {
                         user = new User();
-                        Map<String, String> tokenData = Utils.generateSessionToken();
-                        user.setToken(tokenData.get("token"));
-                        updateToken(tokenData.get("hashed"), resultSet.getLong("id"));
+                        SessionToken tokenData = Utils.generateSessionToken();
+                        user.setToken(tokenData.getPlainToken());
+                        updateToken(tokenData.getHashedToken(), resultSet.getLong("id"));
                     }
                 }
             } catch (SQLException e) {
