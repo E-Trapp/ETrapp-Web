@@ -5,13 +5,10 @@ public class Event {
     private long id;
     private long owner;
     private String title;
+    private long category;
+    private String description;
 
     public Event() {
-    }
-
-    public Event(long id, String title) {
-        this.id = id;
-        this.title = title;
     }
 
     public long getId() {
@@ -38,11 +35,30 @@ public class Event {
         this.owner = owner;
     }
 
+    public long getCategory() {
+        return category;
+    }
+
+    public void setCategory(long category) {
+        this.category = category;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public String toString() {
         return "Event{" +
                 "id=" + id +
+                ", owner=" + owner +
                 ", title='" + title + '\'' +
+                ", category=" + category +
+                ", description='" + description + '\'' +
                 '}';
     }
 }

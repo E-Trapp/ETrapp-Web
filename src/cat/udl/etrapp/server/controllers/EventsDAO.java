@@ -71,13 +71,21 @@ public class EventsDAO {
 
     public Event createEvent(Event event) {
         try (Connection connection = DBManager.getConnection();
-             PreparedStatement statement = connection.prepareStatement("INSERT INTO events (title) VALUES (?)", Statement.RETURN_GENERATED_KEYS);
+             PreparedStatement statement = connection.prepareStatement("INSERT INTO events (title, description, owner_id, category_id) VALUES (?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
         ) {
             statement.setString(1, event.getTitle());
+            statement.setString(2, event.getDescription());
+            statement.setLong(3, event.getOwner());
+            statement.setLong(4, event.getCategory());
             statement.executeUpdate();
-            ResultSet rs = statement.getGeneratedKeys();
-            if (rs.next()) {
-                event.setId(rs.getLong(1));
+            try (ResultSet rs = statement.getGeneratedKeys()) {
+                if (rs.next()) {
+                    event.setId(rs.getLong(1));
+                }
+            } catch (SQLException e) {
+                System.err.println("Error in SQL: createEvent()");
+                System.err.println(e.getMessage());
+                return null;
             }
         } catch (SQLException e) {
             System.err.println("Error in SQL: createEvent()");

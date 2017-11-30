@@ -14,6 +14,8 @@ import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import static cat.udl.etrapp.server.utils.Utils.getAuthToken;
+
 @Path("/auth")
 @Produces(MediaType.APPLICATION_JSON)
 public class AuthEndpoint {
@@ -21,7 +23,7 @@ public class AuthEndpoint {
     @GET
     @Secured
     public Response getAuthUser(@Context HttpHeaders headers) {
-        final User user = UsersDAO.getInstance().getUserByToken(headers.getHeaderString(HttpHeaders.AUTHORIZATION).substring("Bearer".length()).trim());
+        final User user = UsersDAO.getInstance().getUserByToken(getAuthToken(headers));
         user.setToken(null);
         return Response.ok(user).build();
     }
@@ -55,11 +57,12 @@ public class AuthEndpoint {
         }
     }
 
+
     @DELETE
     @Secured
     public Response signOut(@Context HttpHeaders headers) {
         // TODO: Handle failures
-        if(UsersDAO.getInstance().deauthenticate(headers.getHeaderString(HttpHeaders.AUTHORIZATION).substring("Bearer".length()).trim())) {
+        if(UsersDAO.getInstance().deauthenticate(getAuthToken(headers))) {
             return Response.ok().build();
         } else {
             return Response.serverError().build();

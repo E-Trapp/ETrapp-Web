@@ -1,5 +1,6 @@
 package cat.udl.etrapp.server.utils;
 
+import javax.ws.rs.core.HttpHeaders;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
@@ -15,6 +16,10 @@ public class Utils {
         tokenData.put("token", token);
         tokenData.put("hashed", getHashedString(token.getBytes()));
         return tokenData;
+    }
+
+    public static String getHashedString(String input) {
+        return getHashedString(input.getBytes());
     }
 
     public static String getHashedString(byte[] input) {
@@ -33,6 +38,14 @@ public class Utils {
             result.append(Integer.toString((aB & 0xff) + 0x100, 16).substring(1));
         }
         return result.toString();
+    }
+
+    public static String getAuthToken(HttpHeaders headers) {
+        return headers.getHeaderString(HttpHeaders.AUTHORIZATION).substring("Bearer".length()).trim();
+    }
+
+    public static void main(String args[]) {
+        System.out.println("Custom token for development: qweqweqweqwe -> " + getHashedString("qweqweqweqwe"));
     }
 
 }
