@@ -4,6 +4,7 @@ import cat.udl.etrapp.server.api.annotations.Secured;
 import cat.udl.etrapp.server.controllers.UsersDAO;
 import cat.udl.etrapp.server.models.User;
 import cat.udl.etrapp.server.models.UserAuth;
+import cat.udl.etrapp.server.models.UserInfo;
 
 import javax.enterprise.context.RequestScoped;
 import javax.ws.rs.*;
@@ -30,9 +31,8 @@ public class UsersEndpoint {
     @Secured
     @Path("/{id}")
     public Response getUserById(@PathParam("id") long id) {
-        final User user;
-        if ((user = UsersDAO.getInstance().getUserById(id)) != null) {
-            user.setToken(null);
+        final UserInfo user;
+        if ((user = UsersDAO.getInstance().getUserInfoById(id)) != null) {
             return Response.ok(user).build();
         } else {
             return Response.status(Response.Status.NOT_FOUND).build();

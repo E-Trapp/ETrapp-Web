@@ -1,10 +1,7 @@
 package cat.udl.etrapp.server.controllers;
 
 import cat.udl.etrapp.server.db.DBManager;
-import cat.udl.etrapp.server.models.Credentials;
-import cat.udl.etrapp.server.models.SessionToken;
-import cat.udl.etrapp.server.models.User;
-import cat.udl.etrapp.server.models.UserAuth;
+import cat.udl.etrapp.server.models.*;
 import cat.udl.etrapp.server.utils.Password;
 import cat.udl.etrapp.server.utils.Utils;
 import com.sun.istack.internal.Nullable;
@@ -82,6 +79,10 @@ public class UsersDAO {
             System.err.println(e.getMessage());
         }
         return user;
+    }
+
+    public UserInfo getUserInfoById(long id) {
+        return UserInfo.fromUser(getUserById(id));
     }
 
     @Nullable
@@ -192,4 +193,6 @@ public class UsersDAO {
         }
         return deauth;
     }
+
+
 }
