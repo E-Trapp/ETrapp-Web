@@ -7,8 +7,17 @@ public class Event {
     private String title;
     private long category;
     private String description;
+    private long startsAt;
 
     public Event() {
+    }
+
+    public long getStartsAt() {
+        return startsAt;
+    }
+
+    public void setStartsAt(long startsAt) {
+        this.startsAt = startsAt;
     }
 
     public long getId() {

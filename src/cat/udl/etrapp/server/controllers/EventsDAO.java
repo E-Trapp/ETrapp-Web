@@ -27,11 +27,7 @@ public class EventsDAO {
              PreparedStatement statement = connection.prepareStatement("SELECT * FROM events");
              ResultSet resultSet = statement.executeQuery()) {
             while (resultSet.next()) {
-                Event event = new Event();
-                event.setId(resultSet.getLong("id"));
-                event.setTitle(resultSet.getString("title"));
-                event.setOwner(resultSet.getLong("owner_id"));
-                events.add(event);
+                events.add(eventFromResultSet(resultSet));
             }
         } catch (SQLException e) {
             System.err.println("Error in SQL: getAllEvents()");
@@ -51,12 +47,7 @@ public class EventsDAO {
 
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
-                    Event event = new Event();
-                    event.setId(resultSet.getLong("id"));
-                    event.setTitle(resultSet.getString("title"));
-                    event.setOwner(resultSet.getLong("owner_id"));
-                    // System.out.println("Event created at: " + resultSet.getTimestamp("created_at").getTime());
-                    events.add(event);
+                    events.add(eventFromResultSet(resultSet));
                 }
             } catch (SQLException e) {
                 System.err.println("Error in SQL: getEventsPaginated()");
@@ -77,16 +68,24 @@ public class EventsDAO {
              PreparedStatement statement = getEventByIdStatement(connection, id);
              ResultSet resultSet = statement.executeQuery();) {
             while (resultSet.next()) {
-                event = new Event();
-                event.setId(resultSet.getLong("id"));
-                event.setTitle(resultSet.getString("title"));
-                event.setOwner(resultSet.getLong("owner_id"));
+                event = eventFromResultSet(resultSet);
             }
         } catch (SQLException e) {
             System.err.println("Error in SQL: getAllEvents()");
             System.err.println(e.getMessage());
         }
 
+        return event;
+    }
+
+    private Event eventFromResultSet(ResultSet resultSet) throws SQLException {
+        final Event event = new Event();
+        event.setId(resultSet.getLong("id"));
+        event.setTitle(resultSet.getString("title"));
+        event.setOwner(resultSet.getLong("owner_id"));
+        event.setCategory(resultSet.getLong("category_id"));
+        event.setDescription(resultSet.getString("description"));
+        event.setStartsAt(resultSet.getTimestamp("starts_at").getTime());
         return event;
     }
 
