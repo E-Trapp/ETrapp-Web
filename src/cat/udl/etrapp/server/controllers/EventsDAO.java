@@ -122,5 +122,16 @@ public class EventsDAO {
         return event;
     }
 
-
+    public boolean deleteEvent(long id) {
+        try (Connection connection = DBManager.getConnection();
+             PreparedStatement statement = connection.prepareStatement("DELETE FROM events WHERE id = ?");
+        ) {
+            statement.setLong(1, id);
+            if (statement.executeUpdate() == 1) return true;
+        } catch (SQLException e) {
+            System.err.println("Error in SQL: deleteEvent()");
+            System.err.println(e.getMessage());
+        }
+        return false;
+    }
 }

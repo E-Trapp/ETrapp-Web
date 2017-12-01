@@ -1,9 +1,6 @@
 package cat.udl.etrapp.server.api.application;
 
-import cat.udl.etrapp.server.api.AuthEndpoint;
-import cat.udl.etrapp.server.api.CategoriesEndpoint;
-import cat.udl.etrapp.server.api.EventsEndpoint;
-import cat.udl.etrapp.server.api.UsersEndpoint;
+import cat.udl.etrapp.server.api.*;
 import cat.udl.etrapp.server.api.filters.AuthenticationFilter;
 import cat.udl.etrapp.server.api.filters.AuthorizationFilter;
 
@@ -22,6 +19,7 @@ public class RestApplication extends Application {
                 AuthEndpoint.class,
                 CategoriesEndpoint.class,
                 EventsEndpoint.class,
+                EventMessagesEndpoint.class,
                 UsersEndpoint.class,
                 AuthenticationFilter.class,
                 AuthorizationFilter.class));

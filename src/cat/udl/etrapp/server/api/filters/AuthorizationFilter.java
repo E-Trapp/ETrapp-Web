@@ -1,7 +1,6 @@
 package cat.udl.etrapp.server.api.filters;
 
 import cat.udl.etrapp.server.api.annotations.Authorized;
-import cat.udl.etrapp.server.api.annotations.Secured;
 import cat.udl.etrapp.server.api.exceptions.InvalidTokenException;
 import cat.udl.etrapp.server.api.exceptions.UnauthorizedResourceAccessException;
 import cat.udl.etrapp.server.controllers.EventsDAO;
@@ -59,7 +58,8 @@ public class AuthorizationFilter implements ContainerRequestFilter {
                 case "users":
                     final User user;
                     if ((user = UsersDAO.getInstance().getUserById(resourceId)) != null) {
-                        if (user.getId() != requestUser.getId()) throw new UnauthorizedResourceAccessException("Access forbidden");
+                        if (user.getId() != requestUser.getId())
+                            throw new UnauthorizedResourceAccessException("Access forbidden");
                     } else {
                         abortWithNotFound(requestContext);
                     }
@@ -67,15 +67,22 @@ public class AuthorizationFilter implements ContainerRequestFilter {
                 case "events":
                     final Event event;
                     if ((event = EventsDAO.getInstance().getEventById(resourceId)) != null) {
-                        if (event.getOwner() != requestUser.getId()) throw new UnauthorizedResourceAccessException("Access forbidden");
+                        if (event.getOwner() != requestUser.getId())
+                            throw new UnauthorizedResourceAccessException("Access forbidden");
                     } else {
                         abortWithNotFound(requestContext);
                     }
 
             }
-        } catch (InvalidTokenException | UnauthorizedResourceAccessException e) {
+        } catch (InvalidTokenException e) {
             abortWithUnauthorized(requestContext);
+        } catch (UnauthorizedResourceAccessException e) {
+            abortWithForbidden(requestContext);
         }
+    }
+
+    private void abortWithForbidden(ContainerRequestContext requestContext) {
+        requestContext.abortWith(Response.status(Response.Status.FORBIDDEN).build());
     }
 
     private boolean isTokenBasedAuthentication(String authorizationHeader) {

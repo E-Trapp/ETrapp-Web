@@ -42,7 +42,6 @@ public class EventsEndpoint {
     @GET
     @Path("/{id:[0-9][0-9]*}")
     public Response findById(@PathParam("id") final Long id) {
-        //TODO: retrieve the event
         Event event = EventsDAO.getInstance().getEventById(id);
         if (event == null) return Response.status(Status.NOT_FOUND).build();
         return Response.ok(event).build();
@@ -91,8 +90,11 @@ public class EventsEndpoint {
     @Authorized
     @Path("/{id:[0-9][0-9]*}")
     public Response deleteById(@PathParam("id") final Long id) {
-        //TODO: process the event matching by the given id
-        return Response.noContent().build();
+        if (EventsDAO.getInstance().deleteEvent(id)) {
+            return Response.noContent().build();
+        } else {
+            return Response.serverError().build();
+        }
     }
 
 }
