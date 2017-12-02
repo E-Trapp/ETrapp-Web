@@ -3,13 +3,12 @@ HOST: http://etrapp-server.tld/etrapp-server/v1
 
 # ETrapp
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+ETrapp backend API description.
 
 ## Authentication [/auth]
+Handle authentication status
 
 ### Authenticate [POST]
-
-Sign in using this endpoint. Provide Credentials through JSON body payload.
 
 + Request (application/json)
 
@@ -35,15 +34,153 @@ Sign in using this endpoint. Provide Credentials through JSON body payload.
     + Body
 
 ### Deauthenticate [DELETE]
-Sign out endpoint.
 
 + Request 
+
     + Headers
     
             Authorization: Bearer {token}
 + Response 200
+
     Deauth completed without problems.
     + Body
 + Response 401
+
     Error, no authorization token provided
     + Body
+    
+## Events [/events{?start,max}]   
+Endpoint to manage events
+
+### List all events [GET]
+Retrieve paginated list of events
+
++ Parameters
+
+    + start (optional, Number) ... Record offset.
+    + max (optional, Number) ... maximum number of records expected by client.
+    
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "owner": 1,
+                "title": "sample_event1",
+                "category": 3,
+                "description": "event 1 description",
+                "startsAt": 1512428277370
+            },
+            {
+                "id": 2,
+                "owner": 2,
+                "title": "sample_event2",
+                "category": 4,
+                "description": "event 2 description",
+                "startsAt": 1512177548342
+            }
+        ]
+        
+### Create an event [POST]
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer {token}
+    + Body
+    
+            {
+                "title": "sample_event",
+                "description": "event description",
+                "category" : 2
+                "startsAt": 1512177548342
+            }
+
+            
++ Response 201
+
+    Event created
+    + Body
+    
+### Delete an event [DELETE]
+
++ Request
+
+    + Headers
+    
+            Authorization: Bearer {token}
+            
++ Response 204
+    
+    Event deleted
+    + Body
+    
+## Event Messages [/events/{id}/messages]
+Message stream in the specified event.
+
++ Parameters
+
+    + id (required, Number, `1`) ... Numeric `id` of the Event to perform actions on.
+
+### Write a message [POST]
++ Request (application/json)
+
+    + Headers
+            
+            Authorization: Bearer {token}
+    + Body
+    
+            {
+                "message": "testMessage"
+            }
+            
++ Response 201
+
+    + Headers
+    
+            Location: /events/{id}/messages/{messageIndex}
+            
+## Users [/users]
+
+### Create new user [POST]
+
++ Request (application/json)
+
+        {
+            "username": "test_user",
+            "password": "testpassword",
+            "email": "test@fake.com",
+            "firstName":"Test",
+            "lastName": "Testerson"
+        }
+
++ Response 201
+
+    + Headers
+    
+            Location: /users/{id}
+
+## User [/users/{id}]
+
++ Parameters
+
+    + id (required, Number, `1`) ... Numeric `id` of the User to perform action with.
+    
+### Get user [GET]
+
++ Request
+
+    + Headers
+            
+            Authorization: Bearer {token}
+
++ Response 200 (application/json)
+
+        {
+            "id": 1,
+            "username": "test_user",
+            "email": "test@fake.com",
+            "firstName":"Test",
+            "lastName": "Testerson"
+        }
