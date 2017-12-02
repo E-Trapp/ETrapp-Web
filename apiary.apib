@@ -1,0 +1,49 @@
+FORMAT: 1A
+HOST: http://etrapp-server.tld/etrapp-server/v1
+
+# ETrapp
+
+Polls is a simple API allowing consumers to view polls and vote in them.
+
+## Authentication [/auth]
+
+### Authenticate [POST]
+
+Sign in using this endpoint. Provide Credentials through JSON body payload.
+
++ Request (application/json)
+
+        {
+            "username": "test_user",
+            "password": "test_password
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id": 1,
+            "username": "user",
+            "token": "4e52c25c-bd37-49ba-b0c1-dc40f0af6c2a",
+            "firstName": "Test",
+            "lastName": "User",
+            "email": "test@fake.com",
+            "avatarUrl": "/my_avatar.png"
+        }
++ Response 422
+
+    Returned if user was not found or the password is not correct
+    + Body
+
+### Deauthenticate [DELETE]
+Sign out endpoint.
+
++ Request 
+    + Headers
+    
+            Authorization: Bearer {token}
++ Response 200
+    Deauth completed without problems.
+    + Body
++ Response 401
+    Error, no authorization token provided
+    + Body
