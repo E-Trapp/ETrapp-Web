@@ -24,23 +24,39 @@ public class UsersDAO {
     }
 
     public User createUser(UserAuth userAuth) {
+        // TODO: handle errors when registering duplicated username/email.
         User user = null;
 
         try (Connection connection = DBManager.getConnection();
-             PreparedStatement statement = connection.prepareStatement("INSERT INTO users (username, password_hashed, token) VALUES (?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+             PreparedStatement statement = connection.prepareStatement(
+                     "INSERT INTO users (username, password_hashed, token, email, first_name, last_name, avatar_url) VALUES (?, ?, ?, ?, ?, ?, ?)",
+                     Statement.RETURN_GENERATED_KEYS);
         ) {
             SessionToken tokenData = Utils.generateSessionToken();
 
-            statement.setString(1, userAuth.getUsername());
+            final String username = userAuth.getUsername();
+            final String email = userAuth.getEmail();
+            final String firstName = userAuth.getFirstName();
+            final String lastName = userAuth.getLastName();
+            final String avatarUrl = userAuth.getAvatarUrl();
+            statement.setString(1, username);
             statement.setString(2, Password.hashPassword(userAuth.getPassword()));
             statement.setString(3, tokenData.getHashedToken());
+            statement.setString(4, email);
+            statement.setString(5, firstName);
+            statement.setString(6, lastName);
+            statement.setString(7, avatarUrl);
             statement.executeUpdate();
             try (ResultSet rs = statement.getGeneratedKeys()) {
                 if (rs.next()) {
                     user = new User();
                     user.setId(rs.getLong(1));
-                    user.setUsername(userAuth.getUsername());
                     user.setToken(tokenData.getPlainToken());
+                    user.setUsername(username);
+                    user.setFirstName(firstName);
+                    user.setLastName(lastName);
+                    user.setEmail(email);
+                    user.setAvatarUrl(avatarUrl);
                 }
             } catch (SQLException e) {
                 System.err.println("Error in SQL: createUser()");
@@ -59,16 +75,13 @@ public class UsersDAO {
     public User getUserById(long id) {
         User user = null;
         try (Connection connection = DBManager.getConnection();
-             PreparedStatement statement = connection.prepareStatement("SELECT id, username, token FROM users WHERE id = ?");
+             PreparedStatement statement = connection.prepareStatement("SELECT * FROM users WHERE id = ?");
         ) {
             statement.setLong(1, id);
 
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
-                    user = new User();
-                    user.setId(resultSet.getLong("id"));
-                    user.setToken(resultSet.getString("token"));
-                    user.setUsername(resultSet.getString("username"));
+                    user = getUserFromResultSet(resultSet);
                 }
             } catch (SQLException e) {
                 System.err.println("Error in SQL: getUserById()");
@@ -92,16 +105,13 @@ public class UsersDAO {
         final String token = getHashedString(tokenPlainText.getBytes());
 
         try (Connection connection = DBManager.getConnection();
-             PreparedStatement statement = connection.prepareStatement("SELECT id, username, token FROM users WHERE token = ?");
+             PreparedStatement statement = connection.prepareStatement("SELECT * FROM users WHERE token = ?");
         ) {
             statement.setString(1, token);
 
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
-                    user = new User();
-                    user.setId(resultSet.getLong("id"));
-                    user.setToken(resultSet.getString("token"));
-                    user.setUsername(resultSet.getString("username"));
+                    user = getUserFromResultSet(resultSet);
                 }
             } catch (SQLException e) {
                 System.err.println("Error in SQL: getUserById()");
@@ -113,6 +123,22 @@ public class UsersDAO {
         }
 
         return user;
+    }
+
+    private User getUserFromResultSet(ResultSet resultSet, String token) throws SQLException {
+        final User user = new User();
+        user.setId(resultSet.getLong("id"));
+        user.setToken(token != null ? token : resultSet.getString("token"));
+        user.setUsername(resultSet.getString("username"));
+        user.setFirstName(resultSet.getString("first_name"));
+        user.setLastName(resultSet.getString("last_name"));
+        user.setEmail(resultSet.getString("email"));
+        user.setAvatarUrl(resultSet.getString("avatar_url"));
+        return user;
+    }
+
+    private User getUserFromResultSet(ResultSet resultSet) throws SQLException {
+        return getUserFromResultSet(resultSet, null);
     }
 
     public void updateToken(String token, long id) {
@@ -133,7 +159,7 @@ public class UsersDAO {
         final String token = getHashedString(tokenPlainText.getBytes());
 
         try (Connection connection = DBManager.getConnection();
-             PreparedStatement statement = connection.prepareStatement("SELECT * FROM users WHERE token = ?");
+             PreparedStatement statement = connection.prepareStatement("SELECT id FROM users WHERE token = ?");
         ) {
             statement.setString(1, token);
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -162,10 +188,8 @@ public class UsersDAO {
                     final String hashed_password = resultSet.getString("password_hashed");
 
                     if (Password.checkPassword(credentials.getPassword(), hashed_password)) {
-                        user = new User();
-                        user.setUsername(credentials.getUsername());
                         SessionToken tokenData = Utils.generateSessionToken();
-                        user.setToken(tokenData.getPlainToken());
+                        user = getUserFromResultSet(resultSet, tokenData.getPlainToken());
                         updateToken(tokenData.getHashedToken(), resultSet.getLong("id"));
                     }
                 } else {
@@ -176,10 +200,8 @@ public class UsersDAO {
                                 final String hashed_password = resultSet2.getString("password_hashed");
 
                                 if (Password.checkPassword(credentials.getPassword(), hashed_password)) {
-                                    user = new User();
-                                    user.setUsername(resultSet2.getString("username"));
                                     SessionToken tokenData = Utils.generateSessionToken();
-                                    user.setToken(tokenData.getPlainToken());
+                                    user = getUserFromResultSet(resultSet2, tokenData.getPlainToken());
                                     updateToken(tokenData.getHashedToken(), resultSet2.getLong("id"));
                                 }
                             }
