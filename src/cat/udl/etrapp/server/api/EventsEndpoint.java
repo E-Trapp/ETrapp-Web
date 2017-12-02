@@ -9,11 +9,8 @@ import cat.udl.etrapp.server.models.Event;
 
 import javax.enterprise.context.RequestScoped;
 import javax.ws.rs.*;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.HttpHeaders;
-import javax.ws.rs.core.Response;
+import javax.ws.rs.core.*;
 import javax.ws.rs.core.Response.Status;
-import javax.ws.rs.core.UriBuilder;
 import java.util.List;
 import java.util.Map;
 
@@ -21,8 +18,8 @@ import static cat.udl.etrapp.server.utils.Utils.getAuthToken;
 
 @RequestScoped
 @Path("/events")
-@Produces("application/json")
-@Consumes("application/json")
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class EventsEndpoint {
 
     @Context

@@ -2,6 +2,7 @@ package cat.udl.etrapp.server.controllers;
 
 import cat.udl.etrapp.server.db.DBManager;
 import cat.udl.etrapp.server.models.Event;
+import cat.udl.etrapp.server.models.EventMessage;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -133,4 +134,6 @@ public class EventsDAO {
         }
         return false;
     }
+
+
 }

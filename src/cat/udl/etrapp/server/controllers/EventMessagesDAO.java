@@ -1,0 +1,66 @@
+package cat.udl.etrapp.server.controllers;
+
+import cat.udl.etrapp.server.db.DBManager;
+import cat.udl.etrapp.server.models.EventMessage;
+import cat.udl.etrapp.server.models.User;
+
+import java.sql.*;
+
+public class EventMessagesDAO {
+
+    private static EventMessagesDAO instance;
+
+    private EventMessagesDAO() {
+
+    }
+
+    public static synchronized EventMessagesDAO getInstance() {
+        if (instance == null) instance = new EventMessagesDAO();
+        return instance;
+    }
+
+    public EventMessage writeMessage(final EventMessage message, String authToken, final long eventId) {
+        EventMessage eventMessage = null;
+
+        final User user = UsersDAO.getInstance().getUserByToken(authToken);
+
+        try (Connection connection = DBManager.getConnection();
+             PreparedStatement statement = connection.prepareStatement(
+                     "INSERT INTO event_messages (message, user_id, event_id) VALUES (?, ?, ?)",
+                     Statement.RETURN_GENERATED_KEYS);
+        ) {
+            statement.setString(1, message.getMessage());
+            statement.setLong(2, user.getId());
+            statement.setLong(3, eventId);
+            statement.executeUpdate();
+            try (ResultSet rs = statement.getGeneratedKeys()) {
+                if (rs.next()) {
+                    eventMessage = new EventMessage();
+                    user.setId(rs.getLong(1));
+                    eventMessage.setEventId(eventId);
+                    eventMessage.setUserId(user.getId());
+                    eventMessage.setMessage(message.getMessage());
+                }
+            } catch (SQLException e) {
+                System.err.println("Error in SQL: writeMessage()");
+                return null;
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Error in SQL: writeMessage()");
+            return null;
+        }
+
+        return eventMessage;
+    }
+
+
+    // TODO: Get EventMessages using index inside event:
+//    SELECT *
+//    FROM(
+//         SELECT *, ROW_NUMBER () OVER (ORDER BY created_at)
+//         FROM event_messages
+//         WHERE event_id = 37) x
+//    WHERE ROW_NUMBER = 5;
+
+}

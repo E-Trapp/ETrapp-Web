@@ -1,7 +1,6 @@
 package cat.udl.etrapp.server.api;
 
 import cat.udl.etrapp.server.api.annotations.Authorized;
-import cat.udl.etrapp.server.api.annotations.Secured;
 import cat.udl.etrapp.server.controllers.UsersDAO;
 import cat.udl.etrapp.server.models.User;
 import cat.udl.etrapp.server.models.UserAuth;
@@ -46,7 +45,6 @@ public class UsersEndpoint {
     public Response updateUser(@PathParam("id") long id) {
         return Response.ok().build();
     }
-
 
 
 }

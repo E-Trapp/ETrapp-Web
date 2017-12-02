@@ -4,6 +4,7 @@ import cat.udl.etrapp.server.api.annotations.Secured;
 import cat.udl.etrapp.server.controllers.UsersDAO;
 import cat.udl.etrapp.server.models.Credentials;
 import cat.udl.etrapp.server.models.User;
+import cat.udl.etrapp.server.models.UserInfo;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,9 +24,7 @@ public class AuthEndpoint {
     @GET
     @Secured
     public Response getAuthUser(@Context HttpHeaders headers) {
-        final User user = UsersDAO.getInstance().getUserByToken(getAuthToken(headers));
-        user.setToken(null);
-        return Response.ok(user).build();
+        return Response.ok(UserInfo.fromUser(UsersDAO.getInstance().getUserByToken(getAuthToken(headers)))).build();
     }
 
     @POST
@@ -56,7 +55,6 @@ public class AuthEndpoint {
             request.setAttribute("authenticationError", "Invalid email/password.");
         }
     }
-
 
     @DELETE
     @Secured
