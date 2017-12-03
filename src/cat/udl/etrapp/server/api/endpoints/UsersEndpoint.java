@@ -1,4 +1,4 @@
-package cat.udl.etrapp.server.api;
+package cat.udl.etrapp.server.api.endpoints;
 
 import cat.udl.etrapp.server.api.annotations.Authorized;
 import cat.udl.etrapp.server.controllers.UsersDAO;

@@ -21,41 +21,37 @@ public class EventsDAO {
         return instance;
     }
 
-    public List<Event> getAllEvents() {
+    public List<Event> getEvents(Integer offset, Integer maxResults) {
+        final String SQLQuery;
+        boolean paginated = false;
+        if (offset == null || maxResults == null) {
+            SQLQuery = "SELECT * FROM events";
+        } else {
+            paginated = true;
+            SQLQuery = "SELECT * FROM events LIMIT ? OFFSET ?";
+        }
+
         final List<Event> events = new ArrayList<>();
 
         try (Connection connection = DBManager.getConnection();
-             PreparedStatement statement = connection.prepareStatement("SELECT * FROM events");
-             ResultSet resultSet = statement.executeQuery()) {
+             PreparedStatement statement = connection.prepareStatement(SQLQuery)) {
+
+            if (paginated) {
+                statement.setInt(1, maxResults);
+                statement.setInt(2, offset);
+            }
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+
             while (resultSet.next()) {
                 events.add(eventFromResultSet(resultSet));
             }
-        } catch (SQLException e) {
-            System.err.println("Error in SQL: getAllEvents()");
-            System.err.println(e.getMessage());
-        }
-
-        return events;
-    }
-
-    public List<Event> getEventsPaginated(int offset, int maxResults) {
-        final List<Event> events = new ArrayList<>();
-
-        try (Connection connection = DBManager.getConnection();
-             PreparedStatement statement = connection.prepareStatement("SELECT * FROM events LIMIT ? OFFSET ?")) {
-            statement.setInt(1, maxResults);
-            statement.setInt(2, offset);
-
-            try (ResultSet resultSet = statement.executeQuery()) {
-                while (resultSet.next()) {
-                    events.add(eventFromResultSet(resultSet));
-                }
             } catch (SQLException e) {
-                System.err.println("Error in SQL: getEventsPaginated()");
+                System.err.println("Error in SQL: getEvents");
                 System.err.println(e.getMessage());
             }
         } catch (SQLException e) {
-            System.err.println("Error in SQL: getEventsPaginated()");
+            System.err.println("Error in SQL: getEvents()");
             System.err.println(e.getMessage());
         }
 

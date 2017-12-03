@@ -1,4 +1,4 @@
-package cat.udl.etrapp.server.api;
+package cat.udl.etrapp.server.api.endpoints;
 
 import cat.udl.etrapp.server.api.annotations.Authorized;
 import cat.udl.etrapp.server.api.annotations.PATCH;
@@ -47,12 +47,7 @@ public class EventsEndpoint {
     @GET
     public Response listAll(@QueryParam("start") final Integer startPosition,
                                @QueryParam("max") final Integer maxResult) {
-
-        System.out.println("Start: " + startPosition + " maxResult: " + maxResult);
-        final List<Event> events;
-        if (startPosition != null && maxResult != null) {
-            events = EventsDAO.getInstance().getEventsPaginated(startPosition, maxResult);
-        } else events = EventsDAO.getInstance().getAllEvents();
+        final List<Event> events = EventsDAO.getInstance().getEvents(startPosition, maxResult);
         if (events.isEmpty()) {
             return Response.status(Status.NOT_FOUND).build();
         } else {

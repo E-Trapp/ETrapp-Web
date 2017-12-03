@@ -1,4 +1,4 @@
-package cat.udl.etrapp.server.api;
+package cat.udl.etrapp.server.api.endpoints;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Produces;

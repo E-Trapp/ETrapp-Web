@@ -1,6 +1,6 @@
 package cat.udl.etrapp.server.api.application;
 
-import cat.udl.etrapp.server.api.*;
+import cat.udl.etrapp.server.api.endpoints.*;
 import cat.udl.etrapp.server.api.filters.AuthenticationFilter;
 import cat.udl.etrapp.server.api.filters.AuthorizationFilter;
 

@@ -5,6 +5,8 @@ import cat.udl.etrapp.server.models.EventMessage;
 import cat.udl.etrapp.server.models.User;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EventMessagesDAO {
 
@@ -52,6 +54,47 @@ public class EventMessagesDAO {
         }
 
         return eventMessage;
+    }
+
+    public List<EventMessage> getMessages(Integer offset, Integer maxResults, final long eventId) {
+
+        final String SQLQuery;
+        boolean paginated = false;
+        if (offset == null || maxResults == null) {
+            SQLQuery = "SELECT * FROM event_messages WHERE event_id = ?";
+        } else {
+            paginated = true;
+            SQLQuery = "SELECT * FROM event_messages WHERE event_id = ? LIMIT ? OFFSET ?";
+        }
+
+        final List<EventMessage> eventMessages = new ArrayList<>();
+
+        try (Connection connection = DBManager.getConnection();
+             PreparedStatement statement = connection.prepareStatement(SQLQuery)) {
+
+            statement.setLong(1, eventId);
+
+            if (paginated) {
+                statement.setInt(2, maxResults);
+                statement.setInt(3, offset);
+            }
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+
+                while (resultSet.next()) {
+                    EventMessage eventMessage = new EventMessage();
+                    eventMessage.setMessage(resultSet.getString("message"));
+                    eventMessage.setUserId(resultSet.getLong("user_id"));
+                    eventMessages.add(eventMessage);
+                }
+            } catch (SQLException e) {
+                System.err.println("Error in SQL: getEventMessages()");
+            }
+        } catch (SQLException e) {
+            System.err.println("Error in SQL: getEventMessages()");
+        }
+
+        return eventMessages;
     }
 
 
