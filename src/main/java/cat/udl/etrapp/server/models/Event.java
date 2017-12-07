@@ -5,16 +5,24 @@ public class Event {
     private long id;
     private long owner;
     private String title;
+    private String location;
     private long category;
     private String description;
     private long startsAt;
+    private boolean isEnabled;
+    private boolean isFeatured;
 
     public Event() {
+    }
+
+    public String getLocation() {
+        return location;
     }
 
     public long getStartsAt() {
         return startsAt;
     }
+
 
     public void setStartsAt(long startsAt) {
         this.startsAt = startsAt;

@@ -1,9 +1,11 @@
 package cat.udl.etrapp.server.controllers;
 
 import cat.udl.etrapp.server.db.DBManager;
+import cat.udl.etrapp.server.db.SearchManager;
 import cat.udl.etrapp.server.models.*;
 import cat.udl.etrapp.server.utils.Password;
 import cat.udl.etrapp.server.utils.Utils;
+import com.algolia.search.AsyncIndex;
 import com.sun.istack.internal.Nullable;
 
 import java.sql.*;
@@ -58,7 +60,7 @@ public class UsersDAO {
                     user.setEmail(email);
                     user.setAvatarUrl(avatarUrl);
 
-                    // TODO: Index User in Algolia
+                    SearchController.getInstance().addUser(user);
                 }
             } catch (SQLException e) {
                 System.err.println("Error in SQL: createUser()");
