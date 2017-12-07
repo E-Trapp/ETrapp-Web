@@ -116,12 +116,34 @@ Retrieve paginated list of events
     Event deleted
     + Body
     
-## Event Messages [/events/{id}/messages]
+## Event Messages [/events/{id}/messages{?start,max}]
 Message stream in the specified event.
 
 + Parameters
 
     + id (required, Number, `1`) ... Numeric `id` of the Event to perform actions on.
+    
+### List all messages [GET]
+
++ Parameters
+
+    + start (optional, Number) ... Record offset.
+    + max (optional, Number) ... maximum number of records expected by client.+ Reponse 200 (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+    
+            [
+                {
+                    "message": "testMessage",
+                    "userId": 1
+                },
+                {
+                    "message": "testMessage2",
+                    "userId": 1
+                }
+            ]
 
 ### Write a message [POST]
 + Request (application/json)
