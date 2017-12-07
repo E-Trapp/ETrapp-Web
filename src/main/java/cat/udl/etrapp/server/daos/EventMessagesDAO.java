@@ -1,5 +1,6 @@
 package cat.udl.etrapp.server.daos;
 
+import cat.udl.etrapp.server.controllers.FirebaseController;
 import cat.udl.etrapp.server.db.DBManager;
 import cat.udl.etrapp.server.models.EventMessage;
 import cat.udl.etrapp.server.models.User;
@@ -43,6 +44,7 @@ public class EventMessagesDAO {
                     eventMessage.setUserId(user.getId());
                     eventMessage.setMessage(message.getMessage());
                     // TODO: Write message to Firebase
+                    FirebaseController.getInstance().writeMessage(eventId, eventMessage);
                 }
             } catch (SQLException e) {
                 System.err.println("Error in SQL: writeMessage()");
