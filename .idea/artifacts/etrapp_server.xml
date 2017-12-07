@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="war" build-on-make="true" name="etrapp-server">
-    <output-path>$PROJECT_DIR$/build/classes/artifacts/etrapp_server</output-path>
+    <output-path>$PROJECT_DIR$/target/artifacts/etrapp_server</output-path>
     <root id="archive" name="etrapp-server.war">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
