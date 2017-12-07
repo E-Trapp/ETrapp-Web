@@ -21,7 +21,7 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -37,7 +37,9 @@
     <orderEntry type="library" name="org.eclipse.jst.j2ee.internal.web.container" level="application" />
     <orderEntry type="library" name="org.eclipse.jst.j2ee.internal.module.container" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="WildFly 11.0.0.Final" level="application_server_libraries" />
-    <orderEntry type="library" name="javaee-api-7.0" level="project" />
+    <orderEntry type="library" name="Maven: javax:javaee-api:8.0" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.mail:javax.mail:1.6.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
     <orderEntry type="library" name="Maven: com.algolia:algoliasearch-async:2.15.3" level="project" />
     <orderEntry type="library" name="Maven: com.algolia:algoliasearch:2.15.3" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:22.0" level="project" />
