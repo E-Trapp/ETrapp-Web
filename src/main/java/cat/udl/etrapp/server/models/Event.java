@@ -1,6 +1,19 @@
 package cat.udl.etrapp.server.models;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 public class Event {
+
+    public static final Set<String> updatable = new HashSet<>(Arrays.asList(
+            "title",
+            "description",
+            "location",
+            "isEnabled",
+            "isFeatured",
+            "startsAt")
+    );
 
     private long id;
     private long owner;

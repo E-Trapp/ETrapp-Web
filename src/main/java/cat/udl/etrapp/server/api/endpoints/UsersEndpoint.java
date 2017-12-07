@@ -42,7 +42,8 @@ public class UsersEndpoint {
     @PUT
     @Authorized
     @Path("/{id}")
-    public Response updateUser(@PathParam("id") long id) {
+    public Response updateUser(@PathParam("id") long id, UserInfo userInfo) {
+        userInfo.setId(id);
         return Response.ok().build();
     }
 

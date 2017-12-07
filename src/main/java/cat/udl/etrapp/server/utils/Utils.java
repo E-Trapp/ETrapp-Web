@@ -42,8 +42,24 @@ public class Utils {
         return headers.getHeaderString(HttpHeaders.AUTHORIZATION).substring("Bearer".length()).trim();
     }
 
+    public static String generateSQLPatch(String table, Map<String, Object> updates, long id) {
+        String SQLStatement = "UPDATE %s SET %s WHERE id = %d;";
+        String SETStatement = "";
+        for (Map.Entry<String, Object> entry : updates.entrySet()) {
+            SETStatement = SETStatement.concat(entry.getKey().concat(" = "));
+            if (entry.getValue() instanceof String) {
+                SETStatement = SETStatement.concat("'"+ entry.getValue() + "',");
+            } else {
+                SETStatement = SETStatement.concat(entry.getValue() + ",");
+            }
+        }
+        SETStatement = SETStatement.substring(0, SETStatement.length() - 1);
+        return String.format(SQLStatement, table, SETStatement, id);
+    }
+
     public static void main(String args[]) {
         System.out.println("Custom token for development: qweqweqweqwe -> " + getHashedString("qweqweqweqwe"));
+
     }
 
 }

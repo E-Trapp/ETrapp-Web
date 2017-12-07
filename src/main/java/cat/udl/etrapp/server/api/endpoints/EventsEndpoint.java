@@ -67,15 +67,9 @@ public class EventsEndpoint {
     @Authorized
     @Path("/{id:[0-9][0-9]*}")
     public Response update_partially(@PathParam("id") Long id, final Map<String, Object> data) {
-        //TODO: process the given event
-        for (String key : data.keySet()) {
-            try {
-                System.out.println(Event.class.getDeclaredField(key).toString());
-            } catch (NoSuchFieldException e) {
-                e.printStackTrace();
-            }
-        }
-        return Response.noContent().build();
+        if (EventsDAO.getInstance().editEvent(id, data))
+            return Response.ok().build();
+        else return Response.status(Status.BAD_REQUEST).build();
     }
 
     @DELETE

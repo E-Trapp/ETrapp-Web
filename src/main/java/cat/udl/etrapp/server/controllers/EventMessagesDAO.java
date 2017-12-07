@@ -42,6 +42,7 @@ public class EventMessagesDAO {
                     eventMessage.setEventId(eventId);
                     eventMessage.setUserId(user.getId());
                     eventMessage.setMessage(message.getMessage());
+                    // TODO: Write message to Firebase
                 }
             } catch (SQLException e) {
                 System.err.println("Error in SQL: writeMessage()");
@@ -97,13 +98,5 @@ public class EventMessagesDAO {
         return eventMessages;
     }
 
-
-    // TODO: Get EventMessages using index inside event:
-//    SELECT *
-//    FROM(
-//         SELECT *, ROW_NUMBER () OVER (ORDER BY created_at)
-//         FROM event_messages
-//         WHERE event_id = 37) x
-//    WHERE ROW_NUMBER = 5;
 
 }

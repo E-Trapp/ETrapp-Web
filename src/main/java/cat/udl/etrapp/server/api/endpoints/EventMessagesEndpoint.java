@@ -46,7 +46,8 @@ public class EventMessagesEndpoint {
     @GET
     @Path("/{index}")
     public Response getMessage() {
-        return Response.ok().build();
+        // Messages can only be retrieved through Firebase.
+        return Response.status(Response.Status.NOT_FOUND).build();
     }
 
 }

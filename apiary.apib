@@ -102,7 +102,30 @@ Retrieve paginated list of events
 
     Event created
     + Body
-    
+
+## Event [/events/{id}]
+
++ Parameters
+
+    + id (required, Number, `1`) ... Numeric `id` of the Event to perform actions on.
+
+### Edit an event [DELETE]
+
++ Request
+
+    + Headers
+
+            Authorization: Bearer {token}
+
+    + Body
+
+            {
+                "description": "newDescription"
+            }
+
++ Response 200
+
+
 ### Delete an event [DELETE]
 
 + Request

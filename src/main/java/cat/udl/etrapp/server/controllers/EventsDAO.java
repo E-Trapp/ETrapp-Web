@@ -3,10 +3,12 @@ package cat.udl.etrapp.server.controllers;
 import cat.udl.etrapp.server.db.DBManager;
 import cat.udl.etrapp.server.models.Event;
 import cat.udl.etrapp.server.models.EventMessage;
+import cat.udl.etrapp.server.utils.Utils;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class EventsDAO {
 
@@ -132,6 +134,26 @@ public class EventsDAO {
             System.err.println(e.getMessage());
         }
         return false;
+    }
+
+    public boolean editEvent(long id, Map<String, Object> changes) {
+        boolean ok = false;
+
+        if (!Event.updatable.containsAll(changes.keySet())) {
+            return false;
+        }
+
+        try(Connection connection = DBManager.getConnection();
+            CallableStatement statement = connection.prepareCall(Utils.generateSQLPatch("events", changes, id))
+        ) {
+            if (statement.executeUpdate() > 0) {
+                ok = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return ok;
     }
 
 
