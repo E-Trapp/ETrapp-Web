@@ -3,8 +3,8 @@ package cat.udl.etrapp.server.api.endpoints;
 import cat.udl.etrapp.server.api.annotations.Authorized;
 import cat.udl.etrapp.server.api.annotations.PATCH;
 import cat.udl.etrapp.server.api.annotations.Secured;
-import cat.udl.etrapp.server.controllers.EventsDAO;
-import cat.udl.etrapp.server.controllers.UsersDAO;
+import cat.udl.etrapp.server.daos.EventsDAO;
+import cat.udl.etrapp.server.daos.UsersDAO;
 import cat.udl.etrapp.server.models.Event;
 
 import javax.enterprise.context.RequestScoped;

@@ -1,7 +1,7 @@
 package cat.udl.etrapp.server.api.endpoints;
 
 import cat.udl.etrapp.server.api.annotations.Secured;
-import cat.udl.etrapp.server.controllers.UsersDAO;
+import cat.udl.etrapp.server.daos.UsersDAO;
 import cat.udl.etrapp.server.models.Credentials;
 import cat.udl.etrapp.server.models.User;
 import cat.udl.etrapp.server.models.UserInfo;

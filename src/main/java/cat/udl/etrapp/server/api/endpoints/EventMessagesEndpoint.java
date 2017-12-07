@@ -1,7 +1,7 @@
 package cat.udl.etrapp.server.api.endpoints;
 
 import cat.udl.etrapp.server.api.annotations.Secured;
-import cat.udl.etrapp.server.controllers.EventMessagesDAO;
+import cat.udl.etrapp.server.daos.EventMessagesDAO;
 import cat.udl.etrapp.server.models.EventMessage;
 
 import javax.enterprise.context.RequestScoped;

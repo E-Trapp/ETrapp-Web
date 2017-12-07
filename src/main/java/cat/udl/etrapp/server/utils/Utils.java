@@ -50,10 +50,9 @@ public class Utils {
         String SETStatement = "";
 
         for (Map.Entry<String, Object> entry : updates.entrySet()) {
-
             String key = null;
             try {
-                key = (String) cls.getMethod("map_keys",String.class).invoke(null, entry.getKey());
+                key = (String) cls.getMethod("map_keys", String.class).invoke(null, entry.getKey());
             } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
                 e.printStackTrace();
             }
@@ -73,6 +72,7 @@ public class Utils {
                 SETStatement = SETStatement.concat(entry.getValue() + ",");
             }
         }
+
         SETStatement = SETStatement.substring(0, SETStatement.length() - 1);
         return String.format(SQLStatement, table, SETStatement, id);
     }

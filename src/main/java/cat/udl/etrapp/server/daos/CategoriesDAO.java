@@ -1,4 +1,4 @@
-package cat.udl.etrapp.server.controllers;
+package cat.udl.etrapp.server.daos;
 
 public class CategoriesDAO {
 

@@ -1,8 +1,8 @@
-package cat.udl.etrapp.server.controllers;
+package cat.udl.etrapp.server.daos;
 
+import cat.udl.etrapp.server.controllers.SearchController;
 import cat.udl.etrapp.server.db.DBManager;
 import cat.udl.etrapp.server.models.Event;
-import cat.udl.etrapp.server.models.EventMessage;
 import cat.udl.etrapp.server.utils.Utils;
 
 import java.sql.*;
@@ -144,8 +144,7 @@ public class EventsDAO {
         }
 
         try(Connection connection = DBManager.getConnection();
-            CallableStatement statement = connection.prepareCall(Utils.generateSQLPatch("events", changes, id, Event.class))
-        ) {
+            CallableStatement statement = connection.prepareCall(Utils.generateSQLPatch("events", changes, id, Event.class))) {
             if (statement.executeUpdate() > 0) {
                 ok = true;
             }

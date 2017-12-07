@@ -1,11 +1,10 @@
-package cat.udl.etrapp.server.controllers;
+package cat.udl.etrapp.server.daos;
 
+import cat.udl.etrapp.server.controllers.SearchController;
 import cat.udl.etrapp.server.db.DBManager;
-import cat.udl.etrapp.server.db.SearchManager;
 import cat.udl.etrapp.server.models.*;
 import cat.udl.etrapp.server.utils.Password;
 import cat.udl.etrapp.server.utils.Utils;
-import com.algolia.search.AsyncIndex;
 import com.sun.istack.internal.Nullable;
 
 import java.sql.*;
@@ -246,8 +245,7 @@ public class UsersDAO {
         }
 
         try(Connection connection = DBManager.getConnection();
-            CallableStatement statement = connection.prepareCall(Utils.generateSQLPatch("users", updates, id, BaseUser.class))
-        ) {
+            CallableStatement statement = connection.prepareCall(Utils.generateSQLPatch("users", updates, id, BaseUser.class))) {
             if (statement.executeUpdate() > 0) {
                 ok = true;
             }

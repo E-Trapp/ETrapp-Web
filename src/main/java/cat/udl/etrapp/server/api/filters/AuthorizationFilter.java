@@ -3,8 +3,8 @@ package cat.udl.etrapp.server.api.filters;
 import cat.udl.etrapp.server.api.annotations.Authorized;
 import cat.udl.etrapp.server.api.exceptions.InvalidTokenException;
 import cat.udl.etrapp.server.api.exceptions.UnauthorizedResourceAccessException;
-import cat.udl.etrapp.server.controllers.EventsDAO;
-import cat.udl.etrapp.server.controllers.UsersDAO;
+import cat.udl.etrapp.server.daos.EventsDAO;
+import cat.udl.etrapp.server.daos.UsersDAO;
 import cat.udl.etrapp.server.models.Event;
 import cat.udl.etrapp.server.models.User;
 

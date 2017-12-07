@@ -2,7 +2,7 @@ package cat.udl.etrapp.server.api.filters;
 
 import cat.udl.etrapp.server.api.annotations.Secured;
 import cat.udl.etrapp.server.api.exceptions.InvalidTokenException;
-import cat.udl.etrapp.server.controllers.UsersDAO;
+import cat.udl.etrapp.server.daos.UsersDAO;
 
 import javax.annotation.Priority;
 import javax.ws.rs.Priorities;

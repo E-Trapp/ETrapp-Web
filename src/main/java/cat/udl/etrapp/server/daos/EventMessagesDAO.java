@@ -1,4 +1,4 @@
-package cat.udl.etrapp.server.controllers;
+package cat.udl.etrapp.server.daos;
 
 import cat.udl.etrapp.server.db.DBManager;
 import cat.udl.etrapp.server.models.EventMessage;
