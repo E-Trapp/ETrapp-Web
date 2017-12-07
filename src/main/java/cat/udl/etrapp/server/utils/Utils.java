@@ -62,10 +62,12 @@ public class Utils {
             if (entry.getValue() instanceof String) {
                 SETStatement = SETStatement.concat("'"+ entry.getValue() + "',");
             } else if(entry.getKey().equals("startsAt")) {
-
-                // TODO: Fix timestamp!
-                Integer i = (int)entry.getValue();
-                Timestamp timestamp = new Timestamp(i.longValue());
+                Timestamp timestamp;
+                try {
+                    timestamp = new Timestamp((long) entry.getValue());
+                } catch (ClassCastException e) {
+                    timestamp = new Timestamp(1000 * (int) entry.getValue());
+                }
                 SETStatement = SETStatement.concat("'"+ timestamp + "',");
             } else {
                 SETStatement = SETStatement.concat(entry.getValue() + ",");
