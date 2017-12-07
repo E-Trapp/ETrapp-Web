@@ -57,6 +57,8 @@ public class UsersDAO {
                     user.setLastName(lastName);
                     user.setEmail(email);
                     user.setAvatarUrl(avatarUrl);
+
+                    // TODO: Index User in Algolia
                 }
             } catch (SQLException e) {
                 System.err.println("Error in SQL: createUser()");

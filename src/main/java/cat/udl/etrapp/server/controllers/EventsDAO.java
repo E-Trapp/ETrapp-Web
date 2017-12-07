@@ -104,6 +104,7 @@ public class EventsDAO {
             try (ResultSet rs = statement.getGeneratedKeys()) {
                 if (rs.next()) {
                     event.setId(rs.getLong(1));
+                    // TODO: Index event in Algolia
                 }
             } catch (SQLException e) {
                 System.err.println("Error in SQL: createEvent()");
