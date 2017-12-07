@@ -6,6 +6,8 @@ import javax.ws.rs.core.HttpHeaders;
 import java.lang.reflect.InvocationTargetException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -59,6 +61,12 @@ public class Utils {
             SETStatement = SETStatement.concat(key.concat(" = "));
             if (entry.getValue() instanceof String) {
                 SETStatement = SETStatement.concat("'"+ entry.getValue() + "',");
+            } else if(entry.getKey().equals("startsAt")) {
+
+                // TODO: Fix timestamp!
+                Integer i = (int)entry.getValue();
+                Timestamp timestamp = new Timestamp(i.longValue());
+                SETStatement = SETStatement.concat("'"+ timestamp + "',");
             } else {
                 SETStatement = SETStatement.concat(entry.getValue() + ",");
             }
