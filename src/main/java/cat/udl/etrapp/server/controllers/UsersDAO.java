@@ -9,6 +9,7 @@ import com.algolia.search.AsyncIndex;
 import com.sun.istack.internal.Nullable;
 
 import java.sql.*;
+import java.util.Map;
 
 import static cat.udl.etrapp.server.utils.Utils.getHashedString;
 
@@ -237,4 +238,23 @@ public class UsersDAO {
     }
 
 
+    public boolean editUser(long id, Map<String, Object> updates) {
+        boolean ok = false;
+
+        if (!User.updatable.containsAll(updates.keySet())) {
+            return false;
+        }
+
+        try(Connection connection = DBManager.getConnection();
+            CallableStatement statement = connection.prepareCall(Utils.generateSQLPatch("users", updates, id, BaseUser.class))
+        ) {
+            if (statement.executeUpdate() > 0) {
+                ok = true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return ok;
+    }
 }

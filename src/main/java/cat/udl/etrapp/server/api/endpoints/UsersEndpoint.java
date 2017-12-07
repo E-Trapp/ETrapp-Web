@@ -1,6 +1,7 @@
 package cat.udl.etrapp.server.api.endpoints;
 
 import cat.udl.etrapp.server.api.annotations.Authorized;
+import cat.udl.etrapp.server.api.annotations.PATCH;
 import cat.udl.etrapp.server.controllers.UsersDAO;
 import cat.udl.etrapp.server.models.User;
 import cat.udl.etrapp.server.models.UserAuth;
@@ -11,6 +12,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
+import java.util.Map;
 
 @RequestScoped
 @Path("/users")
@@ -45,6 +47,15 @@ public class UsersEndpoint {
     public Response updateUser(@PathParam("id") long id, UserInfo userInfo) {
         userInfo.setId(id);
         return Response.ok().build();
+    }
+
+    @PATCH
+    @Authorized
+    @Path("/{id}")
+    public Response update_partially(@PathParam("id") long id, Map<String, Object> updates) {
+        if (UsersDAO.getInstance().editUser(id, updates))
+            return Response.ok().build();
+        else return Response.status(Response.Status.BAD_REQUEST).build();
     }
 
 

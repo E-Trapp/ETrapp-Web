@@ -1,6 +1,27 @@
 package cat.udl.etrapp.server.models;
 
+import java.util.*;
+
 public abstract class BaseUser {
+
+    public static final Set<String> updatable = new HashSet<>(Arrays.asList(
+            "email",
+            "firstName",
+            "lastName",
+            "avatarUrl")
+    );
+
+    private static final Map<String, String> keyMap;
+    static {
+        keyMap = new HashMap<>();
+        keyMap.put("firstName", "first_name");
+        keyMap.put("lastName", "last_name");
+        keyMap.put("avatarUrl", "avatar_url");
+    }
+
+    public static String map_keys(String key) {
+        return keyMap.getOrDefault(key, key);
+    }
 
     private long id;
     private String username;

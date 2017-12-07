@@ -144,7 +144,7 @@ public class EventsDAO {
         }
 
         try(Connection connection = DBManager.getConnection();
-            CallableStatement statement = connection.prepareCall(Utils.generateSQLPatch("events", changes, id))
+            CallableStatement statement = connection.prepareCall(Utils.generateSQLPatch("events", changes, id, Event.class))
         ) {
             if (statement.executeUpdate() > 0) {
                 ok = true;

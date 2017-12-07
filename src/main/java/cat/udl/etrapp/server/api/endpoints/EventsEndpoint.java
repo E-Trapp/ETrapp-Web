@@ -66,8 +66,8 @@ public class EventsEndpoint {
     @PATCH
     @Authorized
     @Path("/{id:[0-9][0-9]*}")
-    public Response update_partially(@PathParam("id") Long id, final Map<String, Object> data) {
-        if (EventsDAO.getInstance().editEvent(id, data))
+    public Response update_partially(@PathParam("id") Long id, final Map<String, Object> updates) {
+        if (EventsDAO.getInstance().editEvent(id, updates))
             return Response.ok().build();
         else return Response.status(Status.BAD_REQUEST).build();
     }

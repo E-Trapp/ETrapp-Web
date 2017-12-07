@@ -3,6 +3,7 @@ package cat.udl.etrapp.server.utils;
 import cat.udl.etrapp.server.models.SessionToken;
 
 import javax.ws.rs.core.HttpHeaders;
+import java.lang.reflect.InvocationTargetException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
@@ -42,11 +43,20 @@ public class Utils {
         return headers.getHeaderString(HttpHeaders.AUTHORIZATION).substring("Bearer".length()).trim();
     }
 
-    public static String generateSQLPatch(String table, Map<String, Object> updates, long id) {
+    public static String generateSQLPatch(String table, Map<String, Object> updates, long id, Class<?> cls) {
         String SQLStatement = "UPDATE %s SET %s WHERE id = %d;";
         String SETStatement = "";
+
         for (Map.Entry<String, Object> entry : updates.entrySet()) {
-            SETStatement = SETStatement.concat(entry.getKey().concat(" = "));
+
+            String key = null;
+            try {
+                key = (String) cls.getMethod("map_keys",String.class).invoke(null, entry.getKey());
+            } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+                e.printStackTrace();
+            }
+
+            SETStatement = SETStatement.concat(key.concat(" = "));
             if (entry.getValue() instanceof String) {
                 SETStatement = SETStatement.concat("'"+ entry.getValue() + "',");
             } else {

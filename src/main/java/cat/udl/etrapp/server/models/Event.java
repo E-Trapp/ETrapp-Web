@@ -1,8 +1,6 @@
 package cat.udl.etrapp.server.models;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Event {
 
@@ -14,6 +12,18 @@ public class Event {
             "isFeatured",
             "startsAt")
     );
+
+    private static final Map<String, String> keyMap;
+    static {
+        keyMap = new HashMap<>();
+        keyMap.put("startsAt", "starts_at");
+        keyMap.put("isEnabled", "is_enabled");
+        keyMap.put("isFeatured", "is_featured");
+    }
+
+    public static String map_keys(String key) {
+        return keyMap.getOrDefault(key, key);
+    }
 
     private long id;
     private long owner;
