@@ -1,5 +1,6 @@
 package cat.udl.etrapp.server.daos;
 
+import cat.udl.etrapp.server.controllers.FirebaseController;
 import cat.udl.etrapp.server.controllers.SearchController;
 import cat.udl.etrapp.server.db.DBManager;
 import cat.udl.etrapp.server.models.*;
@@ -236,7 +237,6 @@ public class UsersDAO {
         return deauth;
     }
 
-
     public boolean editUser(long id, Map<String, Object> updates) {
         boolean ok = false;
 
@@ -254,5 +254,41 @@ public class UsersDAO {
         }
 
         return ok;
+    }
+
+    public void updateNotificationToken(long id, String token) {
+        try (Connection connection = DBManager.getConnection();
+             PreparedStatement statement = connection.prepareStatement("INSERT INTO user_notification_tokens (user_id, token) VALUES (?, ?) ON CONFLICT (user_id) DO UPDATE SET token=?");
+        ) {
+            statement.setLong(1, id);
+            statement.setString(2, token);
+            statement.setString(3, token);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("Error in SQL: updateNotificationToken()");
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public String getNotificationTokenById(long id) {
+        String token = null;
+        try (Connection connection = DBManager.getConnection();
+             PreparedStatement statement = connection.prepareStatement("SELECT * FROM user_notification_tokens WHERE user_id = ?");
+        ) {
+            statement.setLong(1, id);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    token = resultSet.getString("token");
+                }
+            } catch (SQLException e) {
+                System.err.println("Error in SQL: getNotificationTokenById()");
+                System.err.println(e.getMessage());
+            }
+        } catch (SQLException e) {
+            System.err.println("Error in SQL: getNotificationTokenById()");
+            System.err.println(e.getMessage());
+        }
+        return token;
     }
 }

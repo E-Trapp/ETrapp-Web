@@ -1,7 +1,9 @@
 package cat.udl.etrapp.server.controllers;
 
+import cat.udl.etrapp.server.daos.UsersDAO;
 import cat.udl.etrapp.server.models.EventMessage;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
+import org.json.JSONObject;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -45,17 +47,26 @@ public class FirebaseController {
         }
     }
 
-    public void sendNotification() {
-        // TODO: Send notifications.
-        //        {
-        //            "message":{
-        //            "token" : getUserNotificationToken(),
-        //                    "notification" : {
-        //                "body" : "This is an FCM notification message!",
-        //                        "title" : "FCM Message",
-        //            }
-        //        }
-        //        }
+    public void sendNotification(long id) {
+        JSONObject container = new JSONObject();
+        JSONObject message = new JSONObject();
+        JSONObject notification = new JSONObject();
+        notification.put("body", "testBody");
+        notification.put("title", "testTitle");
+        message.put("token", UsersDAO.getInstance().getNotificationTokenById(id));
+        message.put("notification", notification);
+        container.put("message", message);
+
+        Client client = ClientBuilder.newClient();
+        try {
+            client.target(fcmUrl)
+                    .request(MediaType.APPLICATION_JSON)
+                    .header(HttpHeaders.AUTHORIZATION, "Bearer " + getAccessToken())
+                    .async()
+                    .post(Entity.entity(message, MediaType.APPLICATION_JSON));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private String getAccessToken() throws IOException {

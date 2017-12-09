@@ -54,7 +54,7 @@ public class UsersEndpoint {
     @Authorized
     @Path("/{id}/token")
     public Response updateUser(@PathParam("id") long id, Map<String, String> tokenInfo) {
-        // TODO: Save User Token when received
+        UsersDAO.getInstance().updateNotificationToken(id, tokenInfo.get("token"));
         return Response.ok().build();
     }
 
