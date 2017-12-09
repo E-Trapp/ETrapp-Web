@@ -41,14 +41,6 @@ public class UsersEndpoint {
         }
     }
 
-    @PUT
-    @Authorized
-    @Path("/{id}")
-    public Response updateUser(@PathParam("id") long id, UserInfo userInfo) {
-        userInfo.setId(id);
-        return Response.ok().build();
-    }
-
     @PATCH
     @Authorized
     @Path("/{id}")
@@ -57,6 +49,16 @@ public class UsersEndpoint {
             return Response.ok().build();
         else return Response.status(Response.Status.BAD_REQUEST).build();
     }
+
+    @PUT
+    @Authorized
+    @Path("/{id}/token")
+    public Response updateUser(@PathParam("id") long id, Map<String, String> tokenInfo) {
+        // TODO: Save User Token when received
+        return Response.ok().build();
+    }
+
+
 
 
 }

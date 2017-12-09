@@ -14,11 +14,16 @@ public class DBManager {
     static {
         try {
             final String env = System.getenv("environment");
-            if (env.equals("production")) {
-                dataSource = (DataSource) new InitialContext().lookup("java:/PostgresXADS");
-            } else if (env.equals("development")) {
-                // TODO: cambiar dataSource para atacar a DB local
-                dataSource = (DataSource) new InitialContext().lookup("java:/PostgresXADS");
+            switch (env) {
+                case "production":
+                    dataSource = (DataSource) new InitialContext().lookup("java:/PostgresXADS");
+                    break;
+                case "development":
+                    dataSource = (DataSource) new InitialContext().lookup("java:/PostgresXADS");
+                    break;
+                default:
+                    dataSource = (DataSource) new InitialContext().lookup("java:/PostgresXADS");
+                    break;
             }
         }
         catch (NamingException e) { 

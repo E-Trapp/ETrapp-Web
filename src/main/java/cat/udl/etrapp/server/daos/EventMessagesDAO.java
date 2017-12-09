@@ -43,7 +43,6 @@ public class EventMessagesDAO {
                     eventMessage.setEventId(eventId);
                     eventMessage.setUserId(user.getId());
                     eventMessage.setMessage(message.getMessage());
-                    // TODO: Write message to Firebase
                     FirebaseController.getInstance().writeMessage(eventId, eventMessage);
                 }
             } catch (SQLException e) {
