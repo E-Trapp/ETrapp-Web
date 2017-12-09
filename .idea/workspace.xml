@@ -7,7 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b936f20a-94fa-45fd-8e05-37535ffe15f2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/daos/EventMessagesDAO.java" afterPath="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/daos/EventMessagesDAO.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/etrapp_server.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/etrapp_server.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/e-trapp-5d5b92dd3b2c.json" afterPath="$PROJECT_DIR$/WebContent/META-INF/e-trapp-5d5b92dd3b2c.json" />
+      <change beforePath="$PROJECT_DIR$/etrapp-server.iml" afterPath="$PROJECT_DIR$/etrapp-server.iml" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/controllers/FirebaseController.java" afterPath="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/controllers/FirebaseController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/models/EventMessage.java" afterPath="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/models/EventMessage.java" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -66,7 +72,7 @@
       <file leaf-file-name="UsersDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/daos/UsersDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
+            <state relative-caret-position="0">
               <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding>
                 <element signature="method#getUserById#0;class#UsersDAO#0" expanded="false" />
@@ -77,15 +83,6 @@
                 <element signature="method#authenticate#0;class#UsersDAO#0" expanded="false" />
                 <marker date="1512679194564" expanded="true" signature="965:1088" ph="INSERT INTO users... " />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users" pinned="false" current-in-tab="false">
-        <entry file="das://table:/cff0e20f/7ea67212-7573-41ad-90c2-72c7b422d9bf/dh9lc7447dlvb.public.users">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -108,14 +105,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventMessagesDAO.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EventMessagesDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/daos/EventMessagesDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="46" column="53" lean-forward="false" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
+            <state relative-caret-position="663">
+              <caret line="46" column="59" lean-forward="false" selection-start-line="46" selection-start-column="59" selection-end-line="46" selection-end-column="59" />
               <folding>
                 <element signature="method#getMessages#0;class#EventMessagesDAO#0" expanded="false" />
-                <marker date="1512679815400" expanded="true" signature="970:1042" ph="INSERT INTO event_messages... " />
+                <marker date="1512679894479" expanded="true" signature="970:1042" ph="INSERT INTO event_messages... " />
               </folding>
             </state>
           </provider>
@@ -131,11 +128,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FirebaseController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FirebaseController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/controllers/FirebaseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="119">
+              <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventMessage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/models/EventMessage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="471">
+              <caret line="49" column="36" lean-forward="false" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -156,7 +163,7 @@
       <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/utils/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
+            <state relative-caret-position="482">
               <caret line="72" column="13" lean-forward="false" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
               <folding />
             </state>
@@ -166,18 +173,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="e-trapp-5d5b92dd3b2c.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/e-trapp-5d5b92dd3b2c.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+            <state relative-caret-position="408">
+              <caret line="24" column="21" lean-forward="false" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -227,7 +224,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/RestApplication.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/utils/BCrypt.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/filters/BaseFilter.java" />
         <option value="$PROJECT_DIR$/src/cat/udl/etrapp/server/api/filters/AuthenticationFilter.java" />
@@ -271,13 +267,14 @@
         <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/api/endpoints/UsersEndpoint.java" />
         <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/models/BaseUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/models/Event.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/utils/Utils.java" />
         <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/controllers/EventsDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/controllers/UsersDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/daos/CategoriesDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/controllers/FirebaseController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/daos/EventMessagesDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/models/EventMessage.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/controllers/FirebaseController.java" />
       </list>
     </option>
   </component>
@@ -288,7 +285,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="959" />
+    <option name="y" value="84" />
     <option name="width" value="974" />
     <option name="height" value="1057" />
   </component>
@@ -307,7 +305,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -378,11 +375,23 @@
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="db" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="etrapp-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="etrapp-server" type="462c0819:PsiDirectoryNode" />
+              <item name="WebContent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="etrapp-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="etrapp-server" type="462c0819:PsiDirectoryNode" />
+              <item name="WebContent" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -399,8 +408,12 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="cat.udl.etrapp.server.api.exceptions" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ry\workspace\etrapp-server\WebContent\META-INF" />
+      <recent name="C:\Users\ry\workspace\etrapp-server\WebContent" />
+      <recent name="C:\Users\ry\workspace\etrapp-server\src\main\java\cat\udl\etrapp\server\controllers" />
+      <recent name="C:\Users\ry\workspace\etrapp-server\src\cat\udl\etrapp\server\utils" />
+      <recent name="C:\Users\ry\workspace\etrapp-server\lib" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="cat.udl.etrapp.server.db" />
@@ -413,9 +426,8 @@
       <recent name="cat.udl.etrapp.server.api.annotations" />
       <recent name="cat.udl.etrapp.server.api.filters" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ry\workspace\etrapp-server\src\cat\udl\etrapp\server\utils" />
-      <recent name="C:\Users\ry\workspace\etrapp-server\lib" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="cat.udl.etrapp.server.api.exceptions" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -822,12 +834,14 @@
       <workItem from="1512161219619" duration="9593000" />
       <workItem from="1512313544270" duration="1265000" />
       <workItem from="1512666383506" duration="4680000" />
-      <workItem from="1512675031194" duration="3331000" />
+      <workItem from="1512675031194" duration="3430000" />
+      <workItem from="1512761582039" duration="10534000" />
+      <workItem from="1512819830972" duration="4338000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82193000" />
+    <option name="totallyTimeSpent" value="97164000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -849,7 +863,7 @@
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26119402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53501093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -862,9 +876,9 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3929336" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22376874" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15031983" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30299786" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22376874" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17217484" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -891,22 +905,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/models/SessionToken.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbSrc:///cff0e20f/7ea67212-7573-41ad-90c2-72c7b422d9bf/database/dh9lc7447dlvb/schema/public/routine/trigger_set_timestamp.().sql" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/api/annotations/Authorized.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/controllers/AbstractDAO.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/api/exceptions/InvalidTokenException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -970,13 +968,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/models/EventMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/AuthEndpoint.java" />
     <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/UsersEndpoint.java" />
     <entry file="file://$PROJECT_DIR$/src/cat/udl/etrapp/server/api/CategoriesEndpoint.java" />
@@ -1034,11 +1025,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#getAuthUser#0;class#AuthEndpoint#0" expanded="false" />
-            <element signature="method#authenticate#0;class#AuthEndpoint#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1087,7 +1073,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1117,7 +1102,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="55" column="57" lean-forward="false" selection-start-line="55" selection-start-column="57" selection-end-line="55" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1125,10 +1109,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-          <folding>
-            <element signature="e#566#567#0" expanded="false" />
-            <element signature="e#618#619#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1136,10 +1116,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-          <folding>
-            <element signature="e#608#609#0" expanded="false" />
-            <element signature="e#660#661#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1147,10 +1123,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="30" lean-forward="false" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-          <folding>
-            <element signature="e#133#134#0" expanded="false" />
-            <element signature="e#161#162#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1158,7 +1130,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="935">
           <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1169,50 +1140,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/e-trapp-5d5b92dd3b2c.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/utils/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="72" column="13" lean-forward="false" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/cff0e20f/7ea67212-7573-41ad-90c2-72c7b422d9bf/dh9lc7447dlvb.public.users">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/daos/UsersDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="method#getUserById#0;class#UsersDAO#0" expanded="false" />
-            <element signature="method#getUserByToken#0;class#UsersDAO#0" expanded="false" />
-            <element signature="method#getUserFromResultSet#1;class#UsersDAO#0" expanded="false" />
-            <element signature="method#updateToken#0;class#UsersDAO#0" expanded="false" />
-            <element signature="method#validateToken#0;class#UsersDAO#0" expanded="false" />
-            <element signature="method#authenticate#0;class#UsersDAO#0" expanded="false" />
-            <marker date="1512679194564" expanded="true" signature="965:1088" ph="INSERT INTO users... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1240,6 +1171,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/daos/UsersDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="method#getUserById#0;class#UsersDAO#0" expanded="false" />
+            <element signature="method#getUserByToken#0;class#UsersDAO#0" expanded="false" />
+            <element signature="method#getUserFromResultSet#1;class#UsersDAO#0" expanded="false" />
+            <element signature="method#updateToken#0;class#UsersDAO#0" expanded="false" />
+            <element signature="method#validateToken#0;class#UsersDAO#0" expanded="false" />
+            <element signature="method#authenticate#0;class#UsersDAO#0" expanded="false" />
+            <marker date="1512679194564" expanded="true" signature="965:1088" ph="INSERT INTO users... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/daos/EventMessagesDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="46" column="59" lean-forward="false" selection-start-line="46" selection-start-column="59" selection-end-line="46" selection-end-column="59" />
+          <folding>
+            <element signature="method#getMessages#0;class#EventMessagesDAO#0" expanded="false" />
+            <marker date="1512679894479" expanded="true" signature="970:1042" ph="INSERT INTO event_messages... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/META-INF/e-trapp-5d5b92dd3b2c.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/utils/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="72" column="13" lean-forward="false" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/controllers/SearchController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1248,24 +1222,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/controllers/FirebaseController.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/google/cloud/google-cloud-firestore/0.25.0-beta/google-cloud-firestore-0.25.0-beta.jar!/com/google/cloud/firestore/FieldValue.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="286">
+          <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/google/firebase/firebase-admin/5.5.0/firebase-admin-5.5.0.jar!/com/google/firebase/FirebaseApp.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="108" column="30" lean-forward="false" selection-start-line="108" selection-start-column="30" selection-end-line="108" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/javaee-api/8.0/javaee-api-8.0.jar!/javax/ws/rs/core/MediaType.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="32" column="34" lean-forward="false" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/javaee-api/8.0/javaee-api-8.0.jar!/javax/ws/rs/client/Entity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="50" column="55" lean-forward="true" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/models/EventMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="49" column="36" lean-forward="false" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/daos/EventMessagesDAO.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="46" column="53" lean-forward="false" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
-          <folding>
-            <element signature="method#getMessages#0;class#EventMessagesDAO#0" expanded="false" />
-            <marker date="1512679815400" expanded="true" signature="970:1042" ph="INSERT INTO event_messages... " />
-          </folding>
+        <state relative-caret-position="408">
+          <caret line="24" column="21" lean-forward="false" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/controllers/FirebaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="32" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1278,15 +1289,15 @@
             <show-content>
               <type id="javaee-facet-resources" />
               <type id="artifact" />
-              <type id="library" />
               <type id="jpa-descriptors" />
+              <type id="library" />
             </show-content>
           </artifact-editor>
           <last-edited>etrapp-server</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.13793103" />
+                <option value="0.1150748" />
                 <option value="0.5" />
               </list>
             </option>

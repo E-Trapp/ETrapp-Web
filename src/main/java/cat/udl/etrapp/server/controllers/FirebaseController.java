@@ -1,34 +1,19 @@
 package cat.udl.etrapp.server.controllers;
 
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseOptions;
-import com.google.firebase.auth.FirebaseCredentials;
+import cat.udl.etrapp.server.models.EventMessage;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.core.MediaType;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FirebaseController {
 
-    static {
-        FileInputStream serviceAccount = null;
-        try {
-            serviceAccount = new FileInputStream("e-trapp-5d5b92dd3b2c.json");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        FirebaseOptions options = null;
-        try {
-            options = new FirebaseOptions.Builder()
-                    .setCredential(FirebaseCredentials.fromCertificate(serviceAccount))
-                    .setDatabaseUrl("https://e-trapp.firebaseio.com/")
-                    .build();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        FirebaseApp.initializeApp(options);
-    }
-
+    //    private static final String token = "ya29.c.ElsdBc_kntxDjA08b66guy0EsaSg7e8bhUfyvHY7ap4GHBRJPWqM4Q97RSSo9_cJ-H-CBfL983TsjOCV9kz1llxK4vZcdNdDkjSW5nOxIB-jHSUhhbvQiPAJiOMX";
+    private static final String token = "nGJ9TaspgBT0fjffy7skgYrp69XV8SmSJ9xvtfo5";
+    private static final String dbUrl = "https://e-trapp.firebaseio.com/";
     private static FirebaseController instance;
 
     private FirebaseController() {
@@ -39,4 +24,15 @@ public class FirebaseController {
         return instance;
     }
 
+    public void writeMessage(long eventId, EventMessage eventMessage) {
+        Client client = ClientBuilder.newClient();
+        Map<String, Object> data = eventMessage.asMap();
+        Map<String, String> timestamp = new HashMap<>();
+        timestamp.put(".sv", "timestamp");
+        data.put("timestamp", timestamp);
+        client.target(dbUrl + "eventMessages/event" + eventId + ".json?auth=" + token)
+                .request(MediaType.APPLICATION_JSON)
+                .async()
+                .post(Entity.entity(data, MediaType.APPLICATION_JSON));
+    }
 }

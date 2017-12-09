@@ -1,5 +1,8 @@
 package cat.udl.etrapp.server.models;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class EventMessage {
 
     private long id;
@@ -37,5 +40,14 @@ public class EventMessage {
 
     public void setEventId(long eventId) {
         this.eventId = eventId;
+    }
+
+    public Map<String, Object> asMap() {
+        Map<String, Object> map = new HashMap<>();
+        // map.put("id", id);
+        map.put("message", message);
+        map.put("userId", userId);
+        map.put("eventId", eventId);
+        return map;
     }
 }
