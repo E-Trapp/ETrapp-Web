@@ -53,12 +53,9 @@ public class UsersEndpoint {
     @PUT
     @Authorized
     @Path("/{id}/token")
-    public Response updateUser(@PathParam("id") long id, Map<String, String> tokenInfo) {
+    public Response updateUserToken(@PathParam("id") long id, Map<String, String> tokenInfo) {
         UsersDAO.getInstance().updateNotificationToken(id, tokenInfo.get("token"));
         return Response.ok().build();
     }
-
-
-
 
 }
