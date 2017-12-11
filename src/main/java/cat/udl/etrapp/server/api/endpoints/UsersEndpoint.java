@@ -2,7 +2,10 @@ package cat.udl.etrapp.server.api.endpoints;
 
 import cat.udl.etrapp.server.api.annotations.Authorized;
 import cat.udl.etrapp.server.api.annotations.PATCH;
+import cat.udl.etrapp.server.api.annotations.Secured;
+import cat.udl.etrapp.server.daos.EventsDAO;
 import cat.udl.etrapp.server.daos.UsersDAO;
+import cat.udl.etrapp.server.models.Event;
 import cat.udl.etrapp.server.models.User;
 import cat.udl.etrapp.server.models.UserAuth;
 import cat.udl.etrapp.server.models.UserInfo;
@@ -12,6 +15,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
+import java.util.List;
 import java.util.Map;
 
 @RequestScoped
@@ -45,8 +49,7 @@ public class UsersEndpoint {
     @Authorized
     @Path("/{id}")
     public Response update_partially(@PathParam("id") long id, Map<String, Object> updates) {
-        if (UsersDAO.getInstance().editUser(id, updates))
-            return Response.ok().build();
+        if (UsersDAO.getInstance().editUser(id, updates)) return Response.ok().build();
         else return Response.status(Response.Status.BAD_REQUEST).build();
     }
 
@@ -56,6 +59,20 @@ public class UsersEndpoint {
     public Response updateUserToken(@PathParam("id") long id, Map<String, String> tokenInfo) {
         UsersDAO.getInstance().updateNotificationToken(id, tokenInfo.get("token"));
         return Response.ok().build();
+    }
+
+    @GET
+    @Secured
+    @Path("/{id}/events")
+    public Response getUserEvents(@PathParam("id") long id,
+                                  @QueryParam("start") final Integer startPosition,
+                                  @QueryParam("max") final Integer maxResult) {
+        List<Event> userEvents = EventsDAO.getInstance().getEvents(id, startPosition, maxResult);
+        if (userEvents.isEmpty()) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        } else {
+            return Response.ok(userEvents).build();
+        }
     }
 
 }

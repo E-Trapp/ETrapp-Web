@@ -60,6 +60,46 @@ public class EventsDAO {
         return events;
     }
 
+    public List<Event> getEvents(long userId, Integer offset, Integer maxResults) {
+        final String SQLQuery;
+        boolean paginated = false;
+        if (offset == null || maxResults == null) {
+            SQLQuery = "SELECT * FROM events WHERE owner_id = ?";
+        } else {
+            paginated = true;
+            SQLQuery = "SELECT * FROM events WHERE owner_id = ? LIMIT ? OFFSET ?";
+        }
+
+        final List<Event> events = new ArrayList<>();
+
+        try (Connection connection = DBManager.getConnection();
+             PreparedStatement statement = connection.prepareStatement(SQLQuery)) {
+
+            if (paginated) {
+                statement.setLong(1, userId);
+                statement.setInt(2, maxResults);
+                statement.setInt(3, offset);
+            } else {
+                statement.setLong(1, userId);
+            }
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+
+                while (resultSet.next()) {
+                    events.add(eventFromResultSet(resultSet));
+                }
+            } catch (SQLException e) {
+                System.err.println("Error in SQL: getEvents");
+                System.err.println(e.getMessage());
+            }
+        } catch (SQLException e) {
+            System.err.println("Error in SQL: getEvents()");
+            System.err.println(e.getMessage());
+        }
+
+        return events;
+    }
+
     public Event getEventById(long id) {
         Event event = null;
 
