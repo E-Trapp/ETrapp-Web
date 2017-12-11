@@ -37,12 +37,15 @@
     <orderEntry type="library" name="org.eclipse.jst.j2ee.internal.web.container" level="application" />
     <orderEntry type="library" name="org.eclipse.jst.j2ee.internal.module.container" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="WildFly 11.0.0.Final" level="application_server_libraries" />
-    <orderEntry type="library" name="Maven: javax:javaee-api:8.0" level="project" />
-    <orderEntry type="library" name="Maven: com.sun.mail:javax.mail:1.6.0" level="project" />
-    <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
     <orderEntry type="library" name="Maven: com.algolia:algoliasearch-async:2.15.3" level="project" />
     <orderEntry type="library" name="Maven: com.algolia:algoliasearch:2.15.3" level="project" />
     <orderEntry type="library" name="Maven: com.algolia:algoliasearch-common:2.15.3" level="project" />
+    <orderEntry type="library" name="Maven: javax:javaee-api:8.0" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.mail:javax.mail:1.6.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.algolia:algoliasearch-async:2.15.4" level="project" />
+    <orderEntry type="library" name="Maven: com.algolia:algoliasearch:2.15.4" level="project" />
+    <orderEntry type="library" name="Maven: com.algolia:algoliasearch-common:2.15.4" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.0" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.0" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project" />
@@ -94,7 +97,6 @@
     <orderEntry type="library" name="Maven: com.google.api.grpc:proto-google-cloud-firestore-v1beta1:0.1.20" level="project" />
     <orderEntry type="library" name="Maven: io.grpc:grpc-netty:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: io.grpc:grpc-core:1.6.1" level="project" />
-    <orderEntry type="library" name="Maven: com.google.errorprone:error_prone_annotations:2.0.19" level="project" />
     <orderEntry type="library" name="Maven: com.google.instrumentation:instrumentation-api:0.4.3" level="project" />
     <orderEntry type="library" name="Maven: io.opencensus:opencensus-api:0.5.1" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec-http2:4.1.14.Final" level="project" />
@@ -109,7 +111,11 @@
     <orderEntry type="library" name="Maven: io.netty:netty-codec-socks:4.1.14.Final" level="project" />
     <orderEntry type="library" name="Maven: io.grpc:grpc-stub:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: io.grpc:grpc-auth:1.6.1" level="project" />
-    <orderEntry type="library" name="Maven: com.google.guava:guava:20.0" level="project" />
     <orderEntry type="library" name="Maven: org.json:json:20160810" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:23.5-jre" level="project" />
+    <orderEntry type="library" name="Maven: org.checkerframework:checker-qual:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.errorprone:error_prone_annotations:2.0.18" level="project" />
+    <orderEntry type="library" name="Maven: com.google.j2objc:j2objc-annotations:1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.codehaus.mojo:animal-sniffer-annotations:1.14" level="project" />
   </component>
 </module>
