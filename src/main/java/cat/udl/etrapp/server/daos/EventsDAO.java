@@ -27,10 +27,10 @@ public class EventsDAO {
         final String SQLQuery;
         boolean paginated = false;
         if (offset == null || maxResults == null) {
-            SQLQuery = "SELECT * FROM events";
+            SQLQuery = "SELECT * FROM events ORDER BY starts_at DESC";
         } else {
             paginated = true;
-            SQLQuery = "SELECT * FROM events LIMIT ? OFFSET ?";
+            SQLQuery = "SELECT * FROM events ORDER BY starts_at DESC LIMIT ? OFFSET ? ";
         }
 
         final List<Event> events = new ArrayList<>();
