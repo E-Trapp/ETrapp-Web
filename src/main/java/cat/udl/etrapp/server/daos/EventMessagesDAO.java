@@ -2,6 +2,7 @@ package cat.udl.etrapp.server.daos;
 
 import cat.udl.etrapp.server.controllers.FirebaseController;
 import cat.udl.etrapp.server.db.DBManager;
+import cat.udl.etrapp.server.models.EventComment;
 import cat.udl.etrapp.server.models.EventMessage;
 import cat.udl.etrapp.server.models.User;
 
@@ -44,6 +45,41 @@ public class EventMessagesDAO {
                     eventMessage.setUserId(user.getId());
                     eventMessage.setMessage(message.getMessage());
                     FirebaseController.getInstance().writeMessage(eventId, eventMessage);
+                }
+            } catch (SQLException e) {
+                System.err.println("Error in SQL: writeMessage()");
+                return null;
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Error in SQL: writeMessage()");
+            return null;
+        }
+
+        return eventMessage;
+    }
+
+    public EventComment writeComment(final EventComment message, String authToken, final long eventId) {
+        EventComment eventMessage = null;
+
+        final User user = UsersDAO.getInstance().getUserByToken(authToken);
+        try (Connection connection = DBManager.getConnection();
+             PreparedStatement statement = connection.prepareStatement(
+                     "INSERT INTO event_comments (message, user_id, event_id) VALUES (?, ?, ?)",
+                     Statement.RETURN_GENERATED_KEYS);
+        ) {
+            statement.setString(1, message.getComment());
+            statement.setLong(2, user.getId());
+            statement.setLong(3, eventId);
+            statement.executeUpdate();
+            try (ResultSet rs = statement.getGeneratedKeys()) {
+                if (rs.next()) {
+                    eventMessage = new EventComment();
+                    //user.setId(rs.getLong(1));
+                    eventMessage.setEventId(eventId);
+                    eventMessage.setUserId(user.getId());
+                    eventMessage.setComment(message.getComment());
+                    FirebaseController.getInstance().writeComment(eventId, eventMessage);
                 }
             } catch (SQLException e) {
                 System.err.println("Error in SQL: writeMessage()");

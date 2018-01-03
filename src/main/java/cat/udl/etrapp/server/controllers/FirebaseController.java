@@ -1,6 +1,7 @@
 package cat.udl.etrapp.server.controllers;
 
 import cat.udl.etrapp.server.daos.UsersDAO;
+import cat.udl.etrapp.server.models.EventComment;
 import cat.udl.etrapp.server.models.EventMessage;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import org.json.JSONObject;
@@ -83,4 +84,20 @@ public class FirebaseController {
         return googleCredential.getAccessToken();
     }
 
+    public void writeComment(long eventId, EventComment eventMessage) {
+        Client client = ClientBuilder.newClient();
+        Map<String, Object> data = eventMessage.asMap();
+        Map<String, String> timestamp = new HashMap<>();
+        timestamp.put(".sv", "timestamp");
+        data.put("timestamp", timestamp);
+        try {
+            client.target(dbUrl + "eventComments/event" + eventId + ".json")
+                    .request(MediaType.APPLICATION_JSON)
+                    .header(HttpHeaders.AUTHORIZATION, "Bearer " + getAccessToken())
+                    .async()
+                    .post(Entity.entity(data, MediaType.APPLICATION_JSON));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

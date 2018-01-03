@@ -1,5 +1,7 @@
 package cat.udl.etrapp.server.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.*;
 
 public class Event {
@@ -31,24 +33,12 @@ public class Event {
     private String location;
     private long category;
     private String description;
+    private String imageUrl;
     private long startsAt;
     private boolean isEnabled;
     private boolean isFeatured;
 
     public Event() {
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public long getStartsAt() {
-        return startsAt;
-    }
-
-
-    public void setStartsAt(long startsAt) {
-        this.startsAt = startsAt;
     }
 
     public long getId() {
@@ -59,6 +49,14 @@ public class Event {
         this.id = id;
     }
 
+    public long getOwner() {
+        return owner;
+    }
+
+    public void setOwner(long owner) {
+        this.owner = owner;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -67,12 +65,12 @@ public class Event {
         this.title = title;
     }
 
-    public long getOwner() {
-        return owner;
+    public String getLocation() {
+        return location;
     }
 
-    public void setOwner(long owner) {
-        this.owner = owner;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public long getCategory() {
@@ -89,6 +87,38 @@ public class Event {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public long getStartsAt() {
+        return startsAt;
+    }
+
+    public void setStartsAt(long startsAt) {
+        this.startsAt = startsAt;
+    }
+
+    public boolean isEnabled() {
+        return isEnabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        isEnabled = enabled;
+    }
+
+    public boolean isFeatured() {
+        return isFeatured;
+    }
+
+    public void setFeatured(boolean featured) {
+        isFeatured = featured;
     }
 
     @Override

@@ -19,6 +19,7 @@ public class RestApplication extends Application {
                 AuthEndpoint.class,
                 CategoriesEndpoint.class,
                 EventsEndpoint.class,
+                EventCommentsEndpoint.class,
                 EventMessagesEndpoint.class,
                 UsersEndpoint.class,
                 AuthenticationFilter.class,
