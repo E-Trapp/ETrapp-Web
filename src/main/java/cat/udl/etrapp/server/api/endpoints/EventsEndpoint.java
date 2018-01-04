@@ -1,5 +1,6 @@
 package cat.udl.etrapp.server.api.endpoints;
 
+import cat.udl.etrapp.server.api.annotations.AdminOnly;
 import cat.udl.etrapp.server.api.annotations.Authorized;
 import cat.udl.etrapp.server.api.annotations.PATCH;
 import cat.udl.etrapp.server.api.annotations.Secured;
@@ -81,6 +82,18 @@ public class EventsEndpoint {
         } else {
             return Response.serverError().build();
         }
+    }
+
+    @POST
+    @AdminOnly
+    @Path("/batch")
+    public Response addBatchEvents(List<Event> events) {
+        for(Event e : events) {
+            if (EventsDAO.getInstance().createEvent(e) == null) {
+                return Response.serverError().status(Status.INTERNAL_SERVER_ERROR).build();
+            }
+        }
+        return Response.ok().build();
     }
 
 }

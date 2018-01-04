@@ -79,7 +79,6 @@ public class Utils {
 
     public static void main(String args[]) {
         System.out.println("Custom token for development: qweqweqweqwe -> " + getHashedString("qweqweqweqwe"));
-
     }
 
 }
