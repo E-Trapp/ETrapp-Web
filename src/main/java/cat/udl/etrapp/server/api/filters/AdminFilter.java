@@ -1,8 +1,7 @@
 package cat.udl.etrapp.server.api.filters;
 
-import cat.udl.etrapp.server.api.annotations.Secured;
+import cat.udl.etrapp.server.api.annotations.AdminOnly;
 import cat.udl.etrapp.server.api.exceptions.InvalidTokenException;
-import cat.udl.etrapp.server.daos.UsersDAO;
 
 import javax.annotation.Priority;
 import javax.ws.rs.Priorities;
@@ -14,7 +13,7 @@ import javax.ws.rs.ext.Provider;
 import java.io.IOException;
 
 @Provider
-@Secured
+@AdminOnly
 @Priority(Priorities.AUTHENTICATION)
 public class AdminFilter implements ContainerRequestFilter {
 
@@ -69,6 +68,7 @@ public class AdminFilter implements ContainerRequestFilter {
     private void validateToken(String token) throws InvalidTokenException {
         // Check if the token was issued by the server and if it's not expired
         // Throw an Exception if the token is invalid
-        if (!token.equals("d87beb0f47d19368d491025de45cef4e9d902bc3")) throw new InvalidTokenException("Token " + token + " is not valid.");
+        if (!token.equals("d87beb0f47d19368d491025de45cef4e9d902bc3"))
+            throw new InvalidTokenException("Token " + token + " is not valid.");
     }
 }

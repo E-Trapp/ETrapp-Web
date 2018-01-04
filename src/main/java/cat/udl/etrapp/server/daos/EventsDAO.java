@@ -187,6 +187,7 @@ public class EventsDAO {
             CallableStatement statement = connection.prepareCall(Utils.generateSQLPatch("events", changes, id, Event.class))) {
             if (statement.executeUpdate() > 0) {
                 ok = true;
+                SearchController.getInstance().editEvent(id, changes);
             }
         } catch (SQLException e) {
             e.printStackTrace();
