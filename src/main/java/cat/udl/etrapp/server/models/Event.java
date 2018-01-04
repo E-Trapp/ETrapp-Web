@@ -9,6 +9,7 @@ public class Event {
     public static final Set<String> updatable = new HashSet<>(Arrays.asList(
             "title",
             "description",
+            "imageUrl",
             "location",
             "isEnabled",
             "isFeatured",
@@ -19,6 +20,7 @@ public class Event {
     static {
         keyMap = new HashMap<>();
         keyMap.put("startsAt", "starts_at");
+        keyMap.put("imageUrl", "image_url");
         keyMap.put("isEnabled", "is_enabled");
         keyMap.put("isFeatured", "is_featured");
     }

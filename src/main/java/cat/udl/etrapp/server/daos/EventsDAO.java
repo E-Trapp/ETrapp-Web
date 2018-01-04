@@ -136,7 +136,7 @@ public class EventsDAO {
 
     public Event createEvent(Event event) {
         try (Connection connection = DBManager.getConnection();
-             PreparedStatement statement = connection.prepareStatement("INSERT INTO events (title, description, owner_id, category_id, location, starts_at) VALUES (?, ?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+             PreparedStatement statement = connection.prepareStatement("INSERT INTO events (title, description, owner_id, category_id, location, starts_at, image_url) VALUES (?, ?, ?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
         ) {
             statement.setString(1, event.getTitle());
             statement.setString(2, event.getDescription());
@@ -144,6 +144,7 @@ public class EventsDAO {
             statement.setLong(4, event.getCategory());
             statement.setString(5, event.getLocation());
             statement.setTimestamp(6, new Timestamp(event.getStartsAt()));
+            statement.setString(7, event.getImageUrl());
             statement.executeUpdate();
             try (ResultSet rs = statement.getGeneratedKeys()) {
                 if (rs.next()) {

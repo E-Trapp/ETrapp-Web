@@ -68,7 +68,7 @@ public class AdminFilter implements ContainerRequestFilter {
     private void validateToken(String token) throws InvalidTokenException {
         // Check if the token was issued by the server and if it's not expired
         // Throw an Exception if the token is invalid
-        if (!token.equals("d87beb0f47d19368d491025de45cef4e9d902bc3"))
+        if (!token.equals("etrappBOT"))
             throw new InvalidTokenException("Token " + token + " is not valid.");
     }
 }

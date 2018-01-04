@@ -1,7 +1,9 @@
 package cat.udl.etrapp.server.api.endpoints;
 
+import cat.udl.etrapp.server.api.annotations.AdminOnly;
 import cat.udl.etrapp.server.api.annotations.Secured;
 import cat.udl.etrapp.server.daos.EventMessagesDAO;
+import cat.udl.etrapp.server.daos.EventsDAO;
 import cat.udl.etrapp.server.models.EventMessage;
 
 import javax.enterprise.context.RequestScoped;
@@ -41,6 +43,16 @@ public class EventMessagesEndpoint {
         data.put("id", String.valueOf(eventId));
         data.put("index", String.valueOf(eventMessage.getId()));
         return Response.created(UriBuilder.fromResource(EventMessagesEndpoint.class).buildFromMap(data)).build();
+    }
+
+    @POST
+    @AdminOnly
+    @Path("/batch")
+    public Response batchInsert(@Context HttpHeaders headers, List<EventMessage> messages) {
+        for(EventMessage eventMessage : messages) {
+            EventMessagesDAO.getInstance().writeMessage(eventMessage, getAuthToken(headers), eventId);
+        }
+        return Response.ok().build();
     }
 
     @GET
