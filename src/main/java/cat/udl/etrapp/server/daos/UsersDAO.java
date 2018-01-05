@@ -4,6 +4,7 @@ import cat.udl.etrapp.server.controllers.FirebaseController;
 import cat.udl.etrapp.server.controllers.SearchController;
 import cat.udl.etrapp.server.db.DBManager;
 import cat.udl.etrapp.server.models.*;
+import cat.udl.etrapp.server.utils.BCrypt;
 import cat.udl.etrapp.server.utils.Password;
 import cat.udl.etrapp.server.utils.Utils;
 import com.sun.istack.internal.Nullable;
@@ -242,6 +243,13 @@ public class UsersDAO {
 
         if (!User.updatable.containsAll(updates.keySet())) {
             return false;
+        }
+
+        // Hash the new password and remove plain text
+        if (updates.containsKey("password")) {
+            String password = (String)updates.get("password");
+            updates.remove("password");
+            updates.put("password_hashed", Password.hashPassword(password));
         }
 
         try(Connection connection = DBManager.getConnection();

@@ -5,6 +5,7 @@ import java.util.*;
 public abstract class BaseUser {
 
     public static final Set<String> updatable = new HashSet<>(Arrays.asList(
+            "password",
             "email",
             "firstName",
             "lastName",
@@ -14,6 +15,7 @@ public abstract class BaseUser {
     private static final Map<String, String> keyMap;
     static {
         keyMap = new HashMap<>();
+        keyMap.put("password_hashed", "password_hashed");
         keyMap.put("firstName", "first_name");
         keyMap.put("lastName", "last_name");
         keyMap.put("avatarUrl", "avatar_url");
