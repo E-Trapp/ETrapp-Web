@@ -23,14 +23,25 @@ public class EventsDAO {
         return instance;
     }
 
-    public List<Event> getEvents(Integer offset, Integer maxResults) {
+    public List<Event> getEvents(Integer offset, Integer maxResults, Long category) {
         final String SQLQuery;
         boolean paginated = false;
+        boolean categorized = false;
         if (offset == null || maxResults == null) {
-            SQLQuery = "SELECT * FROM events ORDER BY starts_at DESC";
+            if (category == null) SQLQuery = "SELECT * FROM events ORDER BY starts_at DESC";
+            else {
+                categorized = true;
+                SQLQuery = "SELECT * FROM events WHERE category_id = ? ORDER BY starts_at DESC";
+            }
         } else {
             paginated = true;
-            SQLQuery = "SELECT * FROM events ORDER BY starts_at DESC LIMIT ? OFFSET ? ";
+            if (category == null)
+                SQLQuery = "SELECT * FROM events ORDER BY starts_at DESC LIMIT ? OFFSET ? ";
+            else {
+                categorized = true;
+                SQLQuery = "SELECT * FROM events WHERE category_id = ? ORDER BY starts_at DESC LIMIT ? OFFSET ? ";
+            }
+
         }
 
         final List<Event> events = new ArrayList<>();
@@ -39,9 +50,17 @@ public class EventsDAO {
              PreparedStatement statement = connection.prepareStatement(SQLQuery)) {
 
             if (paginated) {
-                statement.setInt(1, maxResults);
-                statement.setInt(2, offset);
+                if (categorized) {
+                    statement.setLong(1, category);
+                }
+                statement.setInt(2, maxResults);
+                statement.setInt(3, offset);
+
+            } else if (categorized) {
+                statement.setLong(1, category);
             }
+
+
 
             try (ResultSet resultSet = statement.executeQuery()) {
 

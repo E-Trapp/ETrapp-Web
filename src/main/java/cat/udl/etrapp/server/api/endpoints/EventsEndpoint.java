@@ -47,8 +47,9 @@ public class EventsEndpoint {
 
     @GET
     public Response listAll(@QueryParam("start") final Integer startPosition,
-                               @QueryParam("max") final Integer maxResult) {
-        final List<Event> events = EventsDAO.getInstance().getEvents(startPosition, maxResult);
+                               @QueryParam("max") final Integer maxResult,
+                               @QueryParam("category") final Long category) {
+        final List<Event> events = EventsDAO.getInstance().getEvents(startPosition, maxResult, category);
         if (events.isEmpty()) {
             return Response.status(Status.NOT_FOUND).build();
         } else {
