@@ -19,6 +19,7 @@ public class RestApplication extends Application {
         return new HashSet<>(Arrays.asList(
                 AuthEndpoint.class,
                 CategoriesEndpoint.class,
+                SubscribeEndpoint.class,
                 EventsEndpoint.class,
                 EventCommentsEndpoint.class,
                 EventMessagesEndpoint.class,
