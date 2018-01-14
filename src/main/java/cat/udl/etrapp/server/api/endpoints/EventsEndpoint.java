@@ -9,9 +9,12 @@ import cat.udl.etrapp.server.daos.UsersDAO;
 import cat.udl.etrapp.server.models.Event;
 
 import javax.enterprise.context.RequestScoped;
+import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 import javax.ws.rs.core.Response.Status;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Map;
 
@@ -35,6 +38,30 @@ public class EventsEndpoint {
         } else {
             return Response.created(UriBuilder.fromResource(EventsEndpoint.class).path(String.valueOf(event.getId())).build()).build();
         }
+    }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    public void newEvent(@FormParam("title") String title,
+                         @FormParam("desc") String description,
+                         @FormParam("loc") String location,
+                         @FormParam("starts") String startsAt,
+                            @Context HttpServletResponse response) throws Exception {
+        Event e = new Event();
+        e.setTitle(title);
+        e.setDescription(description);
+        e.setLocation(location);
+        e.setStartsAt(new SimpleDateFormat("yyyy-MM-dd HH:mm").parse(startsAt.replace('T', ' ')).getTime());
+        e.setOwner(22);
+        EventsDAO.getInstance().createEvent(e);
+        response.sendRedirect("/etrapp-server/events.jsp");
+    }
+
+    @GET
+    @Path("{id}/delete")
+    public void deleteEvent(@PathParam("id") long eventId, @Context HttpServletResponse response) throws Exception {
+        EventsDAO.getInstance().deleteEvent(eventId);
+        response.sendRedirect("/etrapp-server/events.jsp");
     }
 
     @GET
