@@ -75,4 +75,18 @@ public class UsersEndpoint {
         }
     }
 
+    @GET
+    @Secured
+    @Path("/{id}/subscribe")
+    public Response getUserSubscribe(@PathParam("id") long id,
+                                  @QueryParam("start") final Integer startPosition,
+                                  @QueryParam("max") final Integer maxResult) {
+        List<Event> userEvents = EventsDAO.getInstance().getEventsSubscribe(id, startPosition, maxResult);
+        if (userEvents.isEmpty()) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        } else {
+            return Response.ok(userEvents).build();
+        }
+    }
+
 }
