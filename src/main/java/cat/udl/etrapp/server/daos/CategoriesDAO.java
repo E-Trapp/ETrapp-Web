@@ -2,12 +2,8 @@ package cat.udl.etrapp.server.daos;
 
 import cat.udl.etrapp.server.db.DBManager;
 import cat.udl.etrapp.server.models.Category;
-import cat.udl.etrapp.server.models.Event;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,7 +39,7 @@ public class CategoriesDAO {
 
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
-                    categories.add(eventFromResultSet(resultSet));
+                    categories.add(categoryFromResultSet(resultSet));
                 }
             } catch (SQLException e) {
                 System.err.println("Error in SQL: getEvents");
@@ -57,7 +53,7 @@ public class CategoriesDAO {
         return categories;
     }
 
-    private Category eventFromResultSet(ResultSet resultSet) throws SQLException {
+    private Category categoryFromResultSet(ResultSet resultSet) throws SQLException {
         final Category category = new Category();
         category.setId(resultSet.getLong("id"));
         category.setName(resultSet.getString("name"));
@@ -67,4 +63,51 @@ public class CategoriesDAO {
     }
 
 
+    public Category getCategoryById(long parentId) {
+        final String SQLQuery;
+        Category c = null;
+        SQLQuery = "SELECT * FROM categories WHERE id = ?";
+
+        try (Connection connection = DBManager.getConnection();
+             PreparedStatement statement = connection.prepareStatement(SQLQuery)) {
+            statement.setLong(1, parentId);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                     c = categoryFromResultSet(resultSet);
+                }
+            } catch (SQLException e) {
+                System.err.println("Error in SQL: getEvents");
+                System.err.println(e.getMessage());
+            }
+        } catch (SQLException e) {
+            System.err.println("Error in SQL: getEvents()");
+            System.err.println(e.getMessage());
+        }
+
+        return c;
+    }
+
+    public void createCategory(String categoryTitle) {
+            try (Connection connection = DBManager.getConnection();
+                 PreparedStatement statement = connection.prepareStatement("INSERT INTO categories (name) VALUES (?)");
+            ) {
+                statement.setString(1, categoryTitle);
+                statement.executeUpdate();
+            } catch (SQLException e) {
+                System.err.println("Error in SQL: createEvent()");
+                System.err.println(e.getMessage());
+            }
+    }
+
+    public void deleteCategory(long categoryId) {
+        try (Connection connection = DBManager.getConnection();
+             PreparedStatement statement = connection.prepareStatement("DELETE FROM categories WHERE id = ?");
+        ) {
+            statement.setLong(1, categoryId);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("Error in SQL: createEvent()");
+            System.err.println(e.getMessage());
+        }
+    }
 }
