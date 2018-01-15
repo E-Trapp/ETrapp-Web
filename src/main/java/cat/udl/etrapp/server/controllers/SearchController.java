@@ -66,4 +66,7 @@ public class SearchController {
         eventIndex.partialUpdateObject(String.valueOf(id), e);
     }
 
+    public void deleteEvent(long id) {
+        eventIndex.deleteObject(String.valueOf(id));
+    }
 }

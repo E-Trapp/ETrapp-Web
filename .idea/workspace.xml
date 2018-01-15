@@ -7,12 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b936f20a-94fa-45fd-8e05-37535ffe15f2" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/WebContent/events.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/WebContent/newevent.jsp" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/WebContent/categories.jsp" afterPath="$PROJECT_DIR$/WebContent/categories.jsp" />
-      <change beforePath="$PROJECT_DIR$/WebContent/newcategory.jsp" afterPath="$PROJECT_DIR$/WebContent/newcategory.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/api/endpoints/EventsEndpoint.java" afterPath="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/api/endpoints/EventsEndpoint.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/controllers/SearchController.java" afterPath="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/controllers/SearchController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/daos/EventsDAO.java" afterPath="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/daos/EventsDAO.java" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -156,46 +153,44 @@
       <file leaf-file-name="EventsDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/daos/EventsDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="237" column="19" lean-forward="false" selection-start-line="237" selection-start-column="19" selection-end-line="237" selection-end-column="19" />
+            <state relative-caret-position="226">
+              <caret line="243" column="63" lean-forward="false" selection-start-line="243" selection-start-column="63" selection-end-line="243" selection-end-column="63" />
               <folding>
-                <marker date="1515969847821" expanded="true" signature="852:896" ph="SELECT * FRO... events" />
-                <marker date="1515969847821" expanded="true" signature="982:1048" ph="SELECT * FRO... events" />
-                <marker date="1515969847821" expanded="true" signature="1174:1235" ph="SELECT * FRO... events" />
-                <marker date="1515969847821" expanded="true" signature="1322:1405" ph="SELECT * FRO... events" />
-                <marker date="1515969847821" expanded="true" signature="2730:2769" ph="SELECT * FRO... events" />
-                <marker date="1515969847821" expanded="true" signature="2843:2899" ph="SELECT * FRO... events" />
-                <marker date="1515969847821" expanded="true" signature="4148:4325" ph="SELECT b.* F... subscribe_events" />
-                <marker date="1515969847821" expanded="true" signature="4468:4664" ph="SELECT b.* F... subscribe_events" />
-                <marker date="1515969847821" expanded="true" signature="7020:7053" ph="SELECT * FRO... events" />
-                <marker date="1515969847821" expanded="true" signature="7304:7427" ph="INSERT INTO events... " />
-                <marker date="1515969847821" expanded="true" signature="8745:8776" ph="DELETE FROM events... " />
+                <marker date="1515974511981" expanded="true" signature="852:896" ph="SELECT * FRO... events" />
+                <marker date="1515974511981" expanded="true" signature="982:1048" ph="SELECT * FRO... events" />
+                <marker date="1515974511981" expanded="true" signature="1174:1235" ph="SELECT * FRO... events" />
+                <marker date="1515974511981" expanded="true" signature="1322:1405" ph="SELECT * FRO... events" />
+                <marker date="1515974511981" expanded="true" signature="2730:2769" ph="SELECT * FRO... events" />
+                <marker date="1515974511981" expanded="true" signature="2843:2899" ph="SELECT * FRO... events" />
+                <marker date="1515974511981" expanded="true" signature="4148:4325" ph="SELECT b.* F... subscribe_events" />
+                <marker date="1515974511981" expanded="true" signature="4468:4664" ph="SELECT b.* F... subscribe_events" />
+                <marker date="1515974511981" expanded="true" signature="7020:7053" ph="SELECT * FRO... events" />
+                <marker date="1515974511981" expanded="true" signature="7304:7427" ph="INSERT INTO events... " />
+                <marker date="1515974511981" expanded="true" signature="8745:8776" ph="DELETE FROM events... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventsEndpoint.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SearchController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/controllers/SearchController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="628">
+              <caret line="69" column="52" lean-forward="false" selection-start-line="69" selection-start-column="52" selection-end-line="69" selection-end-column="52" />
+              <folding>
+                <element signature="e#2333#2334#0" expanded="true" />
+                <element signature="e#2392#2393#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventsEndpoint.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/api/endpoints/EventsEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="53" column="95" lean-forward="false" selection-start-line="53" selection-start-column="95" selection-end-line="53" selection-end-column="95" />
+            <state relative-caret-position="430">
+              <caret line="98" column="41" lean-forward="true" selection-start-line="98" selection-start-column="41" selection-end-line="98" selection-end-column="41" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategoriesDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/daos/CategoriesDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="777">
-              <caret line="103" column="107" lean-forward="false" selection-start-line="103" selection-start-column="107" selection-end-line="103" selection-end-column="107" />
-              <folding>
-                <marker date="1515972587124" expanded="true" signature="977:1019" ph="SELECT * FRO... categories" />
-                <marker date="1515972587124" expanded="true" signature="2256:2293" ph="SELECT * FRO... categories" />
-                <marker date="1515972587124" expanded="true" signature="3223:3263" ph="INSERT INTO categories... " />
-                <marker date="1515972587124" expanded="true" signature="3746:3781" ph="DELETE FROM categories... " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -281,7 +276,6 @@
         <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/api/annotations/AdminOnly.java" />
         <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/models/BaseEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/models/AlgoliaEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/controllers/SearchController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/models/Event.java" />
         <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/api/endpoints/EventMessagesEndpoint.java" />
         <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/utils/Utils.java" />
@@ -294,7 +288,6 @@
         <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/api/endpoints/SubscribeEndpoint.java" />
         <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/daos/SubscribeDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/api/endpoints/UsersEndpoint.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/daos/EventsDAO.java" />
         <option value="$PROJECT_DIR$/WebContent/css/style.css" />
         <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/daos/CategoriesDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/api/endpoints/CategoriesEndpoint.java" />
@@ -303,6 +296,8 @@
         <option value="$PROJECT_DIR$/WebContent/events.jsp" />
         <option value="$PROJECT_DIR$/WebContent/newevent.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/api/endpoints/EventsEndpoint.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/daos/EventsDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/controllers/SearchController.java" />
       </list>
     </option>
   </component>
@@ -871,7 +866,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168627000" />
+    <option name="totallyTimeSpent" value="168958000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -906,8 +901,8 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869378" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27730194" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16381156" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27730194" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16381156" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20522387" sideWeight="0.4951724" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="21" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29264393" sideWeight="0.50482756" order="13" side_tool="true" content_ui="tabs" />
@@ -963,13 +958,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/models/EventComment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/models/BaseEvent.java" />
     <entry file="das://table:/cff0e20f/7ea67212-7573-41ad-90c2-72c7b422d9bf/dh9lc7447dlvb.public.event_comments" />
     <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/models/AlgoliaEvent.java">
@@ -983,19 +971,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="15" column="52" lean-forward="false" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/controllers/SearchController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="40" column="59" lean-forward="false" selection-start-line="40" selection-start-column="59" selection-end-line="40" selection-end-column="59" />
-          <folding>
-            <element signature="e#1095#1096#0" expanded="false" />
-            <element signature="e#1156#1157#0" expanded="false" />
-            <element signature="e#1197#1198#0" expanded="false" />
-            <element signature="e#1264#1265#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1258,16 +1233,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/api/endpoints/EventCommentsEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/categories.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -1307,26 +1272,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/daos/EventsDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="237" column="19" lean-forward="false" selection-start-line="237" selection-start-column="19" selection-end-line="237" selection-end-column="19" />
-          <folding>
-            <marker date="1515969847821" expanded="true" signature="852:896" ph="SELECT * FRO... events" />
-            <marker date="1515969847821" expanded="true" signature="982:1048" ph="SELECT * FRO... events" />
-            <marker date="1515969847821" expanded="true" signature="1174:1235" ph="SELECT * FRO... events" />
-            <marker date="1515969847821" expanded="true" signature="1322:1405" ph="SELECT * FRO... events" />
-            <marker date="1515969847821" expanded="true" signature="2730:2769" ph="SELECT * FRO... events" />
-            <marker date="1515969847821" expanded="true" signature="2843:2899" ph="SELECT * FRO... events" />
-            <marker date="1515969847821" expanded="true" signature="4148:4325" ph="SELECT b.* F... subscribe_events" />
-            <marker date="1515969847821" expanded="true" signature="4468:4664" ph="SELECT b.* F... subscribe_events" />
-            <marker date="1515969847821" expanded="true" signature="7020:7053" ph="SELECT * FRO... events" />
-            <marker date="1515969847821" expanded="true" signature="7304:7427" ph="INSERT INTO events... " />
-            <marker date="1515969847821" expanded="true" signature="8745:8776" ph="DELETE FROM events... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/api/endpoints/CategoriesEndpoint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -1337,11 +1282,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/charts.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2805">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/api/endpoints/EventsEndpoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="53" column="95" lean-forward="false" selection-start-line="53" selection-start-column="95" selection-end-line="53" selection-end-column="95" />
+        <state relative-caret-position="430">
+          <caret line="98" column="41" lean-forward="true" selection-start-line="98" selection-start-column="41" selection-end-line="98" selection-end-column="41" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/api/endpoints/EventCommentsEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/daos/EventsDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="243" column="63" lean-forward="false" selection-start-line="243" selection-start-column="63" selection-end-line="243" selection-end-column="63" />
+          <folding>
+            <marker date="1515974511981" expanded="true" signature="852:896" ph="SELECT * FRO... events" />
+            <marker date="1515974511981" expanded="true" signature="982:1048" ph="SELECT * FRO... events" />
+            <marker date="1515974511981" expanded="true" signature="1174:1235" ph="SELECT * FRO... events" />
+            <marker date="1515974511981" expanded="true" signature="1322:1405" ph="SELECT * FRO... events" />
+            <marker date="1515974511981" expanded="true" signature="2730:2769" ph="SELECT * FRO... events" />
+            <marker date="1515974511981" expanded="true" signature="2843:2899" ph="SELECT * FRO... events" />
+            <marker date="1515974511981" expanded="true" signature="4148:4325" ph="SELECT b.* F... subscribe_events" />
+            <marker date="1515974511981" expanded="true" signature="4468:4664" ph="SELECT b.* F... subscribe_events" />
+            <marker date="1515974511981" expanded="true" signature="7020:7053" ph="SELECT * FRO... events" />
+            <marker date="1515974511981" expanded="true" signature="7304:7427" ph="INSERT INTO events... " />
+            <marker date="1515974511981" expanded="true" signature="8745:8776" ph="DELETE FROM events... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cat/udl/etrapp/server/controllers/SearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="69" column="52" lean-forward="false" selection-start-line="69" selection-start-column="52" selection-end-line="69" selection-end-column="52" />
+          <folding>
+            <element signature="e#2333#2334#0" expanded="true" />
+            <element signature="e#2392#2393#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -240,7 +240,10 @@ public class EventsDAO {
              PreparedStatement statement = connection.prepareStatement("DELETE FROM events WHERE id = ?");
         ) {
             statement.setLong(1, id);
-            if (statement.executeUpdate() == 1) return true;
+            if (statement.executeUpdate() == 1) {
+                SearchController.getInstance().deleteEvent(id);
+                return true;
+            }
         } catch (SQLException e) {
             System.err.println("Error in SQL: deleteEvent()");
             System.err.println(e.getMessage());
