@@ -19,31 +19,21 @@ import java.util.List;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class SubscribeEndpoint {
-    // The Java method will process HTTP GET requests
-    /*@GET
-    // The Java method will produce content identified by the MIME Media type "text/plain"
-    @Produces("text/plain")
-    @Path("../test")
-    public String getClichedMessage() {
-        // Return some cliched textual content
-        return "Hello World";
-    }*/
 
-    @GET
-    public String[] test() {
-        String[] kk = new String[3];
-        kk[0] = "0";
-        kk[1] = "1";
-        kk[2] = "2";
-
-        return kk;
-    }
 
 
     @POST
     public Response createSubscribe(final Subscribe subscribe) {
-        System.out.println("DHIOSAHDSHDIAOS");
         if(SubscribeDAO.getInstance().createSubscribe(subscribe) == null){
+            return Response.serverError().status(Response.Status.INTERNAL_SERVER_ERROR).build();
+        } else {
+            return Response.created(UriBuilder.fromResource(SubscribeEndpoint.class).path(String.valueOf(subscribe.getId())).build()).build();
+        }
+    }
+
+    @POST
+    public Response deleteSubscribe(final Subscribe subscribe) {
+        if(SubscribeDAO.getInstance().deleteSubscribe(subscribe) == null){
             return Response.serverError().status(Response.Status.INTERNAL_SERVER_ERROR).build();
         } else {
             return Response.created(UriBuilder.fromResource(SubscribeEndpoint.class).path(String.valueOf(subscribe.getId())).build()).build();

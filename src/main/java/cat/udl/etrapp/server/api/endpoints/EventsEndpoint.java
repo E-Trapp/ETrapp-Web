@@ -154,7 +154,7 @@ public class EventsEndpoint {
 
         Map<String, Long> data = ScoresDAO.getInstance().getScoresFromEvent(id);
         if (data == null)
-        return Response.status(Status.INTERNAL_SERVER_ERROR).build();
+        return Response.status(Status.NOT_FOUND).build();
         else return Response.ok(data).build();
     }
 

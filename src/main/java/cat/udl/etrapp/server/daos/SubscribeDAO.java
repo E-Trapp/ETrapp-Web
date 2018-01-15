@@ -30,7 +30,26 @@ public class SubscribeDAO {
             statement.executeUpdate();
 
         } catch (SQLException e) {
-            System.err.println("Error in SQL: createEvent()");
+            System.err.println("Error in SQL: create subscribe()");
+            System.err.println(e.getMessage());
+            return null;
+        }
+        return subscribe;
+    }
+
+    public Subscribe deleteSubscribe(Subscribe subscribe) {
+        try (Connection connection = DBManager.getConnection();
+             PreparedStatement statement = connection.prepareStatement(
+                     "DELETE FROM subscribe_events WHERE event_id = ? and user_id =?",
+                        Statement.RETURN_GENERATED_KEYS);
+        ) {
+            statement.setLong(1, subscribe.getEvent_id());
+            statement.setLong(2, subscribe.getUser_id());
+
+            statement.executeUpdate();
+
+        } catch (SQLException e) {
+            System.err.println("Error in SQL: delete subscribe()");
             System.err.println(e.getMessage());
             return null;
         }
