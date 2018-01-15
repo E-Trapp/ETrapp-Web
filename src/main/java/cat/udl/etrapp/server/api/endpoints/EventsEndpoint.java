@@ -5,6 +5,7 @@ import cat.udl.etrapp.server.api.annotations.Authorized;
 import cat.udl.etrapp.server.api.annotations.PATCH;
 import cat.udl.etrapp.server.api.annotations.Secured;
 import cat.udl.etrapp.server.daos.EventsDAO;
+import cat.udl.etrapp.server.daos.ScoresDAO;
 import cat.udl.etrapp.server.daos.UsersDAO;
 import cat.udl.etrapp.server.models.Event;
 
@@ -122,6 +123,39 @@ public class EventsEndpoint {
             }
         }
         return Response.ok().build();
+    }
+
+
+    @GET
+    @Secured
+    @Path("{id}/like")
+    public Response addLike(@PathParam("id") final Long id,
+                            @Context HttpHeaders headers) throws Exception {
+        if(ScoresDAO.getInstance().like(id, UsersDAO.getInstance().getUserByToken(getAuthToken(headers)).getId()))
+            return Response.ok().build();
+        else
+            return Response.status(Response.Status.BAD_REQUEST).build();
+    }
+
+    @GET
+    @Secured
+    @Path("{id}/dislike")
+    public Response addDislike(@PathParam("id") final Long id,
+                            @Context HttpHeaders headers) throws Exception {
+        if(ScoresDAO.getInstance().dislike(id, UsersDAO.getInstance().getUserByToken(getAuthToken(headers)).getId()))
+            return Response.ok().build();
+        else
+            return Response.status(Response.Status.BAD_REQUEST).build();
+    }
+
+    @GET
+    @Path("{id}/scores")
+    public Response getScores(@PathParam("id") final Long id) {
+
+        Map<String, Long> data = ScoresDAO.getInstance().getScoresFromEvent(id);
+        if (data == null)
+        return Response.status(Status.INTERNAL_SERVER_ERROR).build();
+        else return Response.ok(data).build();
     }
 
 }
